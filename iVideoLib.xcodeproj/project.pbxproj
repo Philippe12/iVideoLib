@@ -1,0 +1,607 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2640DB7D187EEDDA003EED97 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2640DB7C187EEDDA003EED97 /* Cocoa.framework */; };
+		2640DB87187EEDDA003EED97 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2640DB85187EEDDA003EED97 /* InfoPlist.strings */; };
+		2640DB89187EEDDA003EED97 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2640DB88187EEDDA003EED97 /* main.m */; };
+		2640DB8D187EEDDA003EED97 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2640DB8B187EEDDA003EED97 /* Credits.rtf */; };
+		2640DB90187EEDDA003EED97 /* RADocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 2640DB8F187EEDDA003EED97 /* RADocument.m */; };
+		2640DB93187EEDDA003EED97 /* RADocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2640DB91187EEDDA003EED97 /* RADocument.xib */; };
+		2640DB96187EEDDA003EED97 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2640DB94187EEDDA003EED97 /* MainMenu.xib */; };
+		2640DB99187EEDDA003EED97 /* RADocument.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2640DB97187EEDDA003EED97 /* RADocument.xcdatamodeld */; };
+		2640DB9B187EEDDA003EED97 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2640DB9A187EEDDA003EED97 /* Images.xcassets */; };
+		2640DBA2187EEDDA003EED97 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2640DBA1187EEDDA003EED97 /* XCTest.framework */; };
+		2640DBA3187EEDDA003EED97 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2640DB7C187EEDDA003EED97 /* Cocoa.framework */; };
+		2640DBAB187EEDDA003EED97 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2640DBA9187EEDDA003EED97 /* InfoPlist.strings */; };
+		2640DBAD187EEDDA003EED97 /* iVideoLibTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2640DBAC187EEDDA003EED97 /* iVideoLibTests.m */; };
+		264E4F9C187FEED20020DD5A /* RAEnabledTranformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 264E4F9B187FEED20020DD5A /* RAEnabledTranformer.m */; };
+		264E4FA1187FFC870020DD5A /* RAViewVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 264E4F9F187FFC870020DD5A /* RAViewVideo.m */; };
+		264E4FA2187FFC870020DD5A /* RAViewVideo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 264E4FA0187FFC870020DD5A /* RAViewVideo.xib */; };
+		2665EB02188E69BD00ACB67A /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2665EB01188E69BD00ACB67A /* CoreMedia.framework */; };
+		2665EB05188E810D00ACB67A /* RACollectionViewVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2665EB04188E810D00ACB67A /* RACollectionViewVideo.m */; };
+		26A7DFE8187EEF4C00EE15FD /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A7DFE7187EEF4B00EE15FD /* AVKit.framework */; };
+		26A7DFEB187EF4F200EE15FD /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A7DFEA187EF4F200EE15FD /* Video.m */; };
+		26A7DFEE187EF4F200EE15FD /* Chapitre.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A7DFED187EF4F200EE15FD /* Chapitre.m */; };
+		26A7DFF2187EF9C200EE15FD /* RAImageTranformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A7DFF1187EF9C200EE15FD /* RAImageTranformer.m */; };
+		26A7E005187EFA0700EE15FD /* RAConfigVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A7E000187EFA0700EE15FD /* RAConfigVideo.m */; };
+		26A7E006187EFA0700EE15FD /* RAConfigVideo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26A7E001187EFA0700EE15FD /* RAConfigVideo.xib */; };
+		26A7E007187EFA0700EE15FD /* RAPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A7E003187EFA0700EE15FD /* RAPanelController.m */; };
+		26A7E008187EFA0700EE15FD /* RAPanelController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26A7E004187EFA0700EE15FD /* RAPanelController.xib */; };
+		26B04A7B188D7B980017CB41 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26B04A7A188D7B980017CB41 /* AVFoundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2640DBA4187EEDDA003EED97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2640DB71187EEDDA003EED97 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2640DB78187EEDDA003EED97;
+			remoteInfo = iVideoLib;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2640DB79187EEDDA003EED97 /* iVideoLib.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iVideoLib.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2640DB7C187EEDDA003EED97 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		2640DB7F187EEDDA003EED97 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		2640DB80187EEDDA003EED97 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		2640DB81187EEDDA003EED97 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2640DB84187EEDDA003EED97 /* iVideoLib-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iVideoLib-Info.plist"; sourceTree = "<group>"; };
+		2640DB86187EEDDA003EED97 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2640DB88187EEDDA003EED97 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2640DB8A187EEDDA003EED97 /* iVideoLib-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iVideoLib-Prefix.pch"; sourceTree = "<group>"; };
+		2640DB8C187EEDDA003EED97 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		2640DB8E187EEDDA003EED97 /* RADocument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RADocument.h; sourceTree = "<group>"; };
+		2640DB8F187EEDDA003EED97 /* RADocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RADocument.m; sourceTree = "<group>"; };
+		2640DB92187EEDDA003EED97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/RADocument.xib; sourceTree = "<group>"; };
+		2640DB95187EEDDA003EED97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		2640DB98187EEDDA003EED97 /* RADocument.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RADocument.xcdatamodel; sourceTree = "<group>"; };
+		2640DB9A187EEDDA003EED97 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2640DBA0187EEDDA003EED97 /* iVideoLibTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iVideoLibTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2640DBA1187EEDDA003EED97 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		2640DBA8187EEDDA003EED97 /* iVideoLibTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iVideoLibTests-Info.plist"; sourceTree = "<group>"; };
+		2640DBAA187EEDDA003EED97 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2640DBAC187EEDDA003EED97 /* iVideoLibTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iVideoLibTests.m; sourceTree = "<group>"; };
+		264E4F9A187FEED20020DD5A /* RAEnabledTranformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RAEnabledTranformer.h; path = DataBase/RAEnabledTranformer.h; sourceTree = "<group>"; };
+		264E4F9B187FEED20020DD5A /* RAEnabledTranformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RAEnabledTranformer.m; path = DataBase/RAEnabledTranformer.m; sourceTree = "<group>"; };
+		264E4F9E187FFC870020DD5A /* RAViewVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RAViewVideo.h; path = View/RAViewVideo.h; sourceTree = "<group>"; };
+		264E4F9F187FFC870020DD5A /* RAViewVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RAViewVideo.m; path = View/RAViewVideo.m; sourceTree = "<group>"; };
+		264E4FA0187FFC870020DD5A /* RAViewVideo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RAViewVideo.xib; path = View/RAViewVideo.xib; sourceTree = "<group>"; };
+		2665EB01188E69BD00ACB67A /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		2665EB03188E810D00ACB67A /* RACollectionViewVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RACollectionViewVideo.h; path = View/RACollectionViewVideo.h; sourceTree = "<group>"; };
+		2665EB04188E810D00ACB67A /* RACollectionViewVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RACollectionViewVideo.m; path = View/RACollectionViewVideo.m; sourceTree = "<group>"; };
+		26A7DFE7187EEF4B00EE15FD /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		26A7DFE9187EF4F200EE15FD /* Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Video.h; path = DataBase/Video.h; sourceTree = "<group>"; };
+		26A7DFEA187EF4F200EE15FD /* Video.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Video.m; path = DataBase/Video.m; sourceTree = "<group>"; };
+		26A7DFEC187EF4F200EE15FD /* Chapitre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Chapitre.h; path = DataBase/Chapitre.h; sourceTree = "<group>"; };
+		26A7DFED187EF4F200EE15FD /* Chapitre.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Chapitre.m; path = DataBase/Chapitre.m; sourceTree = "<group>"; };
+		26A7DFF0187EF9C200EE15FD /* RAImageTranformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RAImageTranformer.h; path = DataBase/RAImageTranformer.h; sourceTree = "<group>"; };
+		26A7DFF1187EF9C200EE15FD /* RAImageTranformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RAImageTranformer.m; path = DataBase/RAImageTranformer.m; sourceTree = "<group>"; };
+		26A7DFFF187EFA0700EE15FD /* RAConfigVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAConfigVideo.h; sourceTree = "<group>"; };
+		26A7E000187EFA0700EE15FD /* RAConfigVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAConfigVideo.m; sourceTree = "<group>"; };
+		26A7E001187EFA0700EE15FD /* RAConfigVideo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RAConfigVideo.xib; sourceTree = "<group>"; };
+		26A7E002187EFA0700EE15FD /* RAPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAPanelController.h; sourceTree = "<group>"; };
+		26A7E003187EFA0700EE15FD /* RAPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAPanelController.m; sourceTree = "<group>"; };
+		26A7E004187EFA0700EE15FD /* RAPanelController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RAPanelController.xib; sourceTree = "<group>"; };
+		26B04A7A188D7B980017CB41 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2640DB76187EEDDA003EED97 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2665EB02188E69BD00ACB67A /* CoreMedia.framework in Frameworks */,
+				26B04A7B188D7B980017CB41 /* AVFoundation.framework in Frameworks */,
+				26A7DFE8187EEF4C00EE15FD /* AVKit.framework in Frameworks */,
+				2640DB7D187EEDDA003EED97 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2640DB9D187EEDDA003EED97 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2640DBA3187EEDDA003EED97 /* Cocoa.framework in Frameworks */,
+				2640DBA2187EEDDA003EED97 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2640DB70187EEDDA003EED97 = {
+			isa = PBXGroup;
+			children = (
+				2640DB82187EEDDA003EED97 /* iVideoLib */,
+				2640DBA6187EEDDA003EED97 /* iVideoLibTests */,
+				2640DB7B187EEDDA003EED97 /* Frameworks */,
+				2640DB7A187EEDDA003EED97 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2640DB7A187EEDDA003EED97 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2640DB79187EEDDA003EED97 /* iVideoLib.app */,
+				2640DBA0187EEDDA003EED97 /* iVideoLibTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2640DB7B187EEDDA003EED97 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2665EB01188E69BD00ACB67A /* CoreMedia.framework */,
+				26B04A7A188D7B980017CB41 /* AVFoundation.framework */,
+				26A7DFE7187EEF4B00EE15FD /* AVKit.framework */,
+				2640DB7C187EEDDA003EED97 /* Cocoa.framework */,
+				2640DBA1187EEDDA003EED97 /* XCTest.framework */,
+				2640DB7E187EEDDA003EED97 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2640DB7E187EEDDA003EED97 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2640DB7F187EEDDA003EED97 /* AppKit.framework */,
+				2640DB80187EEDDA003EED97 /* CoreData.framework */,
+				2640DB81187EEDDA003EED97 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		2640DB82187EEDDA003EED97 /* iVideoLib */ = {
+			isa = PBXGroup;
+			children = (
+				264E4F9D187FFC420020DD5A /* View */,
+				26A7DFFE187EFA0700EE15FD /* Panel */,
+				2640DB8E187EEDDA003EED97 /* RADocument.h */,
+				2640DB8F187EEDDA003EED97 /* RADocument.m */,
+				2640DB91187EEDDA003EED97 /* RADocument.xib */,
+				2640DB94187EEDDA003EED97 /* MainMenu.xib */,
+				2640DB9A187EEDDA003EED97 /* Images.xcassets */,
+				2640DB97187EEDDA003EED97 /* RADocument.xcdatamodeld */,
+				26A7DFEF187EF51B00EE15FD /* DataBase */,
+				2640DB83187EEDDA003EED97 /* Supporting Files */,
+			);
+			path = iVideoLib;
+			sourceTree = "<group>";
+		};
+		2640DB83187EEDDA003EED97 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2640DB84187EEDDA003EED97 /* iVideoLib-Info.plist */,
+				2640DB85187EEDDA003EED97 /* InfoPlist.strings */,
+				2640DB88187EEDDA003EED97 /* main.m */,
+				2640DB8A187EEDDA003EED97 /* iVideoLib-Prefix.pch */,
+				2640DB8B187EEDDA003EED97 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2640DBA6187EEDDA003EED97 /* iVideoLibTests */ = {
+			isa = PBXGroup;
+			children = (
+				2640DBAC187EEDDA003EED97 /* iVideoLibTests.m */,
+				2640DBA7187EEDDA003EED97 /* Supporting Files */,
+			);
+			path = iVideoLibTests;
+			sourceTree = "<group>";
+		};
+		2640DBA7187EEDDA003EED97 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2640DBA8187EEDDA003EED97 /* iVideoLibTests-Info.plist */,
+				2640DBA9187EEDDA003EED97 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		264E4F9D187FFC420020DD5A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				264E4F9E187FFC870020DD5A /* RAViewVideo.h */,
+				264E4F9F187FFC870020DD5A /* RAViewVideo.m */,
+				264E4FA0187FFC870020DD5A /* RAViewVideo.xib */,
+				2665EB03188E810D00ACB67A /* RACollectionViewVideo.h */,
+				2665EB04188E810D00ACB67A /* RACollectionViewVideo.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		26A7DFEF187EF51B00EE15FD /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				264E4F9A187FEED20020DD5A /* RAEnabledTranformer.h */,
+				264E4F9B187FEED20020DD5A /* RAEnabledTranformer.m */,
+				26A7DFF0187EF9C200EE15FD /* RAImageTranformer.h */,
+				26A7DFF1187EF9C200EE15FD /* RAImageTranformer.m */,
+				26A7DFEC187EF4F200EE15FD /* Chapitre.h */,
+				26A7DFED187EF4F200EE15FD /* Chapitre.m */,
+				26A7DFE9187EF4F200EE15FD /* Video.h */,
+				26A7DFEA187EF4F200EE15FD /* Video.m */,
+			);
+			name = DataBase;
+			sourceTree = "<group>";
+		};
+		26A7DFFE187EFA0700EE15FD /* Panel */ = {
+			isa = PBXGroup;
+			children = (
+				26A7DFFF187EFA0700EE15FD /* RAConfigVideo.h */,
+				26A7E000187EFA0700EE15FD /* RAConfigVideo.m */,
+				26A7E001187EFA0700EE15FD /* RAConfigVideo.xib */,
+				26A7E002187EFA0700EE15FD /* RAPanelController.h */,
+				26A7E003187EFA0700EE15FD /* RAPanelController.m */,
+				26A7E004187EFA0700EE15FD /* RAPanelController.xib */,
+			);
+			path = Panel;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2640DB78187EEDDA003EED97 /* iVideoLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2640DBB0187EEDDA003EED97 /* Build configuration list for PBXNativeTarget "iVideoLib" */;
+			buildPhases = (
+				2640DB75187EEDDA003EED97 /* Sources */,
+				2640DB76187EEDDA003EED97 /* Frameworks */,
+				2640DB77187EEDDA003EED97 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iVideoLib;
+			productName = iVideoLib;
+			productReference = 2640DB79187EEDDA003EED97 /* iVideoLib.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2640DB9F187EEDDA003EED97 /* iVideoLibTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2640DBB3187EEDDA003EED97 /* Build configuration list for PBXNativeTarget "iVideoLibTests" */;
+			buildPhases = (
+				2640DB9C187EEDDA003EED97 /* Sources */,
+				2640DB9D187EEDDA003EED97 /* Frameworks */,
+				2640DB9E187EEDDA003EED97 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2640DBA5187EEDDA003EED97 /* PBXTargetDependency */,
+			);
+			name = iVideoLibTests;
+			productName = iVideoLibTests;
+			productReference = 2640DBA0187EEDDA003EED97 /* iVideoLibTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2640DB71187EEDDA003EED97 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = RA;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Philippe Fouquet";
+				TargetAttributes = {
+					2640DB9F187EEDDA003EED97 = {
+						TestTargetID = 2640DB78187EEDDA003EED97;
+					};
+				};
+			};
+			buildConfigurationList = 2640DB74187EEDDA003EED97 /* Build configuration list for PBXProject "iVideoLib" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2640DB70187EEDDA003EED97;
+			productRefGroup = 2640DB7A187EEDDA003EED97 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2640DB78187EEDDA003EED97 /* iVideoLib */,
+				2640DB9F187EEDDA003EED97 /* iVideoLibTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2640DB77187EEDDA003EED97 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2640DB93187EEDDA003EED97 /* RADocument.xib in Resources */,
+				26A7E008187EFA0700EE15FD /* RAPanelController.xib in Resources */,
+				2640DB9B187EEDDA003EED97 /* Images.xcassets in Resources */,
+				2640DB87187EEDDA003EED97 /* InfoPlist.strings in Resources */,
+				2640DB8D187EEDDA003EED97 /* Credits.rtf in Resources */,
+				264E4FA2187FFC870020DD5A /* RAViewVideo.xib in Resources */,
+				2640DB96187EEDDA003EED97 /* MainMenu.xib in Resources */,
+				26A7E006187EFA0700EE15FD /* RAConfigVideo.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2640DB9E187EEDDA003EED97 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2640DBAB187EEDDA003EED97 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2640DB75187EEDDA003EED97 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2640DB89187EEDDA003EED97 /* main.m in Sources */,
+				264E4F9C187FEED20020DD5A /* RAEnabledTranformer.m in Sources */,
+				26A7DFEB187EF4F200EE15FD /* Video.m in Sources */,
+				2640DB90187EEDDA003EED97 /* RADocument.m in Sources */,
+				26A7DFEE187EF4F200EE15FD /* Chapitre.m in Sources */,
+				264E4FA1187FFC870020DD5A /* RAViewVideo.m in Sources */,
+				26A7E005187EFA0700EE15FD /* RAConfigVideo.m in Sources */,
+				2665EB05188E810D00ACB67A /* RACollectionViewVideo.m in Sources */,
+				26A7E007187EFA0700EE15FD /* RAPanelController.m in Sources */,
+				26A7DFF2187EF9C200EE15FD /* RAImageTranformer.m in Sources */,
+				2640DB99187EEDDA003EED97 /* RADocument.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2640DB9C187EEDDA003EED97 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2640DBAD187EEDDA003EED97 /* iVideoLibTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2640DBA5187EEDDA003EED97 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2640DB78187EEDDA003EED97 /* iVideoLib */;
+			targetProxy = 2640DBA4187EEDDA003EED97 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2640DB85187EEDDA003EED97 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2640DB86187EEDDA003EED97 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2640DB8B187EEDDA003EED97 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2640DB8C187EEDDA003EED97 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		2640DB91187EEDDA003EED97 /* RADocument.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2640DB92187EEDDA003EED97 /* Base */,
+			);
+			name = RADocument.xib;
+			sourceTree = "<group>";
+		};
+		2640DB94187EEDDA003EED97 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2640DB95187EEDDA003EED97 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		2640DBA9187EEDDA003EED97 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2640DBAA187EEDDA003EED97 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2640DBAE187EEDDA003EED97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		2640DBAF187EEDDA003EED97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		2640DBB1187EEDDA003EED97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iVideoLib/iVideoLib-Prefix.pch";
+				INFOPLIST_FILE = "iVideoLib/iVideoLib-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2640DBB2187EEDDA003EED97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iVideoLib/iVideoLib-Prefix.pch";
+				INFOPLIST_FILE = "iVideoLib/iVideoLib-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		2640DBB4187EEDDA003EED97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iVideoLib.app/Contents/MacOS/iVideoLib";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iVideoLib/iVideoLib-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "iVideoLibTests/iVideoLibTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		2640DBB5187EEDDA003EED97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iVideoLib.app/Contents/MacOS/iVideoLib";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iVideoLib/iVideoLib-Prefix.pch";
+				INFOPLIST_FILE = "iVideoLibTests/iVideoLibTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2640DB74187EEDDA003EED97 /* Build configuration list for PBXProject "iVideoLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2640DBAE187EEDDA003EED97 /* Debug */,
+				2640DBAF187EEDDA003EED97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2640DBB0187EEDDA003EED97 /* Build configuration list for PBXNativeTarget "iVideoLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2640DBB1187EEDDA003EED97 /* Debug */,
+				2640DBB2187EEDDA003EED97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2640DBB3187EEDDA003EED97 /* Build configuration list for PBXNativeTarget "iVideoLibTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2640DBB4187EEDDA003EED97 /* Debug */,
+				2640DBB5187EEDDA003EED97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2640DB97187EEDDA003EED97 /* RADocument.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2640DB98187EEDDA003EED97 /* RADocument.xcdatamodel */,
+			);
+			currentVersion = 2640DB98187EEDDA003EED97 /* RADocument.xcdatamodel */;
+			path = RADocument.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 2640DB71187EEDDA003EED97 /* Project object */;
+}

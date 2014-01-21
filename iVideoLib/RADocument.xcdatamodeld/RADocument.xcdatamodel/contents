@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13B42" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Chapitre" representedClassName="Chapitre" syncable="YES">
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="photo" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="position" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="for_video" maxCount="1" deletionRule="Nullify" destinationEntity="Video" inverseName="have_chapitre" inverseEntity="Video" syncable="YES"/>
+    </entity>
+    <entity name="Video" representedClassName="Video" syncable="YES">
+        <attribute name="name" attributeType="String" defaultValueString="_ New" syncable="YES"/>
+        <attribute name="photo" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="url" attributeType="String" syncable="YES"/>
+        <relationship name="have_chapitre" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Chapitre" inverseName="for_video" inverseEntity="Chapitre" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Chapitre" positionX="-2529" positionY="-4141" width="128" height="103"/>
+        <element name="Video" positionX="-2772" positionY="-4198" width="128" height="103"/>
+    </elements>
+</model>

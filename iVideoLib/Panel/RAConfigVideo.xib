@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1090" identifier="macosx"/>
+        <plugIn identifier="com.apple.AVKitIBPlugin" version="3338"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="RAConfigVideo">
+            <connections>
+                <outlet property="OpenVideo" destination="DRr-rb-2Qk" id="5rf-Cc-AVG"/>
+                <outlet property="Player" destination="pnP-Kc-kMS" id="kfN-SO-JeQ"/>
+                <outlet property="PlayerView" destination="pnP-Kc-kMS" id="VOm-8r-zCt"/>
+                <outlet property="window" destination="1" id="3"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" wantsToBeColor="NO" visibleAtLaunch="NO" animationBehavior="default" id="1">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="420" height="526"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
+            <view key="contentView" id="2">
+                <rect key="frame" x="0.0" y="0.0" width="420" height="526"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Zag-PY-HGS">
+                        <rect key="frame" x="18" y="487" width="49" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Name :" id="Wyw-9J-1KT">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Xqx-KC-8l6">
+                        <rect key="frame" x="73" y="484" width="327" height="22"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="sfq-9O-HQv">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="-2" name="value" keyPath="self.mVideo.name" id="Hq9-GN-lAd"/>
+                        </connections>
+                    </textField>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mUO-vr-Ive">
+                        <rect key="frame" x="14" y="13" width="392" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Close" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="052-Ni-uMi">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="Quite:" target="-2" id="89g-NA-5qM"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DRr-rb-2Qk">
+                        <rect key="frame" x="348" y="60" width="42" height="23"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="pV7-as-NOX"/>
+                        </constraints>
+                        <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSFolder" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="pZk-Bc-Ge5">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="OpenVideo:" target="-2" id="BSd-oZ-AxD"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rCM-Rc-dVU">
+                        <rect key="frame" x="348" y="243" width="42" height="36"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="34" id="qZ8-kk-pn1"/>
+                            <constraint firstAttribute="width" constant="42" id="x2H-sk-1Pw"/>
+                        </constraints>
+                        <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSQuickLookTemplate" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tND-SG-dYA">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="GetPicture:" target="-2" id="orP-0E-BLv"/>
+                        </connections>
+                    </button>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ldf-eo-hGa">
+                        <rect key="frame" x="17" y="283" width="386" height="196"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="190" id="bb6-b8-yEc"/>
+                        </constraints>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="7cx-2G-M4b"/>
+                        <connections>
+                            <binding destination="-2" name="value" keyPath="self.mVideo.photo" id="AfD-jv-4b1">
+                                <dictionary key="options">
+                                    <string key="NSValueTransformerName">RAImageTranformer</string>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </imageView>
+                    <avPlayerView translatesAutoresizingMaskIntoConstraints="NO" id="pnP-Kc-kMS">
+                        <rect key="frame" x="20" y="61" width="320" height="217"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    </avPlayerView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Xqx-KC-8l6" firstAttribute="centerY" secondItem="Zag-PY-HGS" secondAttribute="centerY" id="2VM-nX-x5V"/>
+                    <constraint firstItem="pnP-Kc-kMS" firstAttribute="leading" secondItem="mUO-vr-Ive" secondAttribute="leading" id="49D-18-cNl"/>
+                    <constraint firstItem="ldf-eo-hGa" firstAttribute="top" secondItem="Xqx-KC-8l6" secondAttribute="bottom" constant="8" symbolic="YES" id="JhF-cW-KQF"/>
+                    <constraint firstItem="Zag-PY-HGS" firstAttribute="leading" secondItem="ldf-eo-hGa" secondAttribute="leading" id="Np7-NM-S0T"/>
+                    <constraint firstItem="Xqx-KC-8l6" firstAttribute="top" secondItem="2" secondAttribute="top" constant="20" symbolic="YES" id="SoF-P6-jjx"/>
+                    <constraint firstItem="Xqx-KC-8l6" firstAttribute="trailing" secondItem="ldf-eo-hGa" secondAttribute="trailing" id="TGc-CI-McI"/>
+                    <constraint firstItem="rCM-Rc-dVU" firstAttribute="top" secondItem="ldf-eo-hGa" secondAttribute="bottom" constant="8" symbolic="YES" id="ddh-Gn-Nky"/>
+                    <constraint firstItem="Xqx-KC-8l6" firstAttribute="leading" secondItem="Zag-PY-HGS" secondAttribute="trailing" constant="8" symbolic="YES" id="e7h-Hr-8k3"/>
+                    <constraint firstItem="Zag-PY-HGS" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="20" symbolic="YES" id="fmg-lh-olX"/>
+                    <constraint firstItem="mUO-vr-Ive" firstAttribute="top" secondItem="DRr-rb-2Qk" secondAttribute="bottom" constant="20" symbolic="YES" id="gVT-Sy-lP9"/>
+                    <constraint firstItem="mUO-vr-Ive" firstAttribute="top" secondItem="pnP-Kc-kMS" secondAttribute="bottom" constant="20" symbolic="YES" id="gzn-n4-vVl"/>
+                    <constraint firstAttribute="trailing" secondItem="Xqx-KC-8l6" secondAttribute="trailing" constant="20" symbolic="YES" id="k16-wy-IEe"/>
+                    <constraint firstAttribute="trailing" secondItem="rCM-Rc-dVU" secondAttribute="trailing" constant="30" id="mbf-pQ-dia"/>
+                    <constraint firstAttribute="bottom" secondItem="mUO-vr-Ive" secondAttribute="bottom" constant="20" symbolic="YES" id="qe8-dy-0fT"/>
+                    <constraint firstItem="rCM-Rc-dVU" firstAttribute="trailing" secondItem="DRr-rb-2Qk" secondAttribute="trailing" id="slw-RI-2OK"/>
+                    <constraint firstItem="DRr-rb-2Qk" firstAttribute="leading" secondItem="pnP-Kc-kMS" secondAttribute="trailing" constant="8" symbolic="YES" id="tpb-ts-7I9"/>
+                    <constraint firstItem="ldf-eo-hGa" firstAttribute="trailing" secondItem="mUO-vr-Ive" secondAttribute="trailing" id="udo-eW-r4o"/>
+                    <constraint firstItem="pnP-Kc-kMS" firstAttribute="top" secondItem="ldf-eo-hGa" secondAttribute="bottom" constant="8" symbolic="YES" id="vrM-E3-ahs"/>
+                    <constraint firstItem="rCM-Rc-dVU" firstAttribute="leading" secondItem="pnP-Kc-kMS" secondAttribute="trailing" constant="8" symbolic="YES" id="zUl-jz-ksT"/>
+                    <constraint firstItem="pnP-Kc-kMS" firstAttribute="leading" secondItem="ldf-eo-hGa" secondAttribute="leading" id="zYd-bc-Rzy"/>
+                </constraints>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="4"/>
+            </connections>
+        </window>
+        <userDefaultsController representsSharedInstance="YES" id="dNc-wR-eih"/>
+    </objects>
+    <resources>
+        <image name="NSFolder" width="32" height="32"/>
+        <image name="NSQuickLookTemplate" width="21" height="16"/>
+    </resources>
+</document>
