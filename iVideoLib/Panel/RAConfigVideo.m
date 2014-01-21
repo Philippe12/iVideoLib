@@ -67,6 +67,9 @@
             if (mVideo) {
                 mVideo.url = [url absoluteString];
                 [self setUrlToPlayer];
+                if( mVideo.name == nil) {
+                    mVideo.name = [[url absoluteString] lastPathComponent];
+                }
             }
 		} else {
 			[openPanel close];

@@ -17,9 +17,9 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ipp-OX-AFf">
-                    <rect key="frame" x="11" y="12" width="172" height="86"/>
+                    <rect key="frame" x="8" y="9" width="178" height="92"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <imageCell key="cell" continuous="YES" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="9kA-u3-lWb"/>
+                    <imageCell key="cell" continuous="YES" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="9kA-u3-lWb"/>
                     <connections>
                         <binding destination="-2" name="value" keyPath="self.representedObject.photo" id="qRV-ws-bIr">
                             <dictionary key="options">
