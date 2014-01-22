@@ -9,6 +9,7 @@
 #import "RAConfigVideo.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AVKit/AVKit.h>
+#import "Chapitre.h"
 
 @interface RAConfigVideo ()
 
@@ -33,6 +34,9 @@
     
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
     [self setUrlToPlayer];
+
+    NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"position" ascending:YES];
+    [_ListeChapitre setSortDescriptors:[NSArray arrayWithObject:sort]];
 }
 - (id)initLoc {
 	self = [super initWithWindowNibName:@"RAConfigVideo"];
@@ -91,7 +95,7 @@ NSImage* cgImageToNSImage(CGImageRef image)
     return img;
 }
 
-- (NSImage *)screenshotFromPlayer:(AVPlayer *)player {
+- (NSData *)screenshotFromPlayer:(AVPlayer *)player {
     
     CMTime actualTime;
     NSError *error;
@@ -116,21 +120,42 @@ NSImage* cgImageToNSImage(CGImageRef image)
         return nil;
     }
     
-    return image;
+    NSArray *representations = [image representations];
+    NSNumber *compressionFactor = [NSNumber numberWithFloat:0.9];
+    NSDictionary *imageProps = [NSDictionary dictionaryWithObject:compressionFactor
+                                                           forKey:NSImageCompressionFactor];
+    NSData *data = [NSBitmapImageRep representationOfImageRepsInArray:representations
+                                                            usingType:NSJPEGFileType
+                                                           properties:imageProps];
+    
+    return data;
 }
 
 - (IBAction)GetPicture:(id)sender {
-    NSImage *img = [self screenshotFromPlayer:_player];
-    if (mVideo && img) {
-        NSArray *representations = [img representations];
-        NSNumber *compressionFactor = [NSNumber numberWithFloat:0.9];
-        NSDictionary *imageProps = [NSDictionary dictionaryWithObject:compressionFactor
-                                                               forKey:NSImageCompressionFactor];
-        mVideo.photo = [NSBitmapImageRep representationOfImageRepsInArray:representations
-                                                                      usingType:NSJPEGFileType
-                                                                     properties:imageProps];
+    if (mVideo) {
+        mVideo.photo = [self screenshotFromPlayer:_player];
     }
 
+}
+
+- (IBAction)AddChapitre:(id)sender {
+    NSArrayController *ptr = [[NSArrayController alloc] init];
+    [ptr setManagedObjectContext:self.managedObjectContext];
+    [ptr setEntityName:@"Chapitre"];
+    [ptr prepareContent];
+    
+    Chapitre *chapitre = [ptr newObject];
+    chapitre.name = @"new chapitre";
+    chapitre.photo = [self screenshotFromPlayer:_player];
+    chapitre.position = [[NSNumber alloc] initWithFloat: CMTimeGetSeconds(_player.currentTime)];
+    [mVideo addHave_chapitreObject:chapitre];
+}
+
+-(void)tableViewSelectionDidChange:(NSNotification *)notification{
+    Chapitre *chap = [self getCurrent:_ListeChapitre];
+    if (chap) {
+        [_player seekToTime: CMTimeMake([chap.position intValue], 1)];
+    }
 }
 
 @end

@@ -10,16 +10,20 @@
 #import "Video.h"
 #import <AVKit/AVKit.h>
 
-@interface RAConfigVideo : RAPanelController
+@interface RAConfigVideo : RAPanelController <NSTableViewDelegate>
 {
 @private
     Video *mVideo;
 }
 
 @property (strong) IBOutlet AVPlayerView *PlayerView;
+@property (strong) IBOutlet NSArrayController *ListeChapitre;
+
 - (void)setPresistent:(id)val;
 - (void)setUrlToPlayer;
+
 - (IBAction)OpenVideo:(id)sender;
 - (IBAction)GetPicture:(id)sender;
+- (IBAction)AddChapitre:(id)sender;
 
 @end

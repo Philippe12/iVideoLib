@@ -2,7 +2,7 @@
 //  Chapitre.m
 //  iVideoLib
 //
-//  Created by Philippe Fouquet on 09/01/2014.
+//  Created by Philippe Fouquet on 22/01/2014.
 //  Copyright (c) 2014 Philippe Fouquet. All rights reserved.
 //
 
