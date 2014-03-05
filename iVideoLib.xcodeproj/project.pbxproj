@@ -34,6 +34,8 @@
 		26A7E008187EFA0700EE15FD /* RAPanelController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26A7E004187EFA0700EE15FD /* RAPanelController.xib */; };
 		26AEE5D118900CF800EB2555 /* Chapitre.m in Sources */ = {isa = PBXBuildFile; fileRef = 26AEE5D018900CF800EB2555 /* Chapitre.m */; };
 		26B04A7B188D7B980017CB41 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26B04A7A188D7B980017CB41 /* AVFoundation.framework */; };
+		26B6005B18B0EAD500979173 /* RAWindowPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B6005918B0EAD500979173 /* RAWindowPlayer.m */; };
+		26B6005C18B0EAD500979173 /* RAWindowPlayer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26B6005A18B0EAD500979173 /* RAWindowPlayer.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +92,9 @@
 		26AEE5CF18900CF800EB2555 /* Chapitre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Chapitre.h; path = DataBase/Chapitre.h; sourceTree = "<group>"; };
 		26AEE5D018900CF800EB2555 /* Chapitre.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Chapitre.m; path = DataBase/Chapitre.m; sourceTree = "<group>"; };
 		26B04A7A188D7B980017CB41 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		26B6005818B0EAD500979173 /* RAWindowPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAWindowPlayer.h; sourceTree = "<group>"; };
+		26B6005918B0EAD500979173 /* RAWindowPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAWindowPlayer.m; sourceTree = "<group>"; };
+		26B6005A18B0EAD500979173 /* RAWindowPlayer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RAWindowPlayer.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +176,9 @@
 				2640DB97187EEDDA003EED97 /* RADocument.xcdatamodeld */,
 				26A7DFEF187EF51B00EE15FD /* DataBase */,
 				2640DB83187EEDDA003EED97 /* Supporting Files */,
+				26B6005818B0EAD500979173 /* RAWindowPlayer.h */,
+				26B6005918B0EAD500979173 /* RAWindowPlayer.m */,
+				26B6005A18B0EAD500979173 /* RAWindowPlayer.xib */,
 			);
 			path = iVideoLib;
 			sourceTree = "<group>";
@@ -330,6 +338,7 @@
 				264E4FA2187FFC870020DD5A /* RAViewVideo.xib in Resources */,
 				2640DB96187EEDDA003EED97 /* MainMenu.xib in Resources */,
 				26A7E006187EFA0700EE15FD /* RAConfigVideo.xib in Resources */,
+				26B6005C18B0EAD500979173 /* RAWindowPlayer.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +368,7 @@
 				26A7E007187EFA0700EE15FD /* RAPanelController.m in Sources */,
 				26A7DFF2187EF9C200EE15FD /* RAImageTranformer.m in Sources */,
 				2640DB99187EEDDA003EED97 /* RADocument.xcdatamodeld in Sources */,
+				26B6005B18B0EAD500979173 /* RAWindowPlayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -38,6 +38,7 @@
     NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"position" ascending:YES];
     [_ListeChapitre setSortDescriptors:[NSArray arrayWithObject:sort]];
 }
+
 - (id)initLoc {
 	self = [super initWithWindowNibName:@"RAConfigVideo"];
     

@@ -8,6 +8,7 @@
 
 #import "RADocument.h"
 #import "RAConfigVideo.h"
+#import "RAWindowPlayer.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AVKit/AVKit.h>
 
@@ -62,11 +63,20 @@
 }
 
 - (void)doubleClick:(id)sender {
-    [self ConfigVideo: sender ];
+    id sel = [[_ListeVideo itemAtIndex:[[_ListeVideo selectionIndexes] firstIndex]] representedObject];
+    if( sel == nil )
+        return;
+    
+    RAWindowPlayer* wnd = [[RAWindowPlayer alloc] initLoc];
+    if( wnd == nil )
+        return;
+    [wnd setPresistent:sel];
+    [wnd showWindow:self];
+    
 }
 
 - (void)simpleClick:(id)sender {
-    Video *sel = [[_ListeVideo itemAtIndex:[[_ListeVideo selectionIndexes] firstIndex]] representedObject];
+/*    Video *sel = [[_ListeVideo itemAtIndex:[[_ListeVideo selectionIndexes] firstIndex]] representedObject];
     
     if (sel) {
         if( sel.url != nil )
@@ -76,7 +86,7 @@
             AVPlayer *player = [AVPlayer playerWithURL:url];
             self.PlayerView.player = player;
         }
-    }
+    }*/
 }
 
 @end
