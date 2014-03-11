@@ -17,6 +17,7 @@
         <customObject id="-3" userLabel="Application"/>
         <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" wantsToBeColor="NO" animationBehavior="default" id="1">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="523" height="373"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
@@ -105,8 +106,8 @@
         </view>
         <arrayController mode="entity" entityName="Chapitre" editable="NO" automaticallyPreparesContent="YES" automaticallyRearrangesObjects="YES" id="JKT-E3-CAc" userLabel="Chapitre">
             <connections>
-                <binding destination="-2" name="contentSet" keyPath="self.mVideo.have_chapitre" id="WhP-2B-tpv"/>
                 <binding destination="-2" name="managedObjectContext" keyPath="managedObjectContext" id="TIK-AD-8Us"/>
+                <binding destination="-2" name="contentSet" keyPath="self.mVideo.have_chapitre" id="WhP-2B-tpv"/>
             </connections>
         </arrayController>
     </objects>
