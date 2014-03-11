@@ -9,18 +9,22 @@
 #import <Cocoa/Cocoa.h>
 #import "Video.h"
 #import <AVKit/AVKit.h>
+#import "RAPanelController.h"
+#import "RACollectionViewVideo.h"
 
-@interface RAWindowPlayer : NSWindowController
+@interface RAWindowPlayer : RAPanelController
 {
 @private
     Video *mVideo;
     id self_ptr;
 }
-
 @property (strong) IBOutlet AVPlayerView *PlayerView;
+@property (strong) IBOutlet RACollectionViewVideo *ListeViewChapitre;
+
 @property (strong) IBOutlet NSArrayController *ListeChapitre;
 
 - (id)initLoc;
 - (void)setPresistent:(id)val;
+- (void)simpleClick:(id)sender;
 
 @end

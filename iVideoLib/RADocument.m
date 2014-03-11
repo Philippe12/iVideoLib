@@ -67,9 +67,11 @@
     if( sel == nil )
         return;
     
-    RAWindowPlayer* wnd = [[RAWindowPlayer alloc] initLoc];
+    RAWindowPlayer* wnd = [RAWindowPlayer alloc];
     if( wnd == nil )
         return;
+                           
+    wnd = [wnd initWithManagedObjectContext:self.managedObjectContext :self.managedObjectModel :nil];
     [wnd setPresistent:sel];
     [wnd showWindow:self];
     

@@ -9,6 +9,7 @@
 #import "RAWindowPlayer.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AVKit/AVKit.h>
+#import "Chapitre.h"
 
 @interface RAWindowPlayer ()
 
@@ -32,6 +33,10 @@
     [super windowDidLoad];
     
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+    [self setUrlToPlayer];
+
+    NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"position" ascending:YES];
+    [_ListeChapitre setSortDescriptors:[NSArray arrayWithObject:sort]];
 }
 
 - (id)initLoc {
@@ -56,7 +61,14 @@
             self.PlayerView.player = _player;
         }
     }
-    
+}
+
+- (void)simpleClick:(id)sender {
+    Chapitre *sel = [[_ListeViewChapitre itemAtIndex:[[_ListeViewChapitre selectionIndexes] firstIndex]] representedObject];
+     
+    if (sel) {
+        [_player seekToTime: CMTimeMake([sel.position intValue], 1)];
+    }
 }
 
 @end

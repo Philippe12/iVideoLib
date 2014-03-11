@@ -36,6 +36,7 @@
 		26B04A7B188D7B980017CB41 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26B04A7A188D7B980017CB41 /* AVFoundation.framework */; };
 		26B6005B18B0EAD500979173 /* RAWindowPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B6005918B0EAD500979173 /* RAWindowPlayer.m */; };
 		26B6005C18B0EAD500979173 /* RAWindowPlayer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26B6005A18B0EAD500979173 /* RAWindowPlayer.xib */; };
+		26BB1D0618CF5A600053CD78 /* Pelicule.png in Resources */ = {isa = PBXBuildFile; fileRef = 26BB1D0518CF5A600053CD78 /* Pelicule.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		26B6005818B0EAD500979173 /* RAWindowPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAWindowPlayer.h; sourceTree = "<group>"; };
 		26B6005918B0EAD500979173 /* RAWindowPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAWindowPlayer.m; sourceTree = "<group>"; };
 		26B6005A18B0EAD500979173 /* RAWindowPlayer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RAWindowPlayer.xib; sourceTree = "<group>"; };
+		26BB1D0518CF5A600053CD78 /* Pelicule.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Pelicule.png; path = resource/Pelicule.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 		2640DB82187EEDDA003EED97 /* iVideoLib */ = {
 			isa = PBXGroup;
 			children = (
+				26BB1D0418CF5A320053CD78 /* Resource */,
 				264E4F9D187FFC420020DD5A /* View */,
 				26A7DFFE187EFA0700EE15FD /* Panel */,
 				2640DB8E187EEDDA003EED97 /* RADocument.h */,
@@ -253,6 +256,14 @@
 			path = Panel;
 			sourceTree = "<group>";
 		};
+		26BB1D0418CF5A320053CD78 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				26BB1D0518CF5A600053CD78 /* Pelicule.png */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -338,6 +349,7 @@
 				264E4FA2187FFC870020DD5A /* RAViewVideo.xib in Resources */,
 				2640DB96187EEDDA003EED97 /* MainMenu.xib in Resources */,
 				26A7E006187EFA0700EE15FD /* RAConfigVideo.xib in Resources */,
+				26BB1D0618CF5A600053CD78 /* Pelicule.png in Resources */,
 				26B6005C18B0EAD500979173 /* RAWindowPlayer.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

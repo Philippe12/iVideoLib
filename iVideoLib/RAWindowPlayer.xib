@@ -7,7 +7,9 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="RAWindowPlayer">
             <connections>
-                <outlet property="PlayerView" destination="vCJ-HA-xR3" id="6ZL-DF-X27"/>
+                <outlet property="ListeChapitre" destination="JKT-E3-CAc" id="Igp-e9-QSE"/>
+                <outlet property="ListeViewChapitre" destination="vP2-OY-m1T" id="1tO-U3-mbw"/>
+                <outlet property="PlayerView" destination="vCJ-HA-xR3" id="lOh-oV-UoH"/>
                 <outlet property="window" destination="1" id="3"/>
             </connections>
         </customObject>
@@ -22,15 +24,93 @@
                 <rect key="frame" x="0.0" y="0.0" width="523" height="373"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <avPlayerView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vCJ-HA-xR3">
-                        <rect key="frame" x="0.0" y="0.0" width="523" height="373"/>
+                    <scrollView autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0YP-iW-2sn">
+                        <rect key="frame" x="408" y="0.0" width="116" height="373"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <clipView key="contentView" id="qte-B6-DPd">
+                            <rect key="frame" x="1" y="1" width="114" height="371"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <collectionView selectable="YES" maxNumberOfColumns="1" id="vP2-OY-m1T" customClass="RACollectionViewVideo">
+                                    <rect key="frame" x="0.0" y="0.0" width="114" height="371"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <color key="primaryBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <connections>
+                                        <binding destination="JKT-E3-CAc" name="content" keyPath="arrangedObjects" id="sx7-So-exI"/>
+                                        <outlet property="delegate" destination="-2" id="MuO-JE-i2R"/>
+                                        <outlet property="itemPrototype" destination="FIa-er-x26" id="MIB-Yr-VCv"/>
+                                    </connections>
+                                </collectionView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </clipView>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="116" id="bLm-Qh-Quy"/>
+                        </constraints>
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="tqN-G5-uVk">
+                            <rect key="frame" x="1" y="144" width="233" height="15"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="ZvG-dW-vLL">
+                            <rect key="frame" x="234" y="1" width="15" height="143"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                    </scrollView>
+                    <avPlayerView translatesAutoresizingMaskIntoConstraints="NO" id="vCJ-HA-xR3">
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="373"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     </avPlayerView>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="vCJ-HA-xR3" firstAttribute="top" secondItem="2" secondAttribute="top" id="7on-h5-arm"/>
+                    <constraint firstAttribute="trailing" secondItem="0YP-iW-2sn" secondAttribute="trailing" constant="-1" id="93t-AF-gVj"/>
+                    <constraint firstAttribute="bottom" secondItem="vCJ-HA-xR3" secondAttribute="bottom" id="Opc-tS-2kS"/>
+                    <constraint firstAttribute="bottom" secondItem="0YP-iW-2sn" secondAttribute="bottom" id="Szg-F6-YaU"/>
+                    <constraint firstItem="0YP-iW-2sn" firstAttribute="leading" secondItem="vCJ-HA-xR3" secondAttribute="trailing" constant="8" id="acK-Uc-C2x"/>
+                    <constraint firstItem="vCJ-HA-xR3" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="icj-sl-yMe"/>
+                    <constraint firstItem="0YP-iW-2sn" firstAttribute="top" secondItem="2" secondAttribute="top" id="tua-Ea-X8d"/>
+                </constraints>
             </view>
             <connections>
                 <outlet property="delegate" destination="-2" id="4"/>
             </connections>
         </window>
+        <collectionViewItem id="FIa-er-x26">
+            <connections>
+                <outlet property="view" destination="s0C-AP-MTp" id="3Rf-TT-oC7"/>
+            </connections>
+        </collectionViewItem>
+        <view id="s0C-AP-MTp">
+            <rect key="frame" x="0.0" y="0.0" width="116" height="71"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RF3-p2-BTj">
+                    <rect key="frame" x="0.0" y="-1" width="116" height="72"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Pelicule" id="0ii-Nx-h1L"/>
+                </imageView>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gh3-GA-cH2">
+                    <rect key="frame" x="20" y="6" width="76" height="58"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="2HR-cb-j3d"/>
+                    <connections>
+                        <binding destination="FIa-er-x26" name="value" keyPath="self.representedObject.photo" id="Aao-Rg-7pW">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">RAImageTranformer</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </imageView>
+            </subviews>
+        </view>
+        <arrayController mode="entity" entityName="Chapitre" editable="NO" automaticallyPreparesContent="YES" automaticallyRearrangesObjects="YES" id="JKT-E3-CAc" userLabel="Chapitre">
+            <connections>
+                <binding destination="-2" name="contentSet" keyPath="self.mVideo.have_chapitre" id="WhP-2B-tpv"/>
+                <binding destination="-2" name="managedObjectContext" keyPath="managedObjectContext" id="TIK-AD-8Us"/>
+            </connections>
+        </arrayController>
     </objects>
+    <resources>
+        <image name="Pelicule" width="3307" height="1938"/>
+    </resources>
 </document>
