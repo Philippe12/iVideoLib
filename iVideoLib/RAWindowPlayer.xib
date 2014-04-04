@@ -91,7 +91,7 @@
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Pelicule" id="0ii-Nx-h1L"/>
                 </imageView>
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gh3-GA-cH2">
-                    <rect key="frame" x="20" y="6" width="76" height="58"/>
+                    <rect key="frame" x="18" y="5" width="80" height="61"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="2HR-cb-j3d"/>
                     <connections>
@@ -103,6 +103,9 @@
                     </connections>
                 </imageView>
             </subviews>
+            <connections>
+                <binding destination="FIa-er-x26" name="toolTip" keyPath="self.representedObject.name" id="AN8-ME-Epa"/>
+            </connections>
         </view>
         <arrayController mode="entity" entityName="Chapitre" editable="NO" automaticallyPreparesContent="YES" automaticallyRearrangesObjects="YES" id="JKT-E3-CAc" userLabel="Chapitre">
             <connections>
