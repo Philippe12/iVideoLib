@@ -64,6 +64,14 @@
     
 }
 
+- (void) GetDuration {
+    sleep(5); //wait that video are loaded
+    Float64 f = CMTimeGetSeconds(_player.currentItem.duration);
+    if (mVideo) {
+        mVideo.lenght = [[NSNumber alloc] initWithFloat:f];
+    }
+}
+
 - (IBAction)OpenVideo:(id)sender {
     NSOpenPanel *openPanel = [[NSOpenPanel alloc] init];
     [openPanel beginSheetModalForWindow:self.window completionHandler:^(NSInteger result) {
@@ -72,9 +80,11 @@
             if (mVideo) {
                 mVideo.url = [url absoluteString];
                 [self setUrlToPlayer];
+                mVideo.lenght = [[NSNumber alloc] initWithFloat: CMTimeGetSeconds(_player.currentItem.duration)];
                 if( mVideo.name == nil) {
                     mVideo.name = [[url absoluteString] lastPathComponent];
                 }
+                [self performSelectorInBackground:@selector(GetDuration) withObject:nil];
             }
 		} else {
 			[openPanel close];
