@@ -15,6 +15,7 @@
 - (IBAction)ConfigVideo:(id)sender;
 @property (strong) IBOutlet NSCollectionView *ListeVideo;
 @property (strong) IBOutlet AVPlayerView *PlayerView;
+@property (strong) IBOutlet NSArrayController *ArrayVideo;
 
 - (void)reloadData;
 

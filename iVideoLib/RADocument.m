@@ -42,9 +42,8 @@
 }
 
 - (void)reloadData {
-//    [self.managedObjectModel invalidate];
-//    [_ListeVideo invalidate];
-//    [_ListeVideo releaseGState];
+    NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    [_ArrayVideo setSortDescriptors:[NSArray arrayWithObject:sort]];
 }
 
 - (IBAction)ConfigVideo:(id)sender {
