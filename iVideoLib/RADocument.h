@@ -22,4 +22,9 @@
 - (void)doubleClick:(id)sender;
 - (void)simpleClick:(id)sender;
 
+- (BOOL)configurePersistentStoreCoordinatorForURL:(NSURL*)url
+                                           ofType:(NSString*)fileType
+                               modelConfiguration:(NSString*)configuration
+                                     storeOptions:(NSDictionary*)storeOptions
+                                            error:(NSError**)error;
 @end

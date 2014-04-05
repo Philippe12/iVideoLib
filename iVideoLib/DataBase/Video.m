@@ -2,7 +2,7 @@
 //  Video.m
 //  iVideoLib
 //
-//  Created by Philippe Fouquet on 13/03/2014.
+//  Created by Philippe Fouquet on 04/04/2014.
 //  Copyright (c) 2014 Philippe Fouquet. All rights reserved.
 //
 
@@ -12,10 +12,11 @@
 
 @implementation Video
 
+@dynamic lenght;
 @dynamic name;
 @dynamic photo;
 @dynamic url;
-@dynamic lenght;
+@dynamic locking;
 @dynamic have_chapitre;
 
 @end

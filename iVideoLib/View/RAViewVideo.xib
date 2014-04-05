@@ -56,8 +56,23 @@
                         </binding>
                     </connections>
                 </textField>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zdX-gg-exC">
+                    <rect key="frame" x="116" y="164" width="20" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSLockUnlockedTemplate" id="sFH-gi-bVw"/>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="self.representedObject.locking" id="T6L-Rk-Tr7">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">RALockImageTransformer</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </imageView>
             </subviews>
         </customView>
         <userDefaultsController representsSharedInstance="YES" id="m1n-i5-rbl"/>
     </objects>
+    <resources>
+        <image name="NSLockUnlockedTemplate" width="9" height="12"/>
+    </resources>
 </document>

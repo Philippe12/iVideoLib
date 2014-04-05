@@ -41,6 +41,31 @@
     return YES;
 }
 
+- (BOOL)configurePersistentStoreCoordinatorForURL:(NSURL*)url
+                                           ofType:(NSString*)fileType
+                               modelConfiguration:(NSString*)configuration
+                                     storeOptions:(NSDictionary*)storeOptions
+                                            error:(NSError**)error
+{
+    NSMutableDictionary *options = nil;
+    if (storeOptions != nil) {
+        options = [storeOptions mutableCopy];
+    } else {
+        options = [[NSMutableDictionary alloc] init];
+    }
+    
+    [options setObject:[NSNumber numberWithBool:YES]
+                forKey:NSMigratePersistentStoresAutomaticallyOption];
+    
+    BOOL result = [super configurePersistentStoreCoordinatorForURL:url
+                                                            ofType:fileType
+                                                modelConfiguration:configuration
+                                                      storeOptions:options
+                                                             error:error];
+    options = nil;
+    return result;
+}
+
 - (void)reloadData {
     NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
     [_ArrayVideo setSortDescriptors:[NSArray arrayWithObject:sort]];

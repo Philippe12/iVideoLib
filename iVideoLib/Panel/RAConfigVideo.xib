@@ -26,7 +26,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Zag-PY-HGS">
-                        <rect key="frame" x="18" y="568" width="49" height="17"/>
+                        <rect key="frame" x="49" y="568" width="49" height="23"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Name :" id="Wyw-9J-1KT">
                             <font key="font" metaFont="system"/>
@@ -34,9 +34,12 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dOk-f1-fKr">
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dOk-f1-fKr">
                         <rect key="frame" x="141" y="367" width="49" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="qdF-6k-WN6"/>
+                        </constraints>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Name :" id="Aek-Vy-CBI">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -51,7 +54,7 @@
                         </connections>
                     </textField>
                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Xqx-KC-8l6">
-                        <rect key="frame" x="73" y="565" width="491" height="22"/>
+                        <rect key="frame" x="104" y="568" width="460" height="23"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="sfq-9O-HQv">
                             <font key="font" metaFont="system"/>
@@ -59,6 +62,11 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
+                            <binding destination="-2" name="editable" keyPath="self.mVideo.locking" id="Dod-dN-OrQ">
+                                <dictionary key="options">
+                                    <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                </dictionary>
+                            </binding>
                             <binding destination="-2" name="value" keyPath="self.mVideo.name" id="Hq9-GN-lAd"/>
                         </connections>
                     </textField>
@@ -77,8 +85,7 @@
                         <rect key="frame" x="20" y="362" width="42" height="23"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="9NY-Gz-5hY"/>
-                            <constraint firstAttribute="width" constant="42" id="GGE-Xf-l37"/>
+                            <constraint firstAttribute="width" constant="42" id="5f4-sO-Qf2"/>
                         </constraints>
                         <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSFolder" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="pZk-Bc-Ge5">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -86,6 +93,11 @@
                         </buttonCell>
                         <connections>
                             <action selector="OpenVideo:" target="-2" id="BSd-oZ-AxD"/>
+                            <binding destination="-2" name="enabled" keyPath="self.mVideo.locking" id="cP2-Ya-cCv">
+                                <dictionary key="options">
+                                    <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                </dictionary>
+                            </binding>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rCM-Rc-dVU">
@@ -97,13 +109,18 @@
                         </buttonCell>
                         <connections>
                             <action selector="GetPicture:" target="-2" id="orP-0E-BLv"/>
+                            <binding destination="-2" name="enabled" keyPath="self.mVideo.locking" id="f0E-y2-wyf">
+                                <dictionary key="options">
+                                    <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                </dictionary>
+                            </binding>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WuS-fF-R1O">
                         <rect key="frame" x="319" y="362" width="21" height="23"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="21" id="YaY-cE-6ck"/>
+                            <constraint firstAttribute="width" constant="21" id="qDj-am-UwX"/>
                         </constraints>
                         <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tcL-Ql-s5U">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -111,13 +128,18 @@
                         </buttonCell>
                         <connections>
                             <action selector="AddChapitre:" target="-2" id="2DZ-eo-qqB"/>
+                            <binding destination="-2" name="enabled" keyPath="self.mVideo.locking" id="1EM-ZD-Laa">
+                                <dictionary key="options">
+                                    <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                </dictionary>
+                            </binding>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VTy-a2-sHK">
                         <rect key="frame" x="543" y="362" width="21" height="23"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="21" id="Gpw-Bn-cGS"/>
+                            <constraint firstAttribute="width" constant="21" id="c9Q-xI-U4O"/>
                         </constraints>
                         <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSRemoveTemplate" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4II-VF-4iM">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -125,17 +147,22 @@
                         </buttonCell>
                         <connections>
                             <action selector="remove:" target="3bc-9E-wbS" id="XNZ-wd-Y0F"/>
+                            <binding destination="-2" name="enabled" keyPath="self.mVideo.locking" id="WJa-V9-bPs">
+                                <dictionary key="options">
+                                    <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                </dictionary>
+                            </binding>
                         </connections>
                     </button>
                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ldf-eo-hGa">
                         <rect key="frame" x="17" y="389" width="297" height="171"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="291" id="9ad-Ag-Vnb"/>
-                            <constraint firstAttribute="height" constant="165" id="gZ1-ah-ETa"/>
+                            <constraint firstAttribute="height" constant="165" id="lNh-SO-eYJ"/>
                         </constraints>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="7cx-2G-M4b"/>
                         <connections>
+                            <binding destination="-2" name="editable" keyPath="self.mVideo.locking" id="EBE-VH-fmy"/>
                             <binding destination="-2" name="value" keyPath="self.mVideo.photo" id="AfD-jv-4b1">
                                 <dictionary key="options">
                                     <string key="NSValueTransformerName">RAImageTranformer</string>
@@ -175,6 +202,11 @@
                                                         <string key="NSValueTransformerName">RAImageTranformer</string>
                                                     </dictionary>
                                                 </binding>
+                                                <binding destination="-2" name="editable" keyPath="self.mVideo.locking" id="FSz-qD-SKs">
+                                                    <dictionary key="options">
+                                                        <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                                    </dictionary>
+                                                </binding>
                                             </connections>
                                         </tableColumn>
                                         <tableColumn width="121" minWidth="40" maxWidth="1000" id="nkd-AL-yyu">
@@ -190,6 +222,11 @@
                                             </textFieldCell>
                                             <connections>
                                                 <binding destination="3bc-9E-wbS" name="value" keyPath="arrangedObjects.name" id="XqH-Uk-bU6"/>
+                                                <binding destination="-2" name="editable" keyPath="self.mVideo.locking" id="PWB-Go-kkU">
+                                                    <dictionary key="options">
+                                                        <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                                    </dictionary>
+                                                </binding>
                                             </connections>
                                         </tableColumn>
                                     </tableColumns>
@@ -209,37 +246,60 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </scroller>
                     </scrollView>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="guW-28-x0V">
+                        <rect key="frame" x="20" y="567" width="23" height="25"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="23" id="8c2-yY-IHa"/>
+                            <constraint firstAttribute="height" constant="23" id="RzR-vC-k96"/>
+                        </constraints>
+                        <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSLockUnlockedTemplate" imagePosition="overlaps" alignment="center" alternateImage="NSLockLockedTemplate" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kpe-kw-6As">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <binding destination="-2" name="value" keyPath="self.mVideo.locking" id="wuh-Vc-lvR"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Zag-PY-HGS" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="20" symbolic="YES" id="0il-n7-u3U"/>
-                    <constraint firstItem="Xqx-KC-8l6" firstAttribute="leading" secondItem="Zag-PY-HGS" secondAttribute="trailing" constant="8" symbolic="YES" id="7rT-2D-INJ"/>
-                    <constraint firstItem="DRr-rb-2Qk" firstAttribute="leading" secondItem="pnP-Kc-kMS" secondAttribute="leading" id="Ary-Ai-w0V"/>
-                    <constraint firstItem="iW1-Zo-I2S" firstAttribute="trailing" secondItem="Xqx-KC-8l6" secondAttribute="trailing" id="BGp-h0-hxZ"/>
-                    <constraint firstItem="rCM-Rc-dVU" firstAttribute="baseline" secondItem="WuS-fF-R1O" secondAttribute="baseline" id="CJb-FD-Juh"/>
-                    <constraint firstItem="ldf-eo-hGa" firstAttribute="leading" secondItem="DRr-rb-2Qk" secondAttribute="leading" id="D0N-Ug-ue0"/>
-                    <constraint firstItem="mUO-vr-Ive" firstAttribute="trailing" secondItem="pnP-Kc-kMS" secondAttribute="trailing" id="E9M-ux-VgV"/>
-                    <constraint firstItem="mUO-vr-Ive" firstAttribute="top" secondItem="pnP-Kc-kMS" secondAttribute="bottom" constant="12" id="G9C-iW-emh"/>
-                    <constraint firstItem="WuS-fF-R1O" firstAttribute="leading" secondItem="iW1-Zo-I2S" secondAttribute="leading" id="Hz1-bs-U9f"/>
-                    <constraint firstItem="Xqx-KC-8l6" firstAttribute="centerY" secondItem="Zag-PY-HGS" secondAttribute="centerY" id="KFi-cV-c9Y"/>
-                    <constraint firstItem="iW1-Zo-I2S" firstAttribute="leading" secondItem="ldf-eo-hGa" secondAttribute="trailing" constant="8" symbolic="YES" id="QWS-My-sYK"/>
-                    <constraint firstAttribute="bottom" secondItem="mUO-vr-Ive" secondAttribute="bottom" constant="20" symbolic="YES" id="Vxl-PK-pgr"/>
-                    <constraint firstItem="rCM-Rc-dVU" firstAttribute="top" secondItem="ldf-eo-hGa" secondAttribute="bottom" constant="8" symbolic="YES" id="VyY-Gy-PR4"/>
-                    <constraint firstItem="Xqx-KC-8l6" firstAttribute="top" secondItem="2" secondAttribute="top" constant="20" symbolic="YES" id="YMg-MJ-9B3"/>
-                    <constraint firstItem="VTy-a2-sHK" firstAttribute="baseline" secondItem="WuS-fF-R1O" secondAttribute="baseline" id="bl6-IP-CPa"/>
-                    <constraint firstItem="VTy-a2-sHK" firstAttribute="top" secondItem="iW1-Zo-I2S" secondAttribute="bottom" constant="8" symbolic="YES" id="bnj-ZN-B0t"/>
-                    <constraint firstItem="iW1-Zo-I2S" firstAttribute="top" secondItem="Xqx-KC-8l6" secondAttribute="bottom" constant="8" symbolic="YES" id="cT1-r9-aTq"/>
-                    <constraint firstItem="pnP-Kc-kMS" firstAttribute="top" secondItem="rCM-Rc-dVU" secondAttribute="bottom" constant="8" symbolic="YES" id="cyF-xV-opF"/>
-                    <constraint firstItem="mUO-vr-Ive" firstAttribute="leading" secondItem="pnP-Kc-kMS" secondAttribute="leading" id="iDs-Nz-Xkz"/>
-                    <constraint firstItem="ldf-eo-hGa" firstAttribute="leading" secondItem="Zag-PY-HGS" secondAttribute="leading" id="iNZ-9l-vUl"/>
-                    <constraint firstItem="ldf-eo-hGa" firstAttribute="top" secondItem="Xqx-KC-8l6" secondAttribute="bottom" constant="8" symbolic="YES" id="iXp-YS-Pd2"/>
-                    <constraint firstItem="WuS-fF-R1O" firstAttribute="top" secondItem="iW1-Zo-I2S" secondAttribute="bottom" constant="8" symbolic="YES" id="itA-GM-YD7"/>
-                    <constraint firstItem="iW1-Zo-I2S" firstAttribute="trailing" secondItem="VTy-a2-sHK" secondAttribute="trailing" id="l1q-oA-EG8"/>
-                    <constraint firstItem="WuS-fF-R1O" firstAttribute="leading" secondItem="rCM-Rc-dVU" secondAttribute="trailing" constant="8" symbolic="YES" id="nA3-vU-xTb"/>
-                    <constraint firstAttribute="trailing" secondItem="Xqx-KC-8l6" secondAttribute="trailing" constant="20" symbolic="YES" id="nC9-Bw-2l4"/>
-                    <constraint firstItem="pnP-Kc-kMS" firstAttribute="top" secondItem="DRr-rb-2Qk" secondAttribute="bottom" constant="8" symbolic="YES" id="nUU-Uy-Y8u"/>
-                    <constraint firstItem="DRr-rb-2Qk" firstAttribute="top" secondItem="ldf-eo-hGa" secondAttribute="bottom" constant="8" symbolic="YES" id="rsZ-O1-lBb"/>
-                    <constraint firstItem="WuS-fF-R1O" firstAttribute="top" secondItem="rCM-Rc-dVU" secondAttribute="top" id="uwr-Go-CT0"/>
-                    <constraint firstItem="pnP-Kc-kMS" firstAttribute="trailing" secondItem="VTy-a2-sHK" secondAttribute="trailing" id="xFz-Md-sl3"/>
+                    <constraint firstItem="guW-28-x0V" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="20" symbolic="YES" id="16Y-26-r7B"/>
+                    <constraint firstItem="WuS-fF-R1O" firstAttribute="leading" secondItem="rCM-Rc-dVU" secondAttribute="trailing" constant="8" symbolic="YES" id="2o5-AU-oTp"/>
+                    <constraint firstItem="Zag-PY-HGS" firstAttribute="bottom" secondItem="guW-28-x0V" secondAttribute="bottom" id="3kM-as-KPV"/>
+                    <constraint firstItem="iW1-Zo-I2S" firstAttribute="top" secondItem="ldf-eo-hGa" secondAttribute="top" id="4Yi-uo-Jfl"/>
+                    <constraint firstItem="WuS-fF-R1O" firstAttribute="top" secondItem="iW1-Zo-I2S" secondAttribute="bottom" constant="8" symbolic="YES" id="4t2-Yv-31J"/>
+                    <constraint firstItem="WuS-fF-R1O" firstAttribute="top" secondItem="rCM-Rc-dVU" secondAttribute="top" id="98U-tz-Wq5"/>
+                    <constraint firstItem="iW1-Zo-I2S" firstAttribute="leading" secondItem="WuS-fF-R1O" secondAttribute="leading" id="ABb-bd-Cr7"/>
+                    <constraint firstItem="dOk-f1-fKr" firstAttribute="leading" secondItem="DRr-rb-2Qk" secondAttribute="trailing" constant="81" id="AKl-2Y-BlU"/>
+                    <constraint firstItem="pnP-Kc-kMS" firstAttribute="leading" secondItem="DRr-rb-2Qk" secondAttribute="leading" id="DlL-9L-AHt"/>
+                    <constraint firstItem="ldf-eo-hGa" firstAttribute="centerX" secondItem="dOk-f1-fKr" secondAttribute="centerX" id="DsV-dI-chk"/>
+                    <constraint firstItem="Zag-PY-HGS" firstAttribute="leading" secondItem="guW-28-x0V" secondAttribute="trailing" constant="8" symbolic="YES" id="GgA-Xp-SyJ"/>
+                    <constraint firstItem="Zag-PY-HGS" firstAttribute="top" secondItem="guW-28-x0V" secondAttribute="top" id="Hqh-fb-u8p"/>
+                    <constraint firstItem="pnP-Kc-kMS" firstAttribute="top" secondItem="rCM-Rc-dVU" secondAttribute="bottom" constant="8" symbolic="YES" id="IDC-fr-Ryt"/>
+                    <constraint firstItem="WuS-fF-R1O" firstAttribute="baseline" secondItem="VTy-a2-sHK" secondAttribute="baseline" id="Ijq-TR-Bqd"/>
+                    <constraint firstItem="DRr-rb-2Qk" firstAttribute="leading" secondItem="ldf-eo-hGa" secondAttribute="leading" id="Mr3-Gw-aie"/>
+                    <constraint firstItem="mUO-vr-Ive" firstAttribute="top" secondItem="pnP-Kc-kMS" secondAttribute="bottom" constant="12" id="Qzc-vW-uXk"/>
+                    <constraint firstItem="iW1-Zo-I2S" firstAttribute="leading" secondItem="ldf-eo-hGa" secondAttribute="trailing" constant="8" symbolic="YES" id="RoA-Lo-0cF"/>
+                    <constraint firstAttribute="trailing" secondItem="Xqx-KC-8l6" secondAttribute="trailing" constant="20" symbolic="YES" id="SEs-1O-0bQ"/>
+                    <constraint firstAttribute="bottom" secondItem="mUO-vr-Ive" secondAttribute="bottom" constant="20" symbolic="YES" id="T5n-uo-oS1"/>
+                    <constraint firstItem="Xqx-KC-8l6" firstAttribute="leading" secondItem="Zag-PY-HGS" secondAttribute="trailing" constant="8" symbolic="YES" id="WBg-5t-0Sw"/>
+                    <constraint firstItem="VTy-a2-sHK" firstAttribute="trailing" secondItem="iW1-Zo-I2S" secondAttribute="trailing" id="X18-qf-ifb"/>
+                    <constraint firstItem="guW-28-x0V" firstAttribute="baseline" secondItem="Xqx-KC-8l6" secondAttribute="baseline" id="YgJ-ge-NIG"/>
+                    <constraint firstItem="dOk-f1-fKr" firstAttribute="top" secondItem="ldf-eo-hGa" secondAttribute="bottom" constant="8" symbolic="YES" id="d5O-aZ-yAL"/>
+                    <constraint firstItem="pnP-Kc-kMS" firstAttribute="leading" secondItem="mUO-vr-Ive" secondAttribute="leading" id="dXW-vy-Mop"/>
+                    <constraint firstItem="rCM-Rc-dVU" firstAttribute="top" secondItem="ldf-eo-hGa" secondAttribute="bottom" constant="8" symbolic="YES" id="eIi-P8-bAh"/>
+                    <constraint firstItem="guW-28-x0V" firstAttribute="leading" secondItem="ldf-eo-hGa" secondAttribute="leading" id="eZC-9v-nLf"/>
+                    <constraint firstItem="ldf-eo-hGa" firstAttribute="top" secondItem="guW-28-x0V" secondAttribute="bottom" constant="11" id="gCs-06-vHx"/>
+                    <constraint firstItem="VTy-a2-sHK" firstAttribute="top" secondItem="iW1-Zo-I2S" secondAttribute="bottom" constant="8" symbolic="YES" id="obh-gO-A0K"/>
+                    <constraint firstItem="Xqx-KC-8l6" firstAttribute="trailing" secondItem="iW1-Zo-I2S" secondAttribute="trailing" id="pMh-fA-Xnf"/>
+                    <constraint firstItem="pnP-Kc-kMS" firstAttribute="top" secondItem="dOk-f1-fKr" secondAttribute="bottom" constant="12" id="rxo-FZ-FiS"/>
+                    <constraint firstItem="pnP-Kc-kMS" firstAttribute="trailing" secondItem="mUO-vr-Ive" secondAttribute="trailing" id="s5H-Np-0aE"/>
+                    <constraint firstItem="guW-28-x0V" firstAttribute="top" secondItem="2" secondAttribute="top" constant="16" id="srZ-UC-q8F"/>
+                    <constraint firstItem="WuS-fF-R1O" firstAttribute="baseline" secondItem="rCM-Rc-dVU" secondAttribute="baseline" id="tKO-bT-J7B"/>
+                    <constraint firstItem="Xqx-KC-8l6" firstAttribute="top" secondItem="Zag-PY-HGS" secondAttribute="top" id="uCK-Td-A4I"/>
+                    <constraint firstItem="DRr-rb-2Qk" firstAttribute="top" secondItem="ldf-eo-hGa" secondAttribute="bottom" constant="8" symbolic="YES" id="vAT-CO-I5x"/>
+                    <constraint firstItem="pnP-Kc-kMS" firstAttribute="trailing" secondItem="VTy-a2-sHK" secondAttribute="trailing" id="xw3-j1-NRs"/>
+                    <constraint firstItem="pnP-Kc-kMS" firstAttribute="top" secondItem="DRr-rb-2Qk" secondAttribute="bottom" constant="8" symbolic="YES" id="y0p-gL-OPT"/>
                 </constraints>
             </view>
             <connections>
@@ -257,6 +317,8 @@
     <resources>
         <image name="NSAddTemplate" width="8" height="8"/>
         <image name="NSFolder" width="32" height="32"/>
+        <image name="NSLockLockedTemplate" width="9" height="12"/>
+        <image name="NSLockUnlockedTemplate" width="9" height="12"/>
         <image name="NSQuickLookTemplate" width="21" height="16"/>
         <image name="NSRemoveTemplate" width="8" height="8"/>
     </resources>

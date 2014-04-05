@@ -2,7 +2,7 @@
 //  Video.h
 //  iVideoLib
 //
-//  Created by Philippe Fouquet on 13/03/2014.
+//  Created by Philippe Fouquet on 04/04/2014.
 //  Copyright (c) 2014 Philippe Fouquet. All rights reserved.
 //
 
@@ -13,10 +13,11 @@
 
 @interface Video : NSManagedObject
 
+@property (nonatomic, retain) NSNumber * lenght;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSData * photo;
 @property (nonatomic, retain) NSString * url;
-@property (nonatomic, retain) NSNumber * lenght;
+@property (nonatomic, retain) NSNumber * locking;
 @property (nonatomic, retain) NSSet *have_chapitre;
 @end
 
