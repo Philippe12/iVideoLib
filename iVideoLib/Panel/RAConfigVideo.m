@@ -72,8 +72,34 @@
     }
 }
 
+- (BOOL)panel:(id)sender shouldEnableURL:(NSURL *)url {
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity =
+    [NSEntityDescription entityForName:@"Video"
+                inManagedObjectContext:self.managedObjectContext];
+    [request setEntity:entity];
+    
+    NSString *value = [url absoluteString];
+    NSString *wildcardedString = [NSString stringWithFormat:@"%@*", value];
+
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"url like %@", wildcardedString];
+    [request setPredicate:predicate];
+    
+    NSError *error;
+    NSArray *array = [self.managedObjectContext executeFetchRequest:request error:&error];
+    NSUInteger count = 0;
+    if (array != nil) {
+        count = [array count]; // May be 0 if the object has been deleted.
+    }
+    if( count != 0 ) {
+        return NO;
+    }
+    return YES;
+}
+
 - (IBAction)OpenVideo:(id)sender {
     NSOpenPanel *openPanel = [[NSOpenPanel alloc] init];
+    [openPanel setDelegate:self];
     [openPanel beginSheetModalForWindow:self.window completionHandler:^(NSInteger result) {
 		if (result == NSFileHandlingPanelOKButton) {
             NSURL *url = [openPanel URL];

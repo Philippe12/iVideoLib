@@ -9,6 +9,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="RAConfigVideo">
             <connections>
                 <outlet property="ListeChapitre" destination="3bc-9E-wbS" id="tq4-ec-ggd"/>
+                <outlet property="ListeVideo" destination="G2E-aP-aYR" id="hmi-V4-E3d"/>
                 <outlet property="OpenVideo" destination="DRr-rb-2Qk" id="5rf-Cc-AVG"/>
                 <outlet property="PlayerView" destination="pnP-Kc-kMS" id="VOm-8r-zCt"/>
                 <outlet property="window" destination="1" id="3"/>
@@ -311,6 +312,11 @@
             <connections>
                 <binding destination="-2" name="managedObjectContext" keyPath="managedObjectContext" id="WKU-Sw-KWI"/>
                 <binding destination="-2" name="contentSet" keyPath="self.mVideo.have_chapitre" id="rNZ-26-cU7"/>
+            </connections>
+        </arrayController>
+        <arrayController mode="entity" entityName="Video" automaticallyPreparesContent="YES" automaticallyRearrangesObjects="YES" id="G2E-aP-aYR" userLabel="Video">
+            <connections>
+                <binding destination="-2" name="managedObjectContext" keyPath="managedObjectContext" id="CDQ-SQ-iZT"/>
             </connections>
         </arrayController>
     </objects>
