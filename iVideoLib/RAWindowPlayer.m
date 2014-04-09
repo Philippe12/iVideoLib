@@ -67,7 +67,7 @@
     Chapitre *sel = [[_ListeViewChapitre itemAtIndex:[[_ListeViewChapitre selectionIndexes] firstIndex]] representedObject];
      
     if (sel) {
-        [_player seekToTime: CMTimeMake([sel.position intValue], 1)];
+        [_player.currentItem seekToTime:CMTimeMake([sel.position doubleValue], [sel.scale doubleValue]) toleranceBefore:kCMTimeZero toleranceAfter:kCMTimeZero];
     }
 }
 

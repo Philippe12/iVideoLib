@@ -143,7 +143,7 @@ NSImage* cgImageToNSImage(CGImageRef image)
     // successfully get a screenshot, but it was useful for my project.
     generator.maximumSize = CGSizeMake(1000,1000);
     
-    CGImageRef cgIm = [generator copyCGImageAtTime:player.currentTime
+    CGImageRef cgIm = [generator copyCGImageAtTime:player.currentItem.currentTime
                                         actualTime:&actualTime
                                              error:&error];
     //NSImage *image = [[NSImage alloc] initWithCGImage:cgIm size:(NSSize){ 50.0, 50.0 }];
@@ -153,7 +153,7 @@ NSImage* cgImageToNSImage(CGImageRef image)
     if (nil != error) {
         NSLog(@"Error making screenshot: %@", [error localizedDescription]);
         NSLog(@"Actual screenshot time: %f Requested screenshot time: %f", CMTimeGetSeconds(actualTime),
-              CMTimeGetSeconds(self.player.currentTime));
+              CMTimeGetSeconds(player.currentItem.currentTime));
         return nil;
     }
     
@@ -184,14 +184,15 @@ NSImage* cgImageToNSImage(CGImageRef image)
     Chapitre *chapitre = [ptr newObject];
     chapitre.name = @"new chapitre";
     chapitre.photo = [self screenshotFromPlayer:_player];
-    chapitre.position = [[NSNumber alloc] initWithFloat: CMTimeGetSeconds(_player.currentTime)];
+    chapitre.position = [[NSNumber alloc] initWithDouble: _player.currentItem.currentTime.value];
+    chapitre.scale = [[NSNumber alloc] initWithDouble: _player.currentItem.currentTime.timescale];
     [mVideo addHave_chapitreObject:chapitre];
 }
 
 -(void)tableViewSelectionDidChange:(NSNotification *)notification{
     Chapitre *chap = [self getCurrent:_ListeChapitre];
     if (chap) {
-        [_player seekToTime: CMTimeMake([chap.position intValue], 1)];
+        [_player.currentItem seekToTime:CMTimeMake([chap.position doubleValue], [chap.scale doubleValue]) toleranceBefore:kCMTimeZero toleranceAfter:kCMTimeZero];
     }
 }
 

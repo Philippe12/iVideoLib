@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		26373C2618F05BC500DC6C50 /* RALockImageTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 26373C2518F05BC500DC6C50 /* RALockImageTransformer.m */; };
 		2640DB7D187EEDDA003EED97 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2640DB7C187EEDDA003EED97 /* Cocoa.framework */; };
 		2640DB87187EEDDA003EED97 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2640DB85187EEDDA003EED97 /* InfoPlist.strings */; };
 		2640DB89187EEDDA003EED97 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2640DB88187EEDDA003EED97 /* main.m */; };
@@ -21,13 +20,8 @@
 		2640DBA3187EEDDA003EED97 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2640DB7C187EEDDA003EED97 /* Cocoa.framework */; };
 		2640DBAB187EEDDA003EED97 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2640DBA9187EEDDA003EED97 /* InfoPlist.strings */; };
 		2640DBAD187EEDDA003EED97 /* iVideoLibTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2640DBAC187EEDDA003EED97 /* iVideoLibTests.m */; };
-		264E4F9C187FEED20020DD5A /* RAEnabledTranformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 264E4F9B187FEED20020DD5A /* RAEnabledTranformer.m */; };
-		264E4FA1187FFC870020DD5A /* RAViewVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 264E4F9F187FFC870020DD5A /* RAViewVideo.m */; };
-		264E4FA2187FFC870020DD5A /* RAViewVideo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 264E4FA0187FFC870020DD5A /* RAViewVideo.xib */; };
 		2665EB02188E69BD00ACB67A /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2665EB01188E69BD00ACB67A /* CoreMedia.framework */; };
-		2665EB05188E810D00ACB67A /* RACollectionViewVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2665EB04188E810D00ACB67A /* RACollectionViewVideo.m */; };
 		26A7DFE8187EEF4C00EE15FD /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A7DFE7187EEF4B00EE15FD /* AVKit.framework */; };
-		26A7DFF2187EF9C200EE15FD /* RAImageTranformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A7DFF1187EF9C200EE15FD /* RAImageTranformer.m */; };
 		26A7E005187EFA0700EE15FD /* RAConfigVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A7E000187EFA0700EE15FD /* RAConfigVideo.m */; };
 		26A7E006187EFA0700EE15FD /* RAConfigVideo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26A7E001187EFA0700EE15FD /* RAConfigVideo.xib */; };
 		26A7E007187EFA0700EE15FD /* RAPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A7E003187EFA0700EE15FD /* RAPanelController.m */; };
@@ -36,10 +30,17 @@
 		26B6005B18B0EAD500979173 /* RAWindowPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B6005918B0EAD500979173 /* RAWindowPlayer.m */; };
 		26B6005C18B0EAD500979173 /* RAWindowPlayer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26B6005A18B0EAD500979173 /* RAWindowPlayer.xib */; };
 		26BB1D0618CF5A600053CD78 /* Pelicule.png in Resources */ = {isa = PBXBuildFile; fileRef = 26BB1D0518CF5A600053CD78 /* Pelicule.png */; };
-		26CDB6E918EF08B000D23294 /* MigrationV1toV2.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 26CDB6E818EF08B000D23294 /* MigrationV1toV2.xcmappingmodel */; };
-		26CDB6EC18EF098600D23294 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 26CDB6EB18EF098600D23294 /* Video.m */; };
-		26CDB6EF18EF098600D23294 /* Chapitre.m in Sources */ = {isa = PBXBuildFile; fileRef = 26CDB6EE18EF098600D23294 /* Chapitre.m */; };
-		26EA659A18D209E40056599B /* RADurationTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 26EA659918D209E40056599B /* RADurationTransformer.m */; };
+		26C246E018F596ED009229BF /* Chapitre.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C246D318F596ED009229BF /* Chapitre.m */; };
+		26C246E118F596ED009229BF /* MigrationV1toV2.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 26C246D418F596ED009229BF /* MigrationV1toV2.xcmappingmodel */; };
+		26C246E218F596ED009229BF /* MigrationV2toV3.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 26C246D518F596ED009229BF /* MigrationV2toV3.xcmappingmodel */; };
+		26C246E318F596ED009229BF /* RADurationTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C246D718F596ED009229BF /* RADurationTransformer.m */; };
+		26C246E418F596ED009229BF /* RAEnabledTranformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C246D918F596ED009229BF /* RAEnabledTranformer.m */; };
+		26C246E518F596ED009229BF /* RAImageTranformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C246DB18F596ED009229BF /* RAImageTranformer.m */; };
+		26C246E618F596ED009229BF /* RALockImageTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C246DD18F596ED009229BF /* RALockImageTransformer.m */; };
+		26C246E718F596ED009229BF /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C246DF18F596ED009229BF /* Video.m */; };
+		26C246ED18F5970F009229BF /* RACollectionViewVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C246E918F5970F009229BF /* RACollectionViewVideo.m */; };
+		26C246EE18F5970F009229BF /* RAViewVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C246EB18F5970F009229BF /* RAViewVideo.m */; };
+		26C246EF18F5970F009229BF /* RAViewVideo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C246EC18F5970F009229BF /* RAViewVideo.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,8 +54,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		26373C2418F05BC500DC6C50 /* RALockImageTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RALockImageTransformer.h; path = DataBase/RALockImageTransformer.h; sourceTree = "<group>"; };
-		26373C2518F05BC500DC6C50 /* RALockImageTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RALockImageTransformer.m; path = DataBase/RALockImageTransformer.m; sourceTree = "<group>"; };
 		2640DB79187EEDDA003EED97 /* iVideoLib.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iVideoLib.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2640DB7C187EEDDA003EED97 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		2640DB7F187EEDDA003EED97 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -76,17 +75,8 @@
 		2640DBA8187EEDDA003EED97 /* iVideoLibTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iVideoLibTests-Info.plist"; sourceTree = "<group>"; };
 		2640DBAA187EEDDA003EED97 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2640DBAC187EEDDA003EED97 /* iVideoLibTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iVideoLibTests.m; sourceTree = "<group>"; };
-		264E4F9A187FEED20020DD5A /* RAEnabledTranformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RAEnabledTranformer.h; path = DataBase/RAEnabledTranformer.h; sourceTree = "<group>"; };
-		264E4F9B187FEED20020DD5A /* RAEnabledTranformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RAEnabledTranformer.m; path = DataBase/RAEnabledTranformer.m; sourceTree = "<group>"; };
-		264E4F9E187FFC870020DD5A /* RAViewVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RAViewVideo.h; path = View/RAViewVideo.h; sourceTree = "<group>"; };
-		264E4F9F187FFC870020DD5A /* RAViewVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RAViewVideo.m; path = View/RAViewVideo.m; sourceTree = "<group>"; };
-		264E4FA0187FFC870020DD5A /* RAViewVideo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RAViewVideo.xib; path = View/RAViewVideo.xib; sourceTree = "<group>"; };
 		2665EB01188E69BD00ACB67A /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		2665EB03188E810D00ACB67A /* RACollectionViewVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RACollectionViewVideo.h; path = View/RACollectionViewVideo.h; sourceTree = "<group>"; };
-		2665EB04188E810D00ACB67A /* RACollectionViewVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RACollectionViewVideo.m; path = View/RACollectionViewVideo.m; sourceTree = "<group>"; };
 		26A7DFE7187EEF4B00EE15FD /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
-		26A7DFF0187EF9C200EE15FD /* RAImageTranformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RAImageTranformer.h; path = DataBase/RAImageTranformer.h; sourceTree = "<group>"; };
-		26A7DFF1187EF9C200EE15FD /* RAImageTranformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RAImageTranformer.m; path = DataBase/RAImageTranformer.m; sourceTree = "<group>"; };
 		26A7DFFF187EFA0700EE15FD /* RAConfigVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAConfigVideo.h; sourceTree = "<group>"; };
 		26A7E000187EFA0700EE15FD /* RAConfigVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAConfigVideo.m; sourceTree = "<group>"; };
 		26A7E001187EFA0700EE15FD /* RAConfigVideo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RAConfigVideo.xib; sourceTree = "<group>"; };
@@ -98,14 +88,27 @@
 		26B6005918B0EAD500979173 /* RAWindowPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAWindowPlayer.m; sourceTree = "<group>"; };
 		26B6005A18B0EAD500979173 /* RAWindowPlayer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RAWindowPlayer.xib; sourceTree = "<group>"; };
 		26BB1D0518CF5A600053CD78 /* Pelicule.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Pelicule.png; path = resource/Pelicule.png; sourceTree = "<group>"; };
+		26C246CC18F58F85009229BF /* RADocument V3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "RADocument V3.xcdatamodel"; sourceTree = "<group>"; };
+		26C246D218F596ED009229BF /* Chapitre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chapitre.h; sourceTree = "<group>"; };
+		26C246D318F596ED009229BF /* Chapitre.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Chapitre.m; sourceTree = "<group>"; };
+		26C246D418F596ED009229BF /* MigrationV1toV2.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = MigrationV1toV2.xcmappingmodel; sourceTree = "<group>"; };
+		26C246D518F596ED009229BF /* MigrationV2toV3.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = MigrationV2toV3.xcmappingmodel; sourceTree = "<group>"; };
+		26C246D618F596ED009229BF /* RADurationTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RADurationTransformer.h; sourceTree = "<group>"; };
+		26C246D718F596ED009229BF /* RADurationTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RADurationTransformer.m; sourceTree = "<group>"; };
+		26C246D818F596ED009229BF /* RAEnabledTranformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAEnabledTranformer.h; sourceTree = "<group>"; };
+		26C246D918F596ED009229BF /* RAEnabledTranformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAEnabledTranformer.m; sourceTree = "<group>"; };
+		26C246DA18F596ED009229BF /* RAImageTranformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAImageTranformer.h; sourceTree = "<group>"; };
+		26C246DB18F596ED009229BF /* RAImageTranformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAImageTranformer.m; sourceTree = "<group>"; };
+		26C246DC18F596ED009229BF /* RALockImageTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RALockImageTransformer.h; sourceTree = "<group>"; };
+		26C246DD18F596ED009229BF /* RALockImageTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RALockImageTransformer.m; sourceTree = "<group>"; };
+		26C246DE18F596ED009229BF /* Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Video.h; sourceTree = "<group>"; };
+		26C246DF18F596ED009229BF /* Video.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Video.m; sourceTree = "<group>"; };
+		26C246E818F5970F009229BF /* RACollectionViewVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACollectionViewVideo.h; sourceTree = "<group>"; };
+		26C246E918F5970F009229BF /* RACollectionViewVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACollectionViewVideo.m; sourceTree = "<group>"; };
+		26C246EA18F5970F009229BF /* RAViewVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAViewVideo.h; sourceTree = "<group>"; };
+		26C246EB18F5970F009229BF /* RAViewVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAViewVideo.m; sourceTree = "<group>"; };
+		26C246EC18F5970F009229BF /* RAViewVideo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RAViewVideo.xib; sourceTree = "<group>"; };
 		26CDB6E718EF083C00D23294 /* RADocument V2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "RADocument V2.xcdatamodel"; sourceTree = "<group>"; };
-		26CDB6E818EF08B000D23294 /* MigrationV1toV2.xcmappingmodel */ = {isa = PBXFileReference; explicitFileType = wrapper.xcmappingmodel; name = MigrationV1toV2.xcmappingmodel; path = DataBase/MigrationV1toV2.xcmappingmodel; sourceTree = "<group>"; };
-		26CDB6EA18EF098600D23294 /* Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Video.h; path = DataBase/Video.h; sourceTree = "<group>"; };
-		26CDB6EB18EF098600D23294 /* Video.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Video.m; path = DataBase/Video.m; sourceTree = "<group>"; };
-		26CDB6ED18EF098600D23294 /* Chapitre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Chapitre.h; path = DataBase/Chapitre.h; sourceTree = "<group>"; };
-		26CDB6EE18EF098600D23294 /* Chapitre.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Chapitre.m; path = DataBase/Chapitre.m; sourceTree = "<group>"; };
-		26EA659818D209E40056599B /* RADurationTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RADurationTransformer.h; path = DataBase/RADurationTransformer.h; sourceTree = "<group>"; };
-		26EA659918D209E40056599B /* RADurationTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RADurationTransformer.m; path = DataBase/RADurationTransformer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,33 +231,34 @@
 		264E4F9D187FFC420020DD5A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				264E4F9E187FFC870020DD5A /* RAViewVideo.h */,
-				264E4F9F187FFC870020DD5A /* RAViewVideo.m */,
-				264E4FA0187FFC870020DD5A /* RAViewVideo.xib */,
-				2665EB03188E810D00ACB67A /* RACollectionViewVideo.h */,
-				2665EB04188E810D00ACB67A /* RACollectionViewVideo.m */,
+				26C246E818F5970F009229BF /* RACollectionViewVideo.h */,
+				26C246E918F5970F009229BF /* RACollectionViewVideo.m */,
+				26C246EA18F5970F009229BF /* RAViewVideo.h */,
+				26C246EB18F5970F009229BF /* RAViewVideo.m */,
+				26C246EC18F5970F009229BF /* RAViewVideo.xib */,
 			);
-			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
 		26A7DFEF187EF51B00EE15FD /* DataBase */ = {
 			isa = PBXGroup;
 			children = (
-				26CDB6ED18EF098600D23294 /* Chapitre.h */,
-				26CDB6EE18EF098600D23294 /* Chapitre.m */,
-				26CDB6EA18EF098600D23294 /* Video.h */,
-				26CDB6EB18EF098600D23294 /* Video.m */,
-				26CDB6E818EF08B000D23294 /* MigrationV1toV2.xcmappingmodel */,
-				264E4F9A187FEED20020DD5A /* RAEnabledTranformer.h */,
-				264E4F9B187FEED20020DD5A /* RAEnabledTranformer.m */,
-				26A7DFF0187EF9C200EE15FD /* RAImageTranformer.h */,
-				26A7DFF1187EF9C200EE15FD /* RAImageTranformer.m */,
-				26EA659818D209E40056599B /* RADurationTransformer.h */,
-				26EA659918D209E40056599B /* RADurationTransformer.m */,
-				26373C2418F05BC500DC6C50 /* RALockImageTransformer.h */,
-				26373C2518F05BC500DC6C50 /* RALockImageTransformer.m */,
+				26C246D218F596ED009229BF /* Chapitre.h */,
+				26C246D318F596ED009229BF /* Chapitre.m */,
+				26C246D418F596ED009229BF /* MigrationV1toV2.xcmappingmodel */,
+				26C246D518F596ED009229BF /* MigrationV2toV3.xcmappingmodel */,
+				26C246D618F596ED009229BF /* RADurationTransformer.h */,
+				26C246D718F596ED009229BF /* RADurationTransformer.m */,
+				26C246D818F596ED009229BF /* RAEnabledTranformer.h */,
+				26C246D918F596ED009229BF /* RAEnabledTranformer.m */,
+				26C246DA18F596ED009229BF /* RAImageTranformer.h */,
+				26C246DB18F596ED009229BF /* RAImageTranformer.m */,
+				26C246DC18F596ED009229BF /* RALockImageTransformer.h */,
+				26C246DD18F596ED009229BF /* RALockImageTransformer.m */,
+				26C246DE18F596ED009229BF /* Video.h */,
+				26C246DF18F596ED009229BF /* Video.m */,
 			);
-			name = DataBase;
+			path = DataBase;
 			sourceTree = "<group>";
 		};
 		26A7DFFE187EFA0700EE15FD /* Panel */ = {
@@ -360,11 +364,11 @@
 				2640DB9B187EEDDA003EED97 /* Images.xcassets in Resources */,
 				2640DB87187EEDDA003EED97 /* InfoPlist.strings in Resources */,
 				2640DB8D187EEDDA003EED97 /* Credits.rtf in Resources */,
-				264E4FA2187FFC870020DD5A /* RAViewVideo.xib in Resources */,
 				2640DB96187EEDDA003EED97 /* MainMenu.xib in Resources */,
 				26A7E006187EFA0700EE15FD /* RAConfigVideo.xib in Resources */,
 				26BB1D0618CF5A600053CD78 /* Pelicule.png in Resources */,
 				26B6005C18B0EAD500979173 /* RAWindowPlayer.xib in Resources */,
+				26C246EF18F5970F009229BF /* RAViewVideo.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,20 +388,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				2640DB89187EEDDA003EED97 /* main.m in Sources */,
-				264E4F9C187FEED20020DD5A /* RAEnabledTranformer.m in Sources */,
-				26CDB6E918EF08B000D23294 /* MigrationV1toV2.xcmappingmodel in Sources */,
 				2640DB90187EEDDA003EED97 /* RADocument.m in Sources */,
-				264E4FA1187FFC870020DD5A /* RAViewVideo.m in Sources */,
+				26C246E518F596ED009229BF /* RAImageTranformer.m in Sources */,
+				26C246E318F596ED009229BF /* RADurationTransformer.m in Sources */,
+				26C246E018F596ED009229BF /* Chapitre.m in Sources */,
+				26C246E118F596ED009229BF /* MigrationV1toV2.xcmappingmodel in Sources */,
 				26A7E005187EFA0700EE15FD /* RAConfigVideo.m in Sources */,
-				2665EB05188E810D00ACB67A /* RACollectionViewVideo.m in Sources */,
-				26CDB6EF18EF098600D23294 /* Chapitre.m in Sources */,
-				26EA659A18D209E40056599B /* RADurationTransformer.m in Sources */,
-				26373C2618F05BC500DC6C50 /* RALockImageTransformer.m in Sources */,
+				26C246E718F596ED009229BF /* Video.m in Sources */,
+				26C246E618F596ED009229BF /* RALockImageTransformer.m in Sources */,
+				26C246E418F596ED009229BF /* RAEnabledTranformer.m in Sources */,
 				26A7E007187EFA0700EE15FD /* RAPanelController.m in Sources */,
-				26A7DFF2187EF9C200EE15FD /* RAImageTranformer.m in Sources */,
+				26C246ED18F5970F009229BF /* RACollectionViewVideo.m in Sources */,
+				26C246E218F596ED009229BF /* MigrationV2toV3.xcmappingmodel in Sources */,
+				26C246EE18F5970F009229BF /* RAViewVideo.m in Sources */,
 				2640DB99187EEDDA003EED97 /* RADocument.xcdatamodeld in Sources */,
 				26B6005B18B0EAD500979173 /* RAWindowPlayer.m in Sources */,
-				26CDB6EC18EF098600D23294 /* Video.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -634,10 +639,11 @@
 		2640DB97187EEDDA003EED97 /* RADocument.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				26C246CC18F58F85009229BF /* RADocument V3.xcdatamodel */,
 				26CDB6E718EF083C00D23294 /* RADocument V2.xcdatamodel */,
 				2640DB98187EEDDA003EED97 /* RADocument.xcdatamodel */,
 			);
-			currentVersion = 26CDB6E718EF083C00D23294 /* RADocument V2.xcdatamodel */;
+			currentVersion = 26C246CC18F58F85009229BF /* RADocument V3.xcdatamodel */;
 			path = RADocument.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

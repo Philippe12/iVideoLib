@@ -2,7 +2,7 @@
 //  Chapitre.h
 //  iVideoLib
 //
-//  Created by Philippe Fouquet on 04/04/2014.
+//  Created by Philippe Fouquet on 09/04/2014.
 //  Copyright (c) 2014 Philippe Fouquet. All rights reserved.
 //
 
@@ -16,6 +16,7 @@
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSData * photo;
 @property (nonatomic, retain) NSNumber * position;
+@property (nonatomic, retain) NSNumber * scale;
 @property (nonatomic, retain) Video *for_video;
 
 @end
