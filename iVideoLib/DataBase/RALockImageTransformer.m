@@ -20,6 +20,9 @@
     if( [tmp isEqualTo:[NSNumber numberWithInt:1]]) {
         ret = [NSImage imageNamed:@"NSLockLockedTemplate"];
     }
+    else if( [tmp isEqualTo:[NSNumber numberWithInt:-1]]) {
+        return nil;
+    }
     else {
         ret = [NSImage imageNamed:@"NSLockUnlockedTemplate"];
     }

@@ -38,9 +38,10 @@
 		26C246E518F596ED009229BF /* RAImageTranformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C246DB18F596ED009229BF /* RAImageTranformer.m */; };
 		26C246E618F596ED009229BF /* RALockImageTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C246DD18F596ED009229BF /* RALockImageTransformer.m */; };
 		26C246E718F596ED009229BF /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C246DF18F596ED009229BF /* Video.m */; };
-		26C246ED18F5970F009229BF /* RACollectionViewVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C246E918F5970F009229BF /* RACollectionViewVideo.m */; };
-		26C246EE18F5970F009229BF /* RAViewVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C246EB18F5970F009229BF /* RAViewVideo.m */; };
-		26C246EF18F5970F009229BF /* RAViewVideo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26C246EC18F5970F009229BF /* RAViewVideo.xib */; };
+		26E57DA918F7D6D200ADE3E4 /* RAViewConfigVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E57DA718F7D6D200ADE3E4 /* RAViewConfigVideo.m */; };
+		26E57DAA18F7D6D200ADE3E4 /* RAViewConfigVideo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26E57DA818F7D6D200ADE3E4 /* RAViewConfigVideo.xib */; };
+		26E57DAE18F7DE5100ADE3E4 /* RAViewBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E57DAC18F7DE5100ADE3E4 /* RAViewBase.m */; };
+		26E57DAF18F7DE5100ADE3E4 /* RAViewBase.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26E57DAD18F7DE5100ADE3E4 /* RAViewBase.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,12 +104,13 @@
 		26C246DD18F596ED009229BF /* RALockImageTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RALockImageTransformer.m; sourceTree = "<group>"; };
 		26C246DE18F596ED009229BF /* Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Video.h; sourceTree = "<group>"; };
 		26C246DF18F596ED009229BF /* Video.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Video.m; sourceTree = "<group>"; };
-		26C246E818F5970F009229BF /* RACollectionViewVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACollectionViewVideo.h; sourceTree = "<group>"; };
-		26C246E918F5970F009229BF /* RACollectionViewVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACollectionViewVideo.m; sourceTree = "<group>"; };
-		26C246EA18F5970F009229BF /* RAViewVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAViewVideo.h; sourceTree = "<group>"; };
-		26C246EB18F5970F009229BF /* RAViewVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAViewVideo.m; sourceTree = "<group>"; };
-		26C246EC18F5970F009229BF /* RAViewVideo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RAViewVideo.xib; sourceTree = "<group>"; };
 		26CDB6E718EF083C00D23294 /* RADocument V2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "RADocument V2.xcdatamodel"; sourceTree = "<group>"; };
+		26E57DA618F7D6D200ADE3E4 /* RAViewConfigVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAViewConfigVideo.h; sourceTree = "<group>"; };
+		26E57DA718F7D6D200ADE3E4 /* RAViewConfigVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAViewConfigVideo.m; sourceTree = "<group>"; };
+		26E57DA818F7D6D200ADE3E4 /* RAViewConfigVideo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RAViewConfigVideo.xib; sourceTree = "<group>"; };
+		26E57DAB18F7DE5100ADE3E4 /* RAViewBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAViewBase.h; sourceTree = "<group>"; };
+		26E57DAC18F7DE5100ADE3E4 /* RAViewBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAViewBase.m; sourceTree = "<group>"; };
+		26E57DAD18F7DE5100ADE3E4 /* RAViewBase.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RAViewBase.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,11 +233,12 @@
 		264E4F9D187FFC420020DD5A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				26C246E818F5970F009229BF /* RACollectionViewVideo.h */,
-				26C246E918F5970F009229BF /* RACollectionViewVideo.m */,
-				26C246EA18F5970F009229BF /* RAViewVideo.h */,
-				26C246EB18F5970F009229BF /* RAViewVideo.m */,
-				26C246EC18F5970F009229BF /* RAViewVideo.xib */,
+				26E57DA618F7D6D200ADE3E4 /* RAViewConfigVideo.h */,
+				26E57DA718F7D6D200ADE3E4 /* RAViewConfigVideo.m */,
+				26E57DA818F7D6D200ADE3E4 /* RAViewConfigVideo.xib */,
+				26E57DAB18F7DE5100ADE3E4 /* RAViewBase.h */,
+				26E57DAC18F7DE5100ADE3E4 /* RAViewBase.m */,
+				26E57DAD18F7DE5100ADE3E4 /* RAViewBase.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -360,15 +363,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				2640DB93187EEDDA003EED97 /* RADocument.xib in Resources */,
+				26E57DAA18F7D6D200ADE3E4 /* RAViewConfigVideo.xib in Resources */,
 				26A7E008187EFA0700EE15FD /* RAPanelController.xib in Resources */,
 				2640DB9B187EEDDA003EED97 /* Images.xcassets in Resources */,
 				2640DB87187EEDDA003EED97 /* InfoPlist.strings in Resources */,
 				2640DB8D187EEDDA003EED97 /* Credits.rtf in Resources */,
 				2640DB96187EEDDA003EED97 /* MainMenu.xib in Resources */,
 				26A7E006187EFA0700EE15FD /* RAConfigVideo.xib in Resources */,
+				26E57DAF18F7DE5100ADE3E4 /* RAViewBase.xib in Resources */,
 				26BB1D0618CF5A600053CD78 /* Pelicule.png in Resources */,
 				26B6005C18B0EAD500979173 /* RAWindowPlayer.xib in Resources */,
-				26C246EF18F5970F009229BF /* RAViewVideo.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +391,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26E57DAE18F7DE5100ADE3E4 /* RAViewBase.m in Sources */,
 				2640DB89187EEDDA003EED97 /* main.m in Sources */,
 				2640DB90187EEDDA003EED97 /* RADocument.m in Sources */,
 				26C246E518F596ED009229BF /* RAImageTranformer.m in Sources */,
@@ -396,11 +401,10 @@
 				26A7E005187EFA0700EE15FD /* RAConfigVideo.m in Sources */,
 				26C246E718F596ED009229BF /* Video.m in Sources */,
 				26C246E618F596ED009229BF /* RALockImageTransformer.m in Sources */,
+				26E57DA918F7D6D200ADE3E4 /* RAViewConfigVideo.m in Sources */,
 				26C246E418F596ED009229BF /* RAEnabledTranformer.m in Sources */,
 				26A7E007187EFA0700EE15FD /* RAPanelController.m in Sources */,
-				26C246ED18F5970F009229BF /* RACollectionViewVideo.m in Sources */,
 				26C246E218F596ED009229BF /* MigrationV2toV3.xcmappingmodel in Sources */,
-				26C246EE18F5970F009229BF /* RAViewVideo.m in Sources */,
 				2640DB99187EEDDA003EED97 /* RADocument.xcdatamodeld in Sources */,
 				26B6005B18B0EAD500979173 /* RAWindowPlayer.m in Sources */,
 			);

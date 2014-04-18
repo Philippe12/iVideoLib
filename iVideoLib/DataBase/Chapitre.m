@@ -18,4 +18,15 @@
 @dynamic scale;
 @dynamic for_video;
 
+
+- (id) have_chapitre
+{
+    return nil;
+}
+
+- (id) locking
+{
+    return [NSNumber numberWithInt:-1];
+}
+
 @end

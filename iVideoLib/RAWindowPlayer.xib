@@ -8,7 +8,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="RAWindowPlayer">
             <connections>
                 <outlet property="ListeChapitre" destination="JKT-E3-CAc" id="Igp-e9-QSE"/>
-                <outlet property="ListeViewChapitre" destination="vP2-OY-m1T" id="1tO-U3-mbw"/>
+                <outlet property="ListeViewChapitre" destination="vP2-OY-m1T" id="zJp-o5-h4e"/>
                 <outlet property="PlayerView" destination="vCJ-HA-xR3" id="lOh-oV-UoH"/>
                 <outlet property="window" destination="1" id="3"/>
             </connections>
@@ -32,7 +32,7 @@
                             <rect key="frame" x="1" y="1" width="114" height="371"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <collectionView selectable="YES" maxNumberOfColumns="1" id="vP2-OY-m1T" customClass="RACollectionViewVideo">
+                                <collectionView selectable="YES" maxNumberOfColumns="1" id="vP2-OY-m1T">
                                     <rect key="frame" x="0.0" y="0.0" width="114" height="371"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="primaryBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>

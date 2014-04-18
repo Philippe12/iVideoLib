@@ -7,7 +7,7 @@
 //
 
 #import "RADocument.h"
-#import "RAConfigVideo.h"
+#import "RAViewConfigVideo.h"
 #import "RAWindowPlayer.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AVKit/AVKit.h>
@@ -28,6 +28,16 @@
     // Override returning the nib file name of the document
     // If you need to use a subclass of NSWindowController or if your document supports multiple NSWindowControllers, you should remove this method and override -makeWindowControllers instead.
     return @"RADocument";
+}
+
+- (void)awakeFromNib {
+    [_sidebarOutlineView setFloatsGroupRows:NO];
+    [NSAnimationContext beginGrouping];
+    [[NSAnimationContext currentContext] setDuration:10];
+    [_sidebarOutlineView expandItem:nil expandChildren:NO];
+    [NSAnimationContext endGrouping];
+    [_sidebarOutlineView setDoubleAction:@selector(doubleClickInTableView:)];
+    [self performSelector:@selector(reloadData) withObject:nil afterDelay:0];
 }
 
 - (void)windowControllerDidLoadNib:(NSWindowController *)aController
@@ -66,53 +76,70 @@
     return result;
 }
 
-- (void)reloadData {
-    NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
-    [_ArrayVideo setSortDescriptors:[NSArray arrayWithObject:sort]];
-}
-
-- (IBAction)ConfigVideo:(id)sender {
-    id sel = [[_ListeVideo itemAtIndex:[[_ListeVideo selectionIndexes] firstIndex]] representedObject];
-    if( sel == nil )
-        return;
-    
-    id wnd = [RAConfigVideo alloc];
-    if( wnd == nil )
-        return;
-    
-    wnd = [wnd initWithManagedObjectContext:self.managedObjectContext :self.managedObjectModel :nil];
-    [wnd setPresistent:sel];
-    [wnd runAsPanel:self.windowForSheet];
-    [self performSelector:@selector(reloadData) withObject:nil afterDelay:0];
-}
-
-- (void)doubleClick:(id)sender {
-    id sel = [[_ListeVideo itemAtIndex:[[_ListeVideo selectionIndexes] firstIndex]] representedObject];
+- (IBAction)doubleClickInTableView:(id)sender {
+    id sel = [[_sidebarOutlineView itemAtRow:[_sidebarOutlineView selectedRow]] representedObject];
     if( sel == nil )
         return;
     
     RAWindowPlayer* wnd = [RAWindowPlayer alloc];
     if( wnd == nil )
         return;
-                           
+    
     wnd = [wnd initWithManagedObjectContext:self.managedObjectContext :self.managedObjectModel :nil];
     [wnd setPresistent:sel];
     [wnd showWindow:self];
-    
+
+    [self performSelector:@selector(reloadData) withObject:nil afterDelay:0];
 }
 
-- (void)simpleClick:(id)sender {
-/*    Video *sel = [[_ListeVideo itemAtIndex:[[_ListeVideo selectionIndexes] firstIndex]] representedObject];
+- (BOOL)outlineView:(NSOutlineView *)outlineView isGroupItem:(id)item {
+    if([outlineView parentForItem:item] == nil)
+        return YES;
+    return NO;
+}
+
+- (BOOL)outlineView:(NSOutlineView *)outlineView shouldSelectItem:(id)item{
+    return ([[item representedObject] class] == [Video class]);
+}
+
+- (NSView *)outlineView:(NSOutlineView *)outlineView viewForTableColumn:(NSTableColumn *)tableColumn item:(id)item  {
+    NSTableCellView *result = [outlineView makeViewWithIdentifier:@"MyCell" owner:self];
+    [result setObjectValue:[item representedObject]];
+    return result;
+}
+
+- (void)_setContentViewToName:(id)item {
+    if (_currentContentViewController) {
+        [[_currentContentViewController view] removeFromSuperview];
+    }
     
-    if (sel) {
-        if( sel.url != nil )
-        {
-            NSURL *url = [NSURL URLWithString:sel.url];
-            self.PlayerView.player = nil;
-            AVPlayer *player = [AVPlayer playerWithURL:url];
-            self.PlayerView.player = player;
-        }
-    }*/
+    id ptr = [RAViewConfigVideo alloc]; // Retained
+    if (ptr == nil) {
+        return;
+    }
+    ptr = [ptr initWithManagedObjectContext:self.managedObjectContext :self.managedObjectModel :nil];
+    [ptr setPresistent:item];
+    _currentContentViewController = ptr;
+    
+    NSView *view = [_currentContentViewController view];
+    view.frame = _mainContentView.bounds;
+    [view setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
+    [_mainContentView addSubview:view];
+}
+
+- (void)outlineViewSelectionDidChange:(NSNotification *)notification {
+    if ([_sidebarOutlineView selectedRow] != -1) {
+        id item = [[_sidebarOutlineView itemAtRow:[_sidebarOutlineView selectedRow]] representedObject];
+        [self _setContentViewToName:item];
+    }
+}
+
+- (void)reloadData {
+    NSSortDescriptor *sortname = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    NSSortDescriptor *sortposition = [[NSSortDescriptor alloc] initWithKey:@"position" ascending:YES];
+    [_VideoTree setSortDescriptors:[NSArray arrayWithObjects: sortname, sortposition, nil]];
+    [_sidebarOutlineView invalidateIntrinsicContentSize];
+    [_sidebarOutlineView reloadData];
 }
 
 @end

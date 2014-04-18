@@ -10,7 +10,6 @@
 #import "Video.h"
 #import <AVKit/AVKit.h>
 #import "RAPanelController.h"
-#import "RACollectionViewVideo.h"
 
 @interface RAWindowPlayer : RAPanelController
 {
@@ -19,7 +18,7 @@
     id self_ptr;
 }
 @property (strong) IBOutlet AVPlayerView *PlayerView;
-@property (strong) IBOutlet RACollectionViewVideo *ListeViewChapitre;
+@property (strong) IBOutlet NSCollectionView *ListeViewChapitre;
 
 @property (strong) IBOutlet NSArrayController *ListeChapitre;
 

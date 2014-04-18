@@ -10,17 +10,16 @@
 #import <AVFoundation/AVFoundation.h>
 #import <AVKit/AVKit.h>
 
-@interface RADocument : NSPersistentDocument
+@interface RADocument : NSPersistentDocument <NSOutlineViewDelegate> {
+    //NSViewController *_currentContentViewController;
+    id _currentContentViewController;
+}
 
-- (IBAction)ConfigVideo:(id)sender;
-@property (strong) IBOutlet NSCollectionView *ListeVideo;
-@property (strong) IBOutlet AVPlayerView *PlayerView;
-@property (strong) IBOutlet NSArrayController *ArrayVideo;
+@property (strong) IBOutlet NSOutlineView *sidebarOutlineView;
+@property (strong) IBOutlet NSTreeController *VideoTree;
+@property (strong) IBOutlet NSView *mainContentView;
 
 - (void)reloadData;
-
-- (void)doubleClick:(id)sender;
-- (void)simpleClick:(id)sender;
 
 - (BOOL)configurePersistentStoreCoordinatorForURL:(NSURL*)url
                                            ofType:(NSString*)fileType

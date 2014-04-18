@@ -19,4 +19,10 @@
 @dynamic locking;
 @dynamic have_chapitre;
 
+
+- (id) position
+{
+    return [NSNumber numberWithInt:0];
+}
+
 @end

@@ -19,4 +19,8 @@
 @property (nonatomic, retain) NSNumber * scale;
 @property (nonatomic, retain) Video *for_video;
 
+
+- (id) have_chapitre;
+- (id) locking;
+
 @end

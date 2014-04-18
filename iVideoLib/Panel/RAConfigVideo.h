@@ -9,22 +9,11 @@
 #import "RAPanelController.h"
 #import "Video.h"
 #import <AVKit/AVKit.h>
+#import "../View/RAViewConfigVideo.h"
 
-@interface RAConfigVideo : RAPanelController <NSTableViewDelegate, NSOpenSavePanelDelegate>
-{
-@private
-    Video *mVideo;
-}
+@interface RAConfigVideo : RAPanelController
 
-@property (strong) IBOutlet AVPlayerView *PlayerView;
-@property (strong) IBOutlet NSArrayController *ListeChapitre;
-@property (strong) IBOutlet NSArrayController *ListeVideo;
-
+@property (strong) IBOutlet RAViewConfigVideo *View;
 - (void)setPresistent:(id)val;
-- (void)setUrlToPlayer;
-
-- (IBAction)OpenVideo:(id)sender;
-- (IBAction)GetPicture:(id)sender;
-- (IBAction)AddChapitre:(id)sender;
 
 @end

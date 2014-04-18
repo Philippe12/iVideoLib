@@ -28,4 +28,6 @@
 - (void)addHave_chapitre:(NSSet *)values;
 - (void)removeHave_chapitre:(NSSet *)values;
 
+- (id) position;
+
 @end
