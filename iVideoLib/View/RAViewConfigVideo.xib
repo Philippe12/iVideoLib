@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.AVKitIBPlugin" version="5053"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5053"/>
+        <plugIn identifier="com.apple.AVKitIBPlugin" version="5056"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="RAViewConfigVideo">
@@ -32,7 +32,7 @@
                     <rect key="frame" x="121" y="354" width="49" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="17" id="k6e-8f-1Mw"/>
+                        <constraint firstAttribute="height" constant="17" id="04K-ZT-okZ"/>
                     </constraints>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Name :" id="QSX-u4-axA">
                         <font key="font" metaFont="system"/>
@@ -68,7 +68,7 @@
                     <rect key="frame" x="0.0" y="349" width="42" height="23"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="42" id="Kdn-NU-48L"/>
+                        <constraint firstAttribute="width" constant="42" id="iC6-eW-giy"/>
                     </constraints>
                     <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSFolder" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Ich-LP-3ra">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -103,7 +103,7 @@
                     <rect key="frame" x="299" y="349" width="21" height="23"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="21" id="GA0-Y1-QdT"/>
+                        <constraint firstAttribute="width" constant="21" id="C35-aQ-jDO"/>
                     </constraints>
                     <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="UGB-17-WCI">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -122,7 +122,7 @@
                     <rect key="frame" x="563" y="349" width="21" height="23"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="21" id="dlC-rO-FaE"/>
+                        <constraint firstAttribute="width" constant="21" id="sme-Rp-lVf"/>
                     </constraints>
                     <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSRemoveTemplate" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QDY-Z6-9kS">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -141,7 +141,7 @@
                     <rect key="frame" x="-3" y="376" width="297" height="171"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="165" id="bVN-t9-gJ3"/>
+                        <constraint firstAttribute="height" constant="165" id="gAn-XK-0pC"/>
                     </constraints>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="OXT-Ma-Lec"/>
                     <connections>
@@ -152,10 +152,6 @@
                         </binding>
                     </connections>
                 </imageView>
-                <avPlayerView controlsStyle="inline" translatesAutoresizingMaskIntoConstraints="NO" id="X1I-dJ-0i4">
-                    <rect key="frame" x="0.0" y="0.0" width="584" height="342"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                </avPlayerView>
                 <scrollView autohidesScrollers="YES" horizontalLineScroll="52" horizontalPageScroll="10" verticalLineScroll="52" verticalPageScroll="10" usesPredominantAxisScrolling="NO" verticalScrollElasticity="allowed" translatesAutoresizingMaskIntoConstraints="NO" id="OAH-If-ttI">
                     <rect key="frame" x="299" y="379" width="285" height="165"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -179,14 +175,14 @@
                                         </tableHeaderCell>
                                         <imageCell key="dataCell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" id="FVI-2t-TyU"/>
                                         <connections>
-                                            <binding destination="-2" name="enabled" keyPath="self.mVideo.locking" id="k2u-zs-ZKy">
-                                                <dictionary key="options">
-                                                    <string key="NSValueTransformerName">NSNegateBoolean</string>
-                                                </dictionary>
-                                            </binding>
                                             <binding destination="9KJ-QY-InS" name="value" keyPath="arrangedObjects.photo" id="LeI-YS-cUk">
                                                 <dictionary key="options">
                                                     <string key="NSValueTransformerName">RAImageTranformer</string>
+                                                </dictionary>
+                                            </binding>
+                                            <binding destination="-2" name="enabled" keyPath="self.mVideo.locking" id="k2u-zs-ZKy">
+                                                <dictionary key="options">
+                                                    <string key="NSValueTransformerName">NSNegateBoolean</string>
                                                 </dictionary>
                                             </binding>
                                         </connections>
@@ -204,12 +200,12 @@
                                         </textFieldCell>
                                         <tableColumnResizingMask key="resizingMask" resizeWithTable="YES"/>
                                         <connections>
+                                            <binding destination="9KJ-QY-InS" name="value" keyPath="arrangedObjects.name" id="ipj-n0-iDP"/>
                                             <binding destination="-2" name="enabled" keyPath="self.mVideo.locking" id="ZXv-eA-2uJ">
                                                 <dictionary key="options">
                                                     <string key="NSValueTransformerName">NSNegateBoolean</string>
                                                 </dictionary>
                                             </binding>
-                                            <binding destination="9KJ-QY-InS" name="value" keyPath="arrangedObjects.name" id="ipj-n0-iDP"/>
                                         </connections>
                                     </tableColumn>
                                 </tableColumns>
@@ -230,8 +226,8 @@
                     <rect key="frame" x="0.0" y="554" width="23" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="23" id="05Y-mQ-ELf"/>
-                        <constraint firstAttribute="height" constant="23" id="MgR-2C-mpA"/>
+                        <constraint firstAttribute="width" constant="23" id="PDj-7V-Icn"/>
+                        <constraint firstAttribute="height" constant="23" id="tHk-8t-KnF"/>
                     </constraints>
                     <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSLockUnlockedTemplate" imagePosition="overlaps" alignment="center" alternateImage="NSLockLockedTemplate" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wLf-ue-6cy">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -241,48 +237,79 @@
                         <binding destination="-2" name="value" keyPath="self.mVideo.locking" id="LFW-ba-uJh"/>
                     </connections>
                 </button>
+                <tabView translatesAutoresizingMaskIntoConstraints="NO" id="XDA-Hx-Wse">
+                    <rect key="frame" x="-7" y="-10" width="598" height="358"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <font key="font" metaFont="system"/>
+                    <tabViewItems>
+                        <tabViewItem label="Video" identifier="1" id="0nL-5l-hvV">
+                            <view key="view" id="L10-yz-ZeM">
+                                <rect key="frame" x="10" y="33" width="578" height="312"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <avPlayerView controlsStyle="inline" translatesAutoresizingMaskIntoConstraints="NO" id="X1I-dJ-0i4">
+                                        <rect key="frame" x="17" y="17" width="544" height="292"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    </avPlayerView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="X1I-dJ-0i4" secondAttribute="bottom" constant="17" id="USA-PZ-Bwb"/>
+                                    <constraint firstItem="X1I-dJ-0i4" firstAttribute="leading" secondItem="L10-yz-ZeM" secondAttribute="leading" constant="17" id="aiM-8u-wjU"/>
+                                    <constraint firstItem="X1I-dJ-0i4" firstAttribute="top" secondItem="L10-yz-ZeM" secondAttribute="top" constant="3" id="liK-hn-Jhh"/>
+                                    <constraint firstAttribute="trailing" secondItem="X1I-dJ-0i4" secondAttribute="trailing" constant="17" id="oUL-kq-xtS"/>
+                                </constraints>
+                            </view>
+                        </tabViewItem>
+                        <tabViewItem label="Thumbs" identifier="2" id="D3d-Fr-imS">
+                            <view key="view" id="xnL-zt-Wkw">
+                                <rect key="frame" x="10" y="33" width="578" height="312"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </view>
+                        </tabViewItem>
+                    </tabViewItems>
+                </tabView>
             </subviews>
             <constraints>
-                <constraint firstItem="gE3-yr-Zub" firstAttribute="leading" secondItem="iLK-Yx-LBU" secondAttribute="trailing" constant="81" id="0Ep-uk-ZhL"/>
-                <constraint firstItem="iLK-Yx-LBU" firstAttribute="top" secondItem="lvN-EM-Mkh" secondAttribute="bottom" constant="8" symbolic="YES" id="2L9-Uf-ow6"/>
-                <constraint firstItem="pKd-dE-Y5p" firstAttribute="trailing" secondItem="X1I-dJ-0i4" secondAttribute="trailing" id="2wX-Wa-zyY"/>
-                <constraint firstItem="JuT-ZQ-nyf" firstAttribute="top" secondItem="9UV-bK-Aju" secondAttribute="top" id="8qI-0X-kzD"/>
-                <constraint firstItem="UvO-Do-Lyl" firstAttribute="leading" secondItem="TqU-xS-26B" secondAttribute="trailing" constant="8" symbolic="YES" id="EZX-uu-B3a"/>
-                <constraint firstItem="X1I-dJ-0i4" firstAttribute="top" secondItem="gE3-yr-Zub" secondAttribute="bottom" constant="12" id="G7p-Kr-c3V"/>
-                <constraint firstItem="gE3-yr-Zub" firstAttribute="top" secondItem="lvN-EM-Mkh" secondAttribute="bottom" constant="8" symbolic="YES" id="GeA-mt-0Hz"/>
-                <constraint firstItem="OAH-If-ttI" firstAttribute="leading" secondItem="lvN-EM-Mkh" secondAttribute="trailing" constant="8" symbolic="YES" id="J97-jG-W60"/>
-                <constraint firstItem="beU-fZ-Zmr" firstAttribute="leading" secondItem="lvN-EM-Mkh" secondAttribute="leading" id="KGK-he-SEm"/>
-                <constraint firstItem="lvN-EM-Mkh" firstAttribute="centerX" secondItem="gE3-yr-Zub" secondAttribute="centerX" id="OLC-Zs-JTz"/>
-                <constraint firstItem="JuT-ZQ-nyf" firstAttribute="bottom" secondItem="beU-fZ-Zmr" secondAttribute="bottom" id="OgJ-an-gku"/>
-                <constraint firstItem="OAH-If-ttI" firstAttribute="trailing" secondItem="9UV-bK-Aju" secondAttribute="trailing" id="OhB-i5-2Jx"/>
-                <constraint firstItem="OAH-If-ttI" firstAttribute="trailing" secondItem="pKd-dE-Y5p" secondAttribute="trailing" id="Ok1-Lc-xa3"/>
-                <constraint firstItem="UvO-Do-Lyl" firstAttribute="top" secondItem="OAH-If-ttI" secondAttribute="bottom" constant="8" symbolic="YES" id="P9h-6D-ycU"/>
-                <constraint firstAttribute="trailing" secondItem="pKd-dE-Y5p" secondAttribute="trailing" id="Pic-Hp-HQn"/>
-                <constraint firstItem="lvN-EM-Mkh" firstAttribute="top" secondItem="OAH-If-ttI" secondAttribute="top" id="Poe-Pe-uH5"/>
-                <constraint firstItem="JuT-ZQ-nyf" firstAttribute="leading" secondItem="beU-fZ-Zmr" secondAttribute="trailing" constant="8" symbolic="YES" id="RJs-C6-L21"/>
-                <constraint firstAttribute="bottom" secondItem="X1I-dJ-0i4" secondAttribute="bottom" id="Sz6-uu-a6A"/>
-                <constraint firstItem="JuT-ZQ-nyf" firstAttribute="top" secondItem="beU-fZ-Zmr" secondAttribute="top" id="T7h-Bz-jqf"/>
-                <constraint firstItem="UvO-Do-Lyl" firstAttribute="leading" secondItem="OAH-If-ttI" secondAttribute="leading" id="Uh4-XA-LAf"/>
-                <constraint firstItem="9UV-bK-Aju" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="XVs-VL-K9H"/>
-                <constraint firstItem="lvN-EM-Mkh" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="ZK5-RJ-LNH"/>
-                <constraint firstItem="iLK-Yx-LBU" firstAttribute="leading" secondItem="lvN-EM-Mkh" secondAttribute="leading" id="aqm-Na-WIT"/>
-                <constraint firstItem="UvO-Do-Lyl" firstAttribute="top" secondItem="TqU-xS-26B" secondAttribute="top" id="ftw-SJ-zYj"/>
-                <constraint firstItem="9UV-bK-Aju" firstAttribute="baseline" secondItem="beU-fZ-Zmr" secondAttribute="baseline" id="g9f-AU-ntN"/>
-                <constraint firstItem="TqU-xS-26B" firstAttribute="top" secondItem="lvN-EM-Mkh" secondAttribute="bottom" constant="8" symbolic="YES" id="iHc-gY-Fcu"/>
-                <constraint firstItem="lvN-EM-Mkh" firstAttribute="top" secondItem="beU-fZ-Zmr" secondAttribute="bottom" constant="11" id="iq4-bK-p5q"/>
-                <constraint firstItem="X1I-dJ-0i4" firstAttribute="top" secondItem="TqU-xS-26B" secondAttribute="bottom" constant="8" symbolic="YES" id="k1f-yV-Vcd"/>
-                <constraint firstItem="UvO-Do-Lyl" firstAttribute="baseline" secondItem="pKd-dE-Y5p" secondAttribute="baseline" id="kOe-dl-y1U"/>
-                <constraint firstItem="X1I-dJ-0i4" firstAttribute="top" secondItem="iLK-Yx-LBU" secondAttribute="bottom" constant="8" symbolic="YES" id="mch-lJ-oVi"/>
-                <constraint firstItem="9UV-bK-Aju" firstAttribute="leading" secondItem="JuT-ZQ-nyf" secondAttribute="trailing" constant="8" symbolic="YES" id="tWT-24-o0W"/>
-                <constraint firstItem="TqU-xS-26B" firstAttribute="baseline" secondItem="UvO-Do-Lyl" secondAttribute="baseline" id="vEo-nR-LMq"/>
-                <constraint firstItem="iLK-Yx-LBU" firstAttribute="leading" secondItem="X1I-dJ-0i4" secondAttribute="leading" id="xDB-Kb-HZm"/>
-                <constraint firstItem="pKd-dE-Y5p" firstAttribute="top" secondItem="OAH-If-ttI" secondAttribute="bottom" constant="8" symbolic="YES" id="zrA-SH-GjW"/>
+                <constraint firstAttribute="trailing" secondItem="pKd-dE-Y5p" secondAttribute="trailing" id="4MV-Eb-aQU"/>
+                <constraint firstItem="lvN-EM-Mkh" firstAttribute="centerX" secondItem="gE3-yr-Zub" secondAttribute="centerX" id="5MX-0I-4Ge"/>
+                <constraint firstItem="XDA-Hx-Wse" firstAttribute="trailing" secondItem="pKd-dE-Y5p" secondAttribute="trailing" id="6YI-TO-yfP"/>
+                <constraint firstItem="JuT-ZQ-nyf" firstAttribute="top" secondItem="beU-fZ-Zmr" secondAttribute="top" id="8Xs-Df-dXJ"/>
+                <constraint firstItem="pKd-dE-Y5p" firstAttribute="top" secondItem="OAH-If-ttI" secondAttribute="bottom" constant="8" symbolic="YES" id="ARF-SQ-djZ"/>
+                <constraint firstItem="UvO-Do-Lyl" firstAttribute="leading" secondItem="TqU-xS-26B" secondAttribute="trailing" constant="8" symbolic="YES" id="CuN-s8-pbS"/>
+                <constraint firstItem="9UV-bK-Aju" firstAttribute="baseline" secondItem="beU-fZ-Zmr" secondAttribute="baseline" id="FZY-lD-MEB"/>
+                <constraint firstItem="iLK-Yx-LBU" firstAttribute="top" secondItem="lvN-EM-Mkh" secondAttribute="bottom" constant="8" symbolic="YES" id="GIy-xG-TfX"/>
+                <constraint firstItem="UvO-Do-Lyl" firstAttribute="top" secondItem="TqU-xS-26B" secondAttribute="top" id="GNj-AY-vFz"/>
+                <constraint firstItem="OAH-If-ttI" firstAttribute="leading" secondItem="UvO-Do-Lyl" secondAttribute="leading" id="JIZ-jz-LCY"/>
+                <constraint firstItem="TqU-xS-26B" firstAttribute="baseline" secondItem="UvO-Do-Lyl" secondAttribute="baseline" id="K3o-IB-PXk"/>
+                <constraint firstItem="XDA-Hx-Wse" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="N7K-FY-OOs"/>
+                <constraint firstItem="TqU-xS-26B" firstAttribute="top" secondItem="lvN-EM-Mkh" secondAttribute="bottom" constant="8" symbolic="YES" id="Oba-yv-n0l"/>
+                <constraint firstItem="UvO-Do-Lyl" firstAttribute="top" secondItem="OAH-If-ttI" secondAttribute="bottom" constant="8" symbolic="YES" id="Q2j-DP-23X"/>
+                <constraint firstItem="OAH-If-ttI" firstAttribute="leading" secondItem="lvN-EM-Mkh" secondAttribute="trailing" constant="8" symbolic="YES" id="QTC-fd-S8v"/>
+                <constraint firstItem="XDA-Hx-Wse" firstAttribute="top" secondItem="gE3-yr-Zub" secondAttribute="bottom" constant="12" id="Tub-b9-kwC"/>
+                <constraint firstItem="beU-fZ-Zmr" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="X3X-vl-PSo"/>
+                <constraint firstItem="XDA-Hx-Wse" firstAttribute="leading" secondItem="iLK-Yx-LBU" secondAttribute="leading" id="Xfd-GU-Kf3"/>
+                <constraint firstItem="lvN-EM-Mkh" firstAttribute="top" secondItem="beU-fZ-Zmr" secondAttribute="bottom" constant="11" id="Zej-FN-Mv2"/>
+                <constraint firstItem="beU-fZ-Zmr" firstAttribute="bottom" secondItem="JuT-ZQ-nyf" secondAttribute="bottom" id="bXz-Sy-v21"/>
+                <constraint firstItem="pKd-dE-Y5p" firstAttribute="trailing" secondItem="OAH-If-ttI" secondAttribute="trailing" id="dPH-D3-6o6"/>
+                <constraint firstItem="lvN-EM-Mkh" firstAttribute="top" secondItem="OAH-If-ttI" secondAttribute="top" id="dXs-yS-s7W"/>
+                <constraint firstItem="JuT-ZQ-nyf" firstAttribute="leading" secondItem="beU-fZ-Zmr" secondAttribute="trailing" constant="8" symbolic="YES" id="e3q-ru-Htc"/>
+                <constraint firstItem="gE3-yr-Zub" firstAttribute="leading" secondItem="iLK-Yx-LBU" secondAttribute="trailing" constant="81" id="gHS-t4-6RH"/>
+                <constraint firstItem="XDA-Hx-Wse" firstAttribute="top" secondItem="iLK-Yx-LBU" secondAttribute="bottom" constant="8" symbolic="YES" id="gOk-Hf-2fI"/>
+                <constraint firstItem="9UV-bK-Aju" firstAttribute="leading" secondItem="JuT-ZQ-nyf" secondAttribute="trailing" constant="8" symbolic="YES" id="gaP-j9-AmR"/>
+                <constraint firstItem="OAH-If-ttI" firstAttribute="trailing" secondItem="9UV-bK-Aju" secondAttribute="trailing" id="h0V-ve-cD7"/>
+                <constraint firstItem="XDA-Hx-Wse" firstAttribute="top" secondItem="TqU-xS-26B" secondAttribute="bottom" constant="8" symbolic="YES" id="mrc-22-0Q0"/>
+                <constraint firstItem="UvO-Do-Lyl" firstAttribute="baseline" secondItem="pKd-dE-Y5p" secondAttribute="baseline" id="nsy-by-YyC"/>
+                <constraint firstAttribute="bottom" secondItem="XDA-Hx-Wse" secondAttribute="bottom" id="ogY-RO-wiI"/>
+                <constraint firstItem="lvN-EM-Mkh" firstAttribute="leading" secondItem="beU-fZ-Zmr" secondAttribute="leading" id="pG4-Av-2mS"/>
+                <constraint firstItem="gE3-yr-Zub" firstAttribute="top" secondItem="lvN-EM-Mkh" secondAttribute="bottom" constant="8" symbolic="YES" id="rPI-IH-9BO"/>
+                <constraint firstItem="JuT-ZQ-nyf" firstAttribute="top" secondItem="9UV-bK-Aju" secondAttribute="top" id="s68-Nu-uux"/>
+                <constraint firstItem="lvN-EM-Mkh" firstAttribute="leading" secondItem="iLK-Yx-LBU" secondAttribute="leading" id="xBy-Ew-EUG"/>
             </constraints>
         </customView>
         <arrayController mode="entity" entityName="Chapitre" automaticallyPreparesContent="YES" automaticallyRearrangesObjects="YES" id="9KJ-QY-InS" userLabel="Chapitre">
             <connections>
-                <binding destination="-2" name="contentSet" keyPath="self.mVideo.have_chapitre" id="BdD-fj-jR7"/>
                 <binding destination="-2" name="managedObjectContext" keyPath="managedObjectContext" id="9bX-6h-d3t"/>
+                <binding destination="-2" name="contentSet" keyPath="self.mVideo.have_chapitre" id="BdD-fj-jR7"/>
             </connections>
         </arrayController>
         <arrayController mode="entity" entityName="Video" automaticallyPreparesContent="YES" automaticallyRearrangesObjects="YES" id="LFi-dx-sRN" userLabel="Video">

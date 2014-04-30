@@ -34,15 +34,6 @@
     return self;
 }
 
-- (void)windowDidLoad
-{
- //   [super ];
-    
-    // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
-    [self setUrlToPlayer];
-    [self performSelector:@selector(reloadData) withObject:nil afterDelay:0];
-}
-
 - (void)setPresistent:(id)val
 {
     mVideo = val;
@@ -51,11 +42,11 @@
 }
 
 - (void)setUrlToPlayer {
+    self.PlayerView.player = nil;
     if (mVideo) {
         if( mVideo.url != nil )
         {
             NSURL *url = [NSURL URLWithString:mVideo.url];
-            self.PlayerView.player = nil;
             _player = [AVPlayer playerWithURL:url];
             self.PlayerView.player = _player;
         }
@@ -198,6 +189,7 @@ NSImage* cgImageToNSImage(CGImageRef image)
 - (void)reloadData {
     NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"position" ascending:YES];
     [_ListeChapitre setSortDescriptors:[NSArray arrayWithObject:sort]];
+    [self setUrlToPlayer];
 }
 
 
