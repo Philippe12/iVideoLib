@@ -96,7 +96,7 @@
 -(NSArrayController *) creatArray: (NSString *) entity {
     NSArrayController *ptr = [[NSArrayController alloc] initWithContent:nil];
     [ptr setManagedObjectContext:[self managedObjectContext]];
-    [ptr setEntityName:@"Chapitre"];
+    [ptr setEntityName:entity];
     [ptr prepareContent];
     NSError *error;
     if ([ptr fetchWithRequest:nil merge:YES error:&error] == YES) {
