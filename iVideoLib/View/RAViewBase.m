@@ -27,6 +27,19 @@
     return nil;
 }
 
+- (void) setCallBack:(SEL)fonc {
+    callBack_fonc = fonc;
+}
+
+- (void) runCallback:(int) delay {
+    @try {
+        [self performSelector:callBack_fonc withObject:nil afterDelay:delay];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"Can't run callback %@", exception);
+    }
+}
+
 - (id)initWithManagedObjectContext:(NSManagedObjectContext *)inMoc : (NSManagedObjectModel*) inMom : (NSPersistentStoreCoordinator *)inPsc
 {
 	self = [self initLoc];

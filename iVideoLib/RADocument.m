@@ -119,6 +119,7 @@
     }
     ptr = [ptr initWithManagedObjectContext:self.managedObjectContext :self.managedObjectModel :nil];
     [ptr setPresistent:item];
+    [ptr setCallBack:@selector(reloadData)];
     _currentContentViewController = ptr;
     
     NSView *view = [_currentContentViewController view];

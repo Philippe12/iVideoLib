@@ -175,6 +175,7 @@ NSImage* cgImageToNSImage(CGImageRef image)
         chapitre.position = [[NSNumber alloc] initWithDouble: _player.currentItem.currentTime.value];
         chapitre.scale = [[NSNumber alloc] initWithDouble: _player.currentItem.currentTime.timescale];
         [mVideo addHave_chapitreObject:chapitre];
+        [self runCallback:0];
     }
 }
 
@@ -184,6 +185,7 @@ NSImage* cgImageToNSImage(CGImageRef image)
         Chapitre *chap = [self getCurrent:_ListeChapitre];
         if (chap) {
             [ptr removeObject:chap];
+            [self runCallback:0];
         }
     }
 
