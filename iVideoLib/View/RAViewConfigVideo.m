@@ -132,10 +132,15 @@ NSImage* cgImageToNSImage(CGImageRef image)
     // Setting a maximum size is not necessary for this code to
     // successfully get a screenshot, but it was useful for my project.
     generator.maximumSize = CGSizeMake(1000,1000);
+    generator.appliesPreferredTrackTransform=TRUE;
+    generator.apertureMode = AVAssetImageGeneratorApertureModeCleanAperture;
+    generator.requestedTimeToleranceBefore = kCMTimeZero;
+    generator.requestedTimeToleranceAfter = kCMTimeZero;
     
     CGImageRef cgIm = [generator copyCGImageAtTime:player.currentItem.currentTime
                                         actualTime:&actualTime
                                              error:&error];
+    
     //NSImage *image = [[NSImage alloc] initWithCGImage:cgIm size:(NSSize){ 50.0, 50.0 }];
     NSImage *image = cgImageToNSImage(cgIm);
     CFRelease(cgIm);
