@@ -546,6 +546,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iVideoLib/iVideoLib-Prefix.pch";
 				INFOPLIST_FILE = "iVideoLib/iVideoLib-Info.plist";
@@ -617,7 +618,7 @@
 				2640DBAF187EEDDA003EED97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		2640DBB0187EEDDA003EED97 /* Build configuration list for PBXNativeTarget "iVideoLib" */ = {
 			isa = XCConfigurationList;
@@ -626,7 +627,7 @@
 				2640DBB2187EEDDA003EED97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		2640DBB3187EEDDA003EED97 /* Build configuration list for PBXNativeTarget "iVideoLibTests" */ = {
 			isa = XCConfigurationList;
@@ -635,7 +636,7 @@
 				2640DBB5187EEDDA003EED97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 

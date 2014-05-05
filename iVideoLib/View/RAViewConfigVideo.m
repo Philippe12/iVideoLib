@@ -166,17 +166,28 @@ NSImage* cgImageToNSImage(CGImageRef image)
 }
 
 - (IBAction)AddChapitre:(id)sender {
-    NSArrayController *ptr = [[NSArrayController alloc] init];
-    [ptr setManagedObjectContext:self.managedObjectContext];
-    [ptr setEntityName:@"Chapitre"];
-    [ptr prepareContent];
-    
-    Chapitre *chapitre = [ptr newObject];
-    chapitre.name = @"new chapitre";
-    chapitre.photo = [self screenshotFromPlayer:_player];
-    chapitre.position = [[NSNumber alloc] initWithDouble: _player.currentItem.currentTime.value];
-    chapitre.scale = [[NSNumber alloc] initWithDouble: _player.currentItem.currentTime.timescale];
-    [mVideo addHave_chapitreObject:chapitre];
+    NSArrayController *ptr = [self creatArray:@"Chapitre"];
+
+    if(ptr) {
+        Chapitre *chapitre = [ptr newObject];
+        chapitre.name = @"new chapitre";
+        chapitre.photo = [self screenshotFromPlayer:_player];
+        chapitre.position = [[NSNumber alloc] initWithDouble: _player.currentItem.currentTime.value];
+        chapitre.scale = [[NSNumber alloc] initWithDouble: _player.currentItem.currentTime.timescale];
+        [mVideo addHave_chapitreObject:chapitre];
+    }
+}
+
+- (IBAction)RemoveChapitre:(id)sender {
+    NSArrayController *ptr = [self creatArray:@"Chapitre"];
+    if (ptr) {
+        Chapitre *chap = [self getCurrent:_ListeChapitre];
+        if (chap) {
+            [ptr removeObject:chap];
+        }
+    }
+
+    [self performSelector:@selector(reloadData) withObject:nil afterDelay:0];
 }
 
 -(void)tableViewSelectionDidChange:(NSNotification *)notification{

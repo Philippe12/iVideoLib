@@ -12,6 +12,7 @@
     NSManagedObjectContext *_moc;
     NSManagedObjectModel *_mom;
     NSPersistentStoreCoordinator *_psc;
+    SEL callBack;
 }
 
 - (id) initLoc;
@@ -26,5 +27,6 @@
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator;
 
 -(id)getCurrent: (NSArrayController *) array;
+-(NSArrayController *) creatArray: (NSString *) entity;
 
 @end

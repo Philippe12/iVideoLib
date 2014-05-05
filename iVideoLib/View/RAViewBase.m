@@ -27,7 +27,6 @@
     return nil;
 }
 
-
 - (id)initWithManagedObjectContext:(NSManagedObjectContext *)inMoc : (NSManagedObjectModel*) inMom : (NSPersistentStoreCoordinator *)inPsc
 {
 	self = [self initLoc];
@@ -36,6 +35,7 @@
         [self setManagedObjectContext:inMoc];
         [self setManagedObjectModel:inMom];
         [self setPersistentStoreCoordinator:inPsc];
+     //   [self.managedObjectContext setMergePolicy:NSMergeByPropertyStoreTrumpMergePolicy];
     }
     
 	return self;
@@ -78,6 +78,18 @@
     } else {
         return nil;
     }
+}
+
+-(NSArrayController *) creatArray: (NSString *) entity {
+    NSArrayController *ptr = [[NSArrayController alloc] initWithContent:nil];
+    [ptr setManagedObjectContext:[self managedObjectContext]];
+    [ptr setEntityName:@"Chapitre"];
+    [ptr prepareContent];
+    NSError *error;
+    if ([ptr fetchWithRequest:nil merge:YES error:&error] == YES) {
+        return ptr;
+    }
+    return nil;
 }
 
 @end

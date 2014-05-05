@@ -129,7 +129,7 @@
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                     <connections>
-                        <action selector="remove:" target="9KJ-QY-InS" id="6at-uc-nSn"/>
+                        <action selector="RemoveChapitre:" target="-2" id="nMQ-IN-Q6R"/>
                         <binding destination="-2" name="enabled" keyPath="self.mVideo.locking" id="on3-kf-qPg">
                             <dictionary key="options">
                                 <string key="NSValueTransformerName">NSNegateBoolean</string>
@@ -309,7 +309,7 @@
                 <constraint firstItem="lvN-EM-Mkh" firstAttribute="leading" secondItem="iLK-Yx-LBU" secondAttribute="leading" id="xBy-Ew-EUG"/>
             </constraints>
         </customView>
-        <arrayController mode="entity" entityName="Chapitre" automaticallyPreparesContent="YES" automaticallyRearrangesObjects="YES" id="9KJ-QY-InS" userLabel="Chapitre">
+        <arrayController mode="entity" entityName="Chapitre" automaticallyPreparesContent="YES" preservesSelection="NO" clearsFilterPredicateOnInsertion="NO" automaticallyRearrangesObjects="YES" id="9KJ-QY-InS" userLabel="Chapitre">
             <connections>
                 <binding destination="-2" name="managedObjectContext" keyPath="managedObjectContext" id="9bX-6h-d3t"/>
                 <binding destination="-2" name="contentSet" keyPath="self.mVideo.have_chapitre" id="BdD-fj-jR7"/>

@@ -11,8 +11,7 @@
 #import <AVKit/AVKit.h>
 
 @interface RADocument : NSPersistentDocument <NSOutlineViewDelegate> {
-    //NSViewController *_currentContentViewController;
-    id _currentContentViewController;
+    NSViewController *_currentContentViewController;
 }
 
 @property (strong) IBOutlet NSOutlineView *sidebarOutlineView;

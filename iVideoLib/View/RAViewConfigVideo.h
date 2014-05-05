@@ -17,6 +17,8 @@
     Video *mVideo;
 }
 
+- (void)reloadData;
+
 @property (strong) IBOutlet AVPlayerView *PlayerView;
 @property (strong) IBOutlet NSArrayController *ListeChapitre;
 @property (strong) IBOutlet NSArrayController *ListeVideo;
@@ -27,5 +29,6 @@
 - (IBAction)OpenVideo:(id)sender;
 - (IBAction)GetPicture:(id)sender;
 - (IBAction)AddChapitre:(id)sender;
+- (IBAction)RemoveChapitre:(id)sender;
 
 @end
