@@ -136,7 +136,7 @@
 }
 
 - (void)reloadData {
-    NSSortDescriptor *sortname = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    NSSortDescriptor *sortname = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
     NSSortDescriptor *sortposition = [[NSSortDescriptor alloc] initWithKey:@"position" ascending:YES];
     [_VideoTree setSortDescriptors:[NSArray arrayWithObjects: sortname, sortposition, nil]];
     [_sidebarOutlineView invalidateIntrinsicContentSize];
