@@ -15,6 +15,7 @@
 @interface RAViewConfigVideo : RAViewBase <NSTableViewDelegate, NSOpenSavePanelDelegate>{
 @private
     Video *mVideo;
+    NSURL *loadingVideo;
 }
 
 - (void)reloadData;

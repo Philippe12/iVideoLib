@@ -37,21 +37,26 @@
 - (void)setPresistent:(id)val
 {
     mVideo = val;
-    [self setUrlToPlayer];
     [self performSelector:@selector(reloadData) withObject:nil afterDelay:0];
 }
 
 - (void)setUrlToPlayer {
-    self.PlayerView.player = nil;
+    bool erasevideo = true;
     if (mVideo) {
         if( mVideo.url != nil )
         {
+            erasevideo = false;
             NSURL *url = [NSURL URLWithString:mVideo.url];
-            _player = [AVPlayer playerWithURL:url];
-            self.PlayerView.player = _player;
+            if( ![url isEqualTo:loadingVideo]) {
+                loadingVideo = url;
+                _player = [AVPlayer playerWithURL:url];
+                self.PlayerView.player = _player;
+            }
         }
     }
-    
+    if (erasevideo) {
+        self.PlayerView.player = nil;
+    }
 }
 
 - (void) GetDuration {
@@ -180,6 +185,7 @@ NSImage* cgImageToNSImage(CGImageRef image)
         chapitre.position = [[NSNumber alloc] initWithDouble: _player.currentItem.currentTime.value];
         chapitre.scale = [[NSNumber alloc] initWithDouble: _player.currentItem.currentTime.timescale];
         [mVideo addHave_chapitreObject:chapitre];
+        [_ListeChapitre setSelectedObjects:[NSArray arrayWithObjects:chapitre, nil]];
         [self runCallback:0];
     }
 }
