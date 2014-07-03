@@ -2,10 +2,11 @@
 //  Chapitre.m
 //  iVideoLib
 //
-//  Created by Philippe Fouquet on 09/04/2014.
+//  Created by Philippe Fouquet on 03/07/2014.
 //  Copyright (c) 2014 Philippe Fouquet. All rights reserved.
 //
 
+#import "Chapitre.h"
 #import "Chapitre.h"
 #import "Video.h"
 
@@ -16,17 +17,9 @@
 @dynamic photo;
 @dynamic position;
 @dynamic scale;
+@dynamic locking;
+@dynamic for_chapitre;
 @dynamic for_video;
-
-
-- (id) have_chapitre
-{
-    return nil;
-}
-
-- (id) locking
-{
-    return [NSNumber numberWithInt:-1];
-}
+@dynamic have_chapitre;
 
 @end
