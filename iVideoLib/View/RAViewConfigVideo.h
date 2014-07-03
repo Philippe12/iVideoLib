@@ -12,7 +12,7 @@
 #import <AVKit/AVKit.h>
 
 
-@interface RAViewConfigVideo : RAViewBase <NSTableViewDelegate, NSOpenSavePanelDelegate>{
+@interface RAViewConfigVideo : RAViewBase <NSOutlineViewDelegate, NSOpenSavePanelDelegate>{
 @private
     Video *mVideo;
     NSURL *loadingVideo;
@@ -21,8 +21,9 @@
 - (void)reloadData;
 
 @property (strong) IBOutlet AVPlayerView *PlayerView;
-@property (strong) IBOutlet NSArrayController *ListeChapitre;
 @property (strong) IBOutlet NSArrayController *ListeVideo;
+@property (strong) IBOutlet NSTreeController *ChapitreTree;
+@property (strong) IBOutlet NSOutlineView *Outline;
 
 - (void)setPresistent:(id)val;
 - (void)setUrlToPlayer;

@@ -185,7 +185,7 @@ NSImage* cgImageToNSImage(CGImageRef image)
         chapitre.position = [[NSNumber alloc] initWithDouble: _player.currentItem.currentTime.value];
         chapitre.scale = [[NSNumber alloc] initWithDouble: _player.currentItem.currentTime.timescale];
         [mVideo addHave_chapitreObject:chapitre];
-        [_ListeChapitre setSelectedObjects:[NSArray arrayWithObjects:chapitre, nil]];
+        [_Outline selectAll:(chapitre)];
         [self runCallback:0];
     }
 }
@@ -193,7 +193,9 @@ NSImage* cgImageToNSImage(CGImageRef image)
 - (IBAction)RemoveChapitre:(id)sender {
     NSArrayController *ptr = [self creatArray:@"Chapitre"];
     if (ptr) {
-        Chapitre *chap = [self getCurrent:_ListeChapitre];
+        Chapitre *chap = nil;
+        if ([_Outline selectedRow] != -1)
+            chap = [[_Outline itemAtRow:[_Outline selectedRow]] representedObject];
         if (chap) {
             [ptr removeObject:chap];
             [self runCallback:0];
@@ -203,8 +205,10 @@ NSImage* cgImageToNSImage(CGImageRef image)
     [self performSelector:@selector(reloadData) withObject:nil afterDelay:0];
 }
 
--(void)tableViewSelectionDidChange:(NSNotification *)notification{
-    Chapitre *chap = [self getCurrent:_ListeChapitre];
+- (void)outlineViewSelectionDidChange:(NSNotification *)notification {
+    Chapitre *chap = nil;
+    if ([_Outline selectedRow] != -1)
+        chap = [[_Outline itemAtRow:[_Outline selectedRow]] representedObject];
     if (chap) {
         [_player.currentItem seekToTime:CMTimeMake([chap.position doubleValue], [chap.scale doubleValue]) toleranceBefore:kCMTimeZero toleranceAfter:kCMTimeZero];
     }
@@ -212,7 +216,7 @@ NSImage* cgImageToNSImage(CGImageRef image)
 
 - (void)reloadData {
     NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"position" ascending:YES];
-    [_ListeChapitre setSortDescriptors:[NSArray arrayWithObject:sort]];
+    [_ChapitreTree setSortDescriptors:[NSArray arrayWithObject:sort]];
     [self setUrlToPlayer];
 }
 
