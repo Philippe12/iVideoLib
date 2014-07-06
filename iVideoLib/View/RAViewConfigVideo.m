@@ -175,6 +175,27 @@ NSImage* cgImageToNSImage(CGImageRef image)
     
 }
 
+- (NSIndexPath*)indexPathOfObject:(id)anObject
+{
+    return [self indexPathOfObject:anObject inNodes:[[_ChapitreTree arrangedObjects] childNodes]];
+}
+
+- (NSIndexPath*)indexPathOfObject:(id)anObject inNodes:(NSArray*)nodes
+{
+    for(NSTreeNode* node in nodes)
+    {
+        if([[node representedObject] isEqual:anObject])
+            return [node indexPath];
+        if([[node childNodes] count])
+        {
+            NSIndexPath* path = [self indexPathOfObject:anObject inNodes:[node childNodes]];
+            if(path)
+                return path;
+        }
+    }
+    return nil;
+}
+
 - (IBAction)AddChapitre:(id)sender {
     NSArrayController *ptr = [self creatArray:@"Chapitre"];
 
@@ -185,7 +206,7 @@ NSImage* cgImageToNSImage(CGImageRef image)
         chapitre.position = [[NSNumber alloc] initWithDouble: _player.currentItem.currentTime.value];
         chapitre.scale = [[NSNumber alloc] initWithDouble: _player.currentItem.currentTime.timescale];
         [mVideo addHave_chapitreObject:chapitre];
-        [_Outline selectAll:(chapitre)];
+        [_ChapitreTree setSelectionIndexPath:[self indexPathOfObject:chapitre]];
         [self runCallback:0];
     }
 }
