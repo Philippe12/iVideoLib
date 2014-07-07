@@ -268,6 +268,7 @@
                                                         <binding destination="3v4-7Y-xhD" name="content" keyPath="arrangedObjects" id="vbc-r3-fip"/>
                                                         <binding destination="3v4-7Y-xhD" name="selectionIndexPaths" keyPath="selectionIndexPaths" previousBinding="vbc-r3-fip" id="swW-O4-uNe"/>
                                                         <binding destination="3v4-7Y-xhD" name="sortDescriptors" keyPath="sortDescriptors" previousBinding="swW-O4-uNe" id="dXk-ti-gdh"/>
+                                                        <outlet property="dataSource" destination="-2" id="I2R-Ms-Gto"/>
                                                         <outlet property="delegate" destination="-2" id="K6s-vQ-FPZ"/>
                                                     </connections>
                                                 </outlineView>
@@ -336,8 +337,8 @@
         </arrayController>
         <treeController mode="entity" entityName="Chapitre" automaticallyPreparesContent="YES" childrenKeyPath="have_chapitre" id="3v4-7Y-xhD" userLabel="ChapitreTree">
             <connections>
-                <binding destination="-2" name="contentSet" keyPath="self.mVideo.have_chapitre" id="bXK-82-emr"/>
                 <binding destination="-2" name="managedObjectContext" keyPath="managedObjectContext" id="Z2g-Y0-Z0n"/>
+                <binding destination="-2" name="contentSet" keyPath="self.mVideo.have_chapitre" id="bXK-82-emr"/>
             </connections>
         </treeController>
     </objects>
