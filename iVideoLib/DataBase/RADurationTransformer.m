@@ -31,8 +31,8 @@
     
     // Convert the seconds to hours, minutes and seconds.
     tempHour    = secs / 3600;
-    tempMinute  = secs / 60 - tempHour * 60;
-    tempSecond  = secs - (tempHour * 3600 + tempMinute * 60);
+    tempMinute  = (secs / 60) - (tempHour * 60);
+    tempSecond  = secs - ((tempHour * 3600) + (tempMinute * 60));
     
     hour    = [[NSNumber numberWithInt:tempHour] stringValue];
     minute  = [[NSNumber numberWithInt:tempMinute] stringValue];
