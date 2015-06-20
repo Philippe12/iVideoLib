@@ -2,8 +2,8 @@
 //  Chapitre.m
 //  iVideoLib
 //
-//  Created by Philippe Fouquet on 03/07/2014.
-//  Copyright (c) 2014 Philippe Fouquet. All rights reserved.
+//  Created by Philippe Fouquet on 20/06/2015.
+//  Copyright (c) 2015 Philippe Fouquet. All rights reserved.
 //
 
 #import "Chapitre.h"
@@ -13,11 +13,12 @@
 
 @implementation Chapitre
 
+@dynamic locking;
 @dynamic name;
 @dynamic photo;
 @dynamic position;
 @dynamic scale;
-@dynamic locking;
+@dynamic time;
 @dynamic for_chapitre;
 @dynamic for_video;
 @dynamic have_chapitre;

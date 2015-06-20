@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		261F07421B35CCE900B5F700 /* MigrationV5toV6.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 261F07411B35CCE900B5F700 /* MigrationV5toV6.xcmappingmodel */; };
+		261F07451B35CE7800B5F700 /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 261F07441B35CE7800B5F700 /* Video.m */; };
+		261F07481B35CE7900B5F700 /* Chapitre.m in Sources */ = {isa = PBXBuildFile; fileRef = 261F07471B35CE7900B5F700 /* Chapitre.m */; };
 		2640DB7D187EEDDA003EED97 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2640DB7C187EEDDA003EED97 /* Cocoa.framework */; };
 		2640DB87187EEDDA003EED97 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2640DB85187EEDDA003EED97 /* InfoPlist.strings */; };
 		2640DB89187EEDDA003EED97 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2640DB88187EEDDA003EED97 /* main.m */; };
@@ -36,13 +39,11 @@
 		26C246E418F596ED009229BF /* RAEnabledTranformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C246D918F596ED009229BF /* RAEnabledTranformer.m */; };
 		26C246E518F596ED009229BF /* RAImageTranformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C246DB18F596ED009229BF /* RAImageTranformer.m */; };
 		26C246E618F596ED009229BF /* RALockImageTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C246DD18F596ED009229BF /* RALockImageTransformer.m */; };
-		26C246E718F596ED009229BF /* Video.m in Sources */ = {isa = PBXBuildFile; fileRef = 26C246DF18F596ED009229BF /* Video.m */; };
 		26E57DA918F7D6D200ADE3E4 /* RAViewConfigVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E57DA718F7D6D200ADE3E4 /* RAViewConfigVideo.m */; };
 		26E57DAA18F7D6D200ADE3E4 /* RAViewConfigVideo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26E57DA818F7D6D200ADE3E4 /* RAViewConfigVideo.xib */; };
 		26E57DAE18F7DE5100ADE3E4 /* RAViewBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E57DAC18F7DE5100ADE3E4 /* RAViewBase.m */; };
 		26E57DAF18F7DE5100ADE3E4 /* RAViewBase.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26E57DAD18F7DE5100ADE3E4 /* RAViewBase.xib */; };
 		26E9333D196584D300BA83EE /* MigrationV3toV4.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 26E9333C196584D300BA83EE /* MigrationV3toV4.xcmappingmodel */; };
-		26E93344196585E400BA83EE /* Chapitre.m in Sources */ = {isa = PBXBuildFile; fileRef = 26E93343196585E400BA83EE /* Chapitre.m */; };
 		26E93346196585FC00BA83EE /* MigrationV4toV5.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 26E93345196585FC00BA83EE /* MigrationV4toV5.xcmappingmodel */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		261F07401B35CC6000B5F700 /* RADocument V6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "RADocument V6.xcdatamodel"; sourceTree = "<group>"; };
+		261F07411B35CCE900B5F700 /* MigrationV5toV6.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = MigrationV5toV6.xcmappingmodel; sourceTree = "<group>"; };
+		261F07431B35CE7800B5F700 /* Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Video.h; sourceTree = "<group>"; };
+		261F07441B35CE7800B5F700 /* Video.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Video.m; sourceTree = "<group>"; };
+		261F07461B35CE7900B5F700 /* Chapitre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chapitre.h; sourceTree = "<group>"; };
+		261F07471B35CE7900B5F700 /* Chapitre.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Chapitre.m; sourceTree = "<group>"; };
 		2640DB79187EEDDA003EED97 /* iVideoLib.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iVideoLib.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2640DB7C187EEDDA003EED97 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		2640DB7F187EEDDA003EED97 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -102,8 +109,6 @@
 		26C246DB18F596ED009229BF /* RAImageTranformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAImageTranformer.m; sourceTree = "<group>"; };
 		26C246DC18F596ED009229BF /* RALockImageTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RALockImageTransformer.h; sourceTree = "<group>"; };
 		26C246DD18F596ED009229BF /* RALockImageTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RALockImageTransformer.m; sourceTree = "<group>"; };
-		26C246DE18F596ED009229BF /* Video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Video.h; sourceTree = "<group>"; };
-		26C246DF18F596ED009229BF /* Video.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Video.m; sourceTree = "<group>"; };
 		26CDB6E718EF083C00D23294 /* RADocument V2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "RADocument V2.xcdatamodel"; sourceTree = "<group>"; };
 		26E57DA618F7D6D200ADE3E4 /* RAViewConfigVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAViewConfigVideo.h; sourceTree = "<group>"; };
 		26E57DA718F7D6D200ADE3E4 /* RAViewConfigVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAViewConfigVideo.m; sourceTree = "<group>"; };
@@ -114,8 +119,6 @@
 		26E9333B196582DE00BA83EE /* RADocument V4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "RADocument V4.xcdatamodel"; sourceTree = "<group>"; };
 		26E9333C196584D300BA83EE /* MigrationV3toV4.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = MigrationV3toV4.xcmappingmodel; sourceTree = "<group>"; };
 		26E933411965859700BA83EE /* RADocument V5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "RADocument V5.xcdatamodel"; sourceTree = "<group>"; };
-		26E93342196585E400BA83EE /* Chapitre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chapitre.h; sourceTree = "<group>"; };
-		26E93343196585E400BA83EE /* Chapitre.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Chapitre.m; sourceTree = "<group>"; };
 		26E93345196585FC00BA83EE /* MigrationV4toV5.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = MigrationV4toV5.xcmappingmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -252,8 +255,10 @@
 		26A7DFEF187EF51B00EE15FD /* DataBase */ = {
 			isa = PBXGroup;
 			children = (
-				26E93342196585E400BA83EE /* Chapitre.h */,
-				26E93343196585E400BA83EE /* Chapitre.m */,
+				261F07461B35CE7900B5F700 /* Chapitre.h */,
+				261F07471B35CE7900B5F700 /* Chapitre.m */,
+				261F07431B35CE7800B5F700 /* Video.h */,
+				261F07441B35CE7800B5F700 /* Video.m */,
 				26C246D418F596ED009229BF /* MigrationV1toV2.xcmappingmodel */,
 				26C246D518F596ED009229BF /* MigrationV2toV3.xcmappingmodel */,
 				26C246D618F596ED009229BF /* RADurationTransformer.h */,
@@ -264,10 +269,9 @@
 				26C246DB18F596ED009229BF /* RAImageTranformer.m */,
 				26C246DC18F596ED009229BF /* RALockImageTransformer.h */,
 				26C246DD18F596ED009229BF /* RALockImageTransformer.m */,
-				26C246DE18F596ED009229BF /* Video.h */,
-				26C246DF18F596ED009229BF /* Video.m */,
 				26E9333C196584D300BA83EE /* MigrationV3toV4.xcmappingmodel */,
 				26E93345196585FC00BA83EE /* MigrationV4toV5.xcmappingmodel */,
+				261F07411B35CCE900B5F700 /* MigrationV5toV6.xcmappingmodel */,
 			);
 			path = DataBase;
 			sourceTree = "<group>";
@@ -400,15 +404,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				26E57DAE18F7DE5100ADE3E4 /* RAViewBase.m in Sources */,
-				26E93344196585E400BA83EE /* Chapitre.m in Sources */,
 				2640DB89187EEDDA003EED97 /* main.m in Sources */,
 				2640DB90187EEDDA003EED97 /* RADocument.m in Sources */,
 				26E9333D196584D300BA83EE /* MigrationV3toV4.xcmappingmodel in Sources */,
 				26C246E518F596ED009229BF /* RAImageTranformer.m in Sources */,
+				261F07421B35CCE900B5F700 /* MigrationV5toV6.xcmappingmodel in Sources */,
 				26C246E318F596ED009229BF /* RADurationTransformer.m in Sources */,
+				261F07451B35CE7800B5F700 /* Video.m in Sources */,
 				26C246E118F596ED009229BF /* MigrationV1toV2.xcmappingmodel in Sources */,
 				26A7E005187EFA0700EE15FD /* RAConfigVideo.m in Sources */,
-				26C246E718F596ED009229BF /* Video.m in Sources */,
+				261F07481B35CE7900B5F700 /* Chapitre.m in Sources */,
 				26C246E618F596ED009229BF /* RALockImageTransformer.m in Sources */,
 				26E57DA918F7D6D200ADE3E4 /* RAViewConfigVideo.m in Sources */,
 				26C246E418F596ED009229BF /* RAEnabledTranformer.m in Sources */,
@@ -654,13 +659,14 @@
 		2640DB97187EEDDA003EED97 /* RADocument.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				261F07401B35CC6000B5F700 /* RADocument V6.xcdatamodel */,
 				26E933411965859700BA83EE /* RADocument V5.xcdatamodel */,
 				26E9333B196582DE00BA83EE /* RADocument V4.xcdatamodel */,
 				26C246CC18F58F85009229BF /* RADocument V3.xcdatamodel */,
 				26CDB6E718EF083C00D23294 /* RADocument V2.xcdatamodel */,
 				2640DB98187EEDDA003EED97 /* RADocument.xcdatamodel */,
 			);
-			currentVersion = 26E933411965859700BA83EE /* RADocument V5.xcdatamodel */;
+			currentVersion = 261F07401B35CC6000B5F700 /* RADocument V6.xcdatamodel */;
 			path = RADocument.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

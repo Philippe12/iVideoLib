@@ -75,7 +75,7 @@
     [request setEntity:entity];
     
     NSString *value = [url absoluteString];
-    NSString *wildcardedString = [NSString stringWithFormat:@"%@*", value];
+    NSString *wildcardedString = [NSString stringWithFormat:@"%@", value];
     
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"url like %@", wildcardedString];
     [request setPredicate:predicate];
@@ -205,6 +205,8 @@ NSImage* cgImageToNSImage(CGImageRef image)
         chapitre.photo = [self screenshotFromPlayer:_player];
         chapitre.position = [[NSNumber alloc] initWithDouble: _player.currentItem.currentTime.value];
         chapitre.scale = [[NSNumber alloc] initWithDouble: _player.currentItem.currentTime.timescale];
+        chapitre.time = [[NSNumber alloc] initWithDouble:
+                     [chapitre.position doubleValue] / [chapitre.scale doubleValue] ];
         [mVideo addHave_chapitreObject:chapitre];
         [_ChapitreTree setSelectionIndexPath:[self indexPathOfObject:chapitre]];
         [self runCallback:0];
@@ -268,7 +270,7 @@ NSImage* cgImageToNSImage(CGImageRef image)
 
 - (void)reloadData {
     [_Outline registerForDraggedTypes:[NSArray arrayWithObject: @"Event"]];
-    NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"position" ascending:YES];
+    NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"time" ascending:YES];
     [_ChapitreTree setSortDescriptors:[NSArray arrayWithObject:sort]];
     [self setUrlToPlayer];
     [_Outline reloadData];
