@@ -37,6 +37,14 @@
 
     NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"position" ascending:YES];
     [_ListeChapitre setSortDescriptors:[NSArray arrayWithObject:sort]];
+    [Chapitre addObserver:self forKeyPath:@"selectedObjects"
+                  options:NSKeyValueObservingOptionNew
+                  context:nil];
+}
+
+- (IBAction)sliderChange:(id)sender {
+    NSSlider *slide = sender;
+    [_player.currentItem seekToTime:CMTimeMake([slide floatValue], 1) toleranceBefore:kCMTimeZero toleranceAfter:kCMTimeZero];
 }
 
 - (id)initLoc {
@@ -51,6 +59,15 @@
     [self setUrlToPlayer];
 }
 
+- (void) GetDuration {
+    sleep(5); //wait that video are loaded
+    Float64 f = CMTimeGetSeconds(_player.currentItem.duration);
+    [_sliderVideo setMinValue:0.0];
+    [_sliderVideo setMaxValue:f];
+    [_sliderVideo setFloatValue:0.0];
+    [_sliderVideo setEnabled:true];
+}
+
 - (void)setUrlToPlayer {
     if (mVideo) {
         if( mVideo.url != nil )
@@ -59,6 +76,7 @@
             self.PlayerView.player = nil;
             _player = [AVPlayer playerWithURL:url];
             self.PlayerView.player = _player;
+            [self performSelectorInBackground:@selector(GetDuration) withObject:nil];
         }
     }
 }
@@ -71,4 +89,11 @@
     }
 }
 
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context
+{
+    [self simpleClick:nil];
+}
 @end

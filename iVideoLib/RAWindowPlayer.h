@@ -21,6 +21,8 @@
 @property (strong) IBOutlet NSCollectionView *ListeViewChapitre;
 
 @property (strong) IBOutlet NSArrayController *ListeChapitre;
+- (IBAction)sliderChange:(id)sender;
+@property (strong) IBOutlet NSSliderCell *sliderVideo;
 
 - (id)initLoc;
 - (void)setPresistent:(id)val;

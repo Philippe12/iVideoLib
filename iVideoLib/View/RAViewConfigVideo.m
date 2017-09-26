@@ -146,15 +146,17 @@ NSImage* cgImageToNSImage(CGImageRef image)
                                         actualTime:&actualTime
                                              error:&error];
     
-    //NSImage *image = [[NSImage alloc] initWithCGImage:cgIm size:(NSSize){ 50.0, 50.0 }];
-    NSImage *image = cgImageToNSImage(cgIm);
-    CFRelease(cgIm);
-    
     if (nil != error) {
         NSLog(@"Error making screenshot: %@", [error localizedDescription]);
         NSLog(@"Actual screenshot time: %f Requested screenshot time: %f", CMTimeGetSeconds(actualTime),
               CMTimeGetSeconds(player.currentItem.currentTime));
         return nil;
+    }
+
+    //NSImage *image = [[NSImage alloc] initWithCGImage:cgIm size:(NSSize){ 50.0, 50.0 }];
+    NSImage *image = cgImageToNSImage(cgIm);
+    if( cgIm != nil ) {
+        CFRelease(cgIm);
     }
     
     NSArray *representations = [image representations];
@@ -162,7 +164,7 @@ NSImage* cgImageToNSImage(CGImageRef image)
     NSDictionary *imageProps = [NSDictionary dictionaryWithObject:compressionFactor
                                                            forKey:NSImageCompressionFactor];
     NSData *data = [NSBitmapImageRep representationOfImageRepsInArray:representations
-                                                            usingType:NSJPEGFileType
+                                                            usingType:NSPNGFileType
                                                            properties:imageProps];
     
     return data;
@@ -240,9 +242,9 @@ NSImage* cgImageToNSImage(CGImageRef image)
 - (BOOL)outlineView:(NSOutlineView *)outlineView acceptDrop:(id < NSDraggingInfo >)info item:(id)item childIndex:(NSInteger)index {
     //NSLog(@"accepting drag operation");
     //todo: move the object in the data model;
-    NSIndexPath *path = [_ChapitreTree selectionIndexPath]; // these three values are nil too.
-    NSArray *objects = [_ChapitreTree selectedObjects];
-    NSArray *nodes = [_ChapitreTree selectedNodes];
+    //NSIndexPath *path = [_ChapitreTree selectionIndexPath]; // these three values are nil too.
+    //NSArray *objects = [_ChapitreTree selectedObjects];
+    //NSArray *nodes = [_ChapitreTree selectedNodes];
     //NSLog(@"%@", path);
     //NSLog(@"%@", objects);
     //NSLog(@"%@", nodes);
