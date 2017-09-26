@@ -17,10 +17,10 @@
 -(id)transformedValue:(id)value {
     NSNumber *tmp = value;
     NSImage *ret = nil;
-    if( [tmp isEqualTo:[NSNumber numberWithInt:1]]) {
+    if( [tmp isEqualTo:@1]) {
         ret = [NSImage imageNamed:@"NSLockLockedTemplate"];
     }
-    else if( [tmp isEqualTo:[NSNumber numberWithInt:-1]]) {
+    else if( [tmp isEqualTo:@-1]) {
         return nil;
     }
     else {

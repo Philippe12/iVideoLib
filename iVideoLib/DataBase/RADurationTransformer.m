@@ -34,9 +34,9 @@
     tempMinute  = (secs / 60) - (tempHour * 60);
     tempSecond  = secs - ((tempHour * 3600) + (tempMinute * 60));
     
-    hour    = [[NSNumber numberWithInt:tempHour] stringValue];
-    minute  = [[NSNumber numberWithInt:tempMinute] stringValue];
-    second  = [[NSNumber numberWithInt:tempSecond] stringValue];
+    hour    = @(tempHour).stringValue;
+    minute  = @(tempMinute).stringValue;
+    second  = @(tempSecond).stringValue;
     
     // Make time look like 00:00:00 and not 0:0:0
     if (tempHour < 10) {

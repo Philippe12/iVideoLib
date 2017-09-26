@@ -14,15 +14,12 @@
     NSPersistentStoreCoordinator *_psc;
 }
 
-- (id) initLoc;
-- (id)initWithManagedObjectContext:(NSManagedObjectContext *)inMoc : (NSManagedObjectModel*) inMom : (NSPersistentStoreCoordinator *)inPsc;
-- (void)setManagedObjectContext:(NSManagedObjectContext *)value;
-- (void)setManagedObjectModel:(NSManagedObjectModel *)value;
-- (void)setPersistentStoreCoordinator:(NSPersistentStoreCoordinator *)value;
+- (instancetype) initLoc;
+- (instancetype)initWithManagedObjectContext:(NSManagedObjectContext *)inMoc : (NSManagedObjectModel*) inMom : (NSPersistentStoreCoordinator *)inPsc;
 
-- (NSManagedObjectContext *)managedObjectContext;
-- (NSManagedObjectModel *)managedObjectModel;
-- (NSPersistentStoreCoordinator *)persistentStoreCoordinator;
+@property (NS_NONATOMIC_IOSONLY, strong) NSManagedObjectContext *managedObjectContext;
+@property (NS_NONATOMIC_IOSONLY, copy) NSManagedObjectModel *managedObjectModel;
+@property (NS_NONATOMIC_IOSONLY, strong) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 - (int)runAsPanel: (id)mainWindow;
 -(id)getCurrent: (NSArrayController *) array;

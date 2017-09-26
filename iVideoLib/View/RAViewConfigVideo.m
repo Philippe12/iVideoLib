@@ -19,7 +19,7 @@
 
 @implementation RAViewConfigVideo
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -28,7 +28,7 @@
     return self;
 }
 
-- (id)initLoc 
+- (instancetype)initLoc 
 {
     self = [super initWithNibName:@"RAViewConfigVideo" bundle:nil];
     return self;
@@ -72,19 +72,19 @@
     NSEntityDescription *entity =
     [NSEntityDescription entityForName:@"Video"
                 inManagedObjectContext:self.managedObjectContext];
-    [request setEntity:entity];
+    request.entity = entity;
     
-    NSString *value = [url absoluteString];
+    NSString *value = url.absoluteString;
     NSString *wildcardedString = [NSString stringWithFormat:@"%@", value];
     
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"url like %@", wildcardedString];
-    [request setPredicate:predicate];
+    request.predicate = predicate;
     
     NSError *error;
     NSArray *array = [self.managedObjectContext executeFetchRequest:request error:&error];
     NSUInteger count = 0;
     if (array != nil) {
-        count = [array count]; // May be 0 if the object has been deleted.
+        count = array.count; // May be 0 if the object has been deleted.
     }
     if( count != 0 ) {
         return NO;
@@ -94,23 +94,23 @@
 
 - (IBAction)OpenVideo:(id)sender {
     NSOpenPanel *openPanel = [[NSOpenPanel alloc] init];
-    [openPanel setDelegate:self];
-    [openPanel beginSheetModalForWindow:[[self view] window] completionHandler:^(NSInteger result) {
-		if (result == NSFileHandlingPanelOKButton) {
-            NSURL *url = [openPanel URL];
+    openPanel.delegate = self;
+    [openPanel beginSheetModalForWindow:self.view.window completionHandler:^(NSInteger result) {
+        if (result == NSFileHandlingPanelOKButton) {
+            NSURL *url = openPanel.URL;
             if (mVideo) {
-                mVideo.url = [url absoluteString];
+                mVideo.url = url.absoluteString;
                 [self setUrlToPlayer];
                 mVideo.lenght = [[NSNumber alloc] initWithFloat: CMTimeGetSeconds(_player.currentItem.duration)];
                 if( mVideo.name == nil) {
-                    mVideo.name = [[url absoluteString] lastPathComponent];
+                    mVideo.name = url.absoluteString.lastPathComponent;
                 }
                 [self performSelectorInBackground:@selector(GetDuration) withObject:nil];
             }
-		} else {
-			[openPanel close];
-		}
-	}];
+        } else {
+            [openPanel close];
+        }
+    }];
 }
 
 NSImage* cgImageToNSImage(CGImageRef image)
@@ -147,7 +147,7 @@ NSImage* cgImageToNSImage(CGImageRef image)
                                              error:&error];
     
     if (nil != error) {
-        NSLog(@"Error making screenshot: %@", [error localizedDescription]);
+        NSLog(@"Error making screenshot: %@", error.localizedDescription);
         NSLog(@"Actual screenshot time: %f Requested screenshot time: %f", CMTimeGetSeconds(actualTime),
               CMTimeGetSeconds(player.currentItem.currentTime));
         return nil;
@@ -159,10 +159,9 @@ NSImage* cgImageToNSImage(CGImageRef image)
         CFRelease(cgIm);
     }
     
-    NSArray *representations = [image representations];
-    NSNumber *compressionFactor = [NSNumber numberWithFloat:0.9];
-    NSDictionary *imageProps = [NSDictionary dictionaryWithObject:compressionFactor
-                                                           forKey:NSImageCompressionFactor];
+    NSArray *representations = image.representations;
+    NSNumber *compressionFactor = @0.9f;
+    NSDictionary *imageProps = @{NSImageCompressionFactor: compressionFactor};
     NSData *data = [NSBitmapImageRep representationOfImageRepsInArray:representations
                                                             usingType:NSPNGFileType
                                                            properties:imageProps];
@@ -179,18 +178,18 @@ NSImage* cgImageToNSImage(CGImageRef image)
 
 - (NSIndexPath*)indexPathOfObject:(id)anObject
 {
-    return [self indexPathOfObject:anObject inNodes:[[_ChapitreTree arrangedObjects] childNodes]];
+    return [self indexPathOfObject:anObject inNodes:_ChapitreTree.arrangedObjects.childNodes];
 }
 
 - (NSIndexPath*)indexPathOfObject:(id)anObject inNodes:(NSArray*)nodes
 {
     for(NSTreeNode* node in nodes)
     {
-        if([[node representedObject] isEqual:anObject])
-            return [node indexPath];
-        if([[node childNodes] count])
+        if([node.representedObject isEqual:anObject])
+            return node.indexPath;
+        if(node.childNodes.count)
         {
-            NSIndexPath* path = [self indexPathOfObject:anObject inNodes:[node childNodes]];
+            NSIndexPath* path = [self indexPathOfObject:anObject inNodes:node.childNodes];
             if(path)
                 return path;
         }
@@ -207,8 +206,7 @@ NSImage* cgImageToNSImage(CGImageRef image)
         chapitre.photo = [self screenshotFromPlayer:_player];
         chapitre.position = [[NSNumber alloc] initWithDouble: _player.currentItem.currentTime.value];
         chapitre.scale = [[NSNumber alloc] initWithDouble: _player.currentItem.currentTime.timescale];
-        chapitre.time = [[NSNumber alloc] initWithDouble:
-                     [chapitre.position doubleValue] / [chapitre.scale doubleValue] ];
+        chapitre.time = @((chapitre.position).doubleValue / (chapitre.scale).doubleValue);
         [mVideo addHave_chapitreObject:chapitre];
         [_ChapitreTree setSelectionIndexPath:[self indexPathOfObject:chapitre]];
         [self runCallback:0];
@@ -219,8 +217,8 @@ NSImage* cgImageToNSImage(CGImageRef image)
     NSArrayController *ptr = [self creatArray:@"Chapitre"];
     if (ptr) {
         Chapitre *chap = nil;
-        if ([_Outline selectedRow] != -1)
-            chap = [[_Outline itemAtRow:[_Outline selectedRow]] representedObject];
+        if (_Outline.selectedRow != -1)
+            chap = [[_Outline itemAtRow:_Outline.selectedRow] representedObject];
         if (chap) {
             [ptr removeObject:chap];
             [self runCallback:0];
@@ -232,10 +230,10 @@ NSImage* cgImageToNSImage(CGImageRef image)
 
 - (void)outlineViewSelectionDidChange:(NSNotification *)notification {
     Chapitre *chap = nil;
-    if ([_Outline selectedRow] != -1)
-        chap = [[_Outline itemAtRow:[_Outline selectedRow]] representedObject];
+    if (_Outline.selectedRow != -1)
+        chap = [[_Outline itemAtRow:_Outline.selectedRow] representedObject];
     if (chap) {
-        [_player.currentItem seekToTime:CMTimeMake([chap.position doubleValue], [chap.scale doubleValue]) toleranceBefore:kCMTimeZero toleranceAfter:kCMTimeZero];
+        [_player.currentItem seekToTime:CMTimeMake((chap.position).doubleValue, (chap.scale).doubleValue) toleranceBefore:kCMTimeZero toleranceAfter:kCMTimeZero];
     }
 }
 
@@ -253,7 +251,7 @@ NSImage* cgImageToNSImage(CGImageRef image)
 
 - (BOOL)outlineView:(NSOutlineView *)outlineView writeItems:(NSArray *)items toPasteboard:(NSPasteboard *)pboard {
     NSString *pasteBoardType = @"Event";
-    [pboard declareTypes:[NSArray arrayWithObject:pasteBoardType] owner:self];
+    [pboard declareTypes:@[pasteBoardType] owner:self];
     
     return YES;
 }
@@ -271,9 +269,9 @@ NSImage* cgImageToNSImage(CGImageRef image)
 }
 
 - (void)reloadData {
-    [_Outline registerForDraggedTypes:[NSArray arrayWithObject: @"Event"]];
+    [_Outline registerForDraggedTypes:@[@"Event"]];
     NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"time" ascending:YES];
-    [_ChapitreTree setSortDescriptors:[NSArray arrayWithObject:sort]];
+    _ChapitreTree.sortDescriptors = @[sort];
     [self setUrlToPlayer];
     [_Outline reloadData];
 }

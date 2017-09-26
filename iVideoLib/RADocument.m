@@ -14,7 +14,7 @@
 
 @implementation RADocument
 
-- (id)init
+- (instancetype)init
 {
     self = [super init];
     if (self) {
@@ -33,10 +33,10 @@
 - (void)awakeFromNib {
     [_sidebarOutlineView setFloatsGroupRows:NO];
     [NSAnimationContext beginGrouping];
-    [[NSAnimationContext currentContext] setDuration:10];
+    [NSAnimationContext currentContext].duration = 10;
     [_sidebarOutlineView expandItem:nil expandChildren:NO];
     [NSAnimationContext endGrouping];
-    [_sidebarOutlineView setDoubleAction:@selector(doubleClickInTableView:)];
+    _sidebarOutlineView.doubleAction = @selector(doubleClickInTableView:);
     [self performSelector:@selector(reloadData) withObject:nil afterDelay:0];
 }
 
@@ -64,8 +64,7 @@
         options = [[NSMutableDictionary alloc] init];
     }
     
-    [options setObject:[NSNumber numberWithBool:YES]
-                forKey:NSMigratePersistentStoresAutomaticallyOption];
+    options[NSMigratePersistentStoresAutomaticallyOption] = @YES;
     
     BOOL result = [super configurePersistentStoreCoordinatorForURL:url
                                                             ofType:fileType
@@ -77,7 +76,7 @@
 }
 
 - (IBAction)doubleClickInTableView:(id)sender {
-    id sel = [[_sidebarOutlineView itemAtRow:[_sidebarOutlineView selectedRow]] representedObject];
+    id sel = [[_sidebarOutlineView itemAtRow:_sidebarOutlineView.selectedRow] representedObject];
     if( sel == nil )
         return;
     
@@ -104,13 +103,13 @@
 
 - (NSView *)outlineView:(NSOutlineView *)outlineView viewForTableColumn:(NSTableColumn *)tableColumn item:(id)item  {
     NSTableCellView *result = [outlineView makeViewWithIdentifier:@"MyCell" owner:self];
-    [result setObjectValue:[item representedObject]];
+    result.objectValue = [item representedObject];
     return result;
 }
 
 - (void)_setContentViewToName:(id)item {
     if (_currentContentViewController) {
-        [[_currentContentViewController view] removeFromSuperview];
+        [_currentContentViewController.view removeFromSuperview];
     }
     
     id ptr = [RAViewConfigVideo alloc]; // Retained
@@ -122,15 +121,15 @@
     [ptr setCallBack:@selector(reloadData)];
     _currentContentViewController = ptr;
     
-    NSView *view = [_currentContentViewController view];
+    NSView *view = _currentContentViewController.view;
     view.frame = _mainContentView.bounds;
-    [view setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
+    view.autoresizingMask = NSViewWidthSizable | NSViewHeightSizable;
     [_mainContentView addSubview:view];
 }
 
 - (void)outlineViewSelectionDidChange:(NSNotification *)notification {
-    if ([_sidebarOutlineView selectedRow] != -1) {
-        id item = [[_sidebarOutlineView itemAtRow:[_sidebarOutlineView selectedRow]] representedObject];
+    if (_sidebarOutlineView.selectedRow != -1) {
+        id item = [[_sidebarOutlineView itemAtRow:_sidebarOutlineView.selectedRow] representedObject];
         [self _setContentViewToName:item];
     }
 }
@@ -138,7 +137,7 @@
 - (void)reloadData {
     NSSortDescriptor *sortname = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
     NSSortDescriptor *sortposition = [[NSSortDescriptor alloc] initWithKey:@"position" ascending:YES];
-    [_VideoTree setSortDescriptors:[NSArray arrayWithObjects: sortname, sortposition, nil]];
+    _VideoTree.sortDescriptors = @[sortname, sortposition];
     [_sidebarOutlineView invalidateIntrinsicContentSize];
     [_sidebarOutlineView reloadData];
 }

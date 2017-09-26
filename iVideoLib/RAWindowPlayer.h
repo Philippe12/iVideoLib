@@ -24,7 +24,7 @@
 - (IBAction)sliderChange:(id)sender;
 @property (strong) IBOutlet NSSliderCell *sliderVideo;
 
-- (id)initLoc;
+- (instancetype)initLoc NS_DESIGNATED_INITIALIZER;
 - (void)setPresistent:(id)val;
 - (void)simpleClick:(id)sender;
 

@@ -19,7 +19,7 @@
 
 @implementation RAWindowPlayer
 
-- (id)initWithWindow:(NSWindow *)window
+- (instancetype)initWithWindow:(NSWindow *)window
 {
     self = [super initWithWindow:window];
     if (self) {
@@ -36,7 +36,7 @@
     [self setUrlToPlayer];
 
     NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"position" ascending:YES];
-    [_ListeChapitre setSortDescriptors:[NSArray arrayWithObject:sort]];
+    _ListeChapitre.sortDescriptors = @[sort];
     [Chapitre addObserver:self forKeyPath:@"selectedObjects"
                   options:NSKeyValueObservingOptionNew
                   context:nil];
@@ -44,13 +44,13 @@
 
 - (IBAction)sliderChange:(id)sender {
     NSSlider *slide = sender;
-    [_player.currentItem seekToTime:CMTimeMake([slide floatValue], 1) toleranceBefore:kCMTimeZero toleranceAfter:kCMTimeZero];
+    [_player.currentItem seekToTime:CMTimeMake(slide.floatValue, 1) toleranceBefore:kCMTimeZero toleranceAfter:kCMTimeZero];
 }
 
-- (id)initLoc {
-	self = [super initWithWindowNibName:@"RAWindowPlayer"];
+- (instancetype)initLoc {
+    self = [super initWithWindowNibName:@"RAWindowPlayer"];
     self_ptr = self;
-	return self;
+    return self;
 }
 
 - (void)setPresistent:(id)val
@@ -62,9 +62,9 @@
 - (void) GetDuration {
     sleep(5); //wait that video are loaded
     Float64 f = CMTimeGetSeconds(_player.currentItem.duration);
-    [_sliderVideo setMinValue:0.0];
-    [_sliderVideo setMaxValue:f];
-    [_sliderVideo setFloatValue:0.0];
+    _sliderVideo.minValue = 0.0;
+    _sliderVideo.maxValue = f;
+    _sliderVideo.floatValue = 0.0;
     [_sliderVideo setEnabled:true];
 }
 
@@ -82,10 +82,10 @@
 }
 
 - (void)simpleClick:(id)sender {
-    Chapitre *sel = [[_ListeViewChapitre itemAtIndex:[[_ListeViewChapitre selectionIndexes] firstIndex]] representedObject];
+    Chapitre *sel = [_ListeViewChapitre itemAtIndex:_ListeViewChapitre.selectionIndexes.firstIndex].representedObject;
      
     if (sel) {
-        [_player.currentItem seekToTime:CMTimeMake([sel.position doubleValue], [sel.scale doubleValue]) toleranceBefore:kCMTimeZero toleranceAfter:kCMTimeZero];
+        [_player.currentItem seekToTime:CMTimeMake((sel.position).doubleValue, (sel.scale).doubleValue) toleranceBefore:kCMTimeZero toleranceAfter:kCMTimeZero];
     }
 }
 

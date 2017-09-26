@@ -16,7 +16,7 @@
 
 -(id)transformedValue:(id)value {
     NSString *tmp = value;
-    NSNumber *ret = [[NSNumber alloc] initWithBool:[tmp length]!=0];
+    NSNumber *ret = [[NSNumber alloc] initWithBool:tmp.length!=0];
     return ret;
 }
 

@@ -19,7 +19,7 @@
 
 @implementation RAConfigVideo
 
-- (id)initWithWindow:(NSWindow *)window
+- (instancetype)initWithWindow:(NSWindow *)window
 {
     self = [super initWithWindow:window];
     if (self) {
@@ -35,10 +35,10 @@
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
 }
 
-- (id)initLoc {
-	self = [super initWithWindowNibName:@"RAConfigVideo"];
+- (instancetype)initLoc {
+    self = [super initWithWindowNibName:@"RAConfigVideo"];
     
-	return self;
+    return self;
 }
 
 - (void)setPresistent:(id)val

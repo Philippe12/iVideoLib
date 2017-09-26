@@ -14,7 +14,7 @@
 
 @implementation RAViewBase
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -23,7 +23,7 @@
     return self;
 }
 
-- (id) initLoc {
+- (instancetype) initLoc {
     return nil;
 }
 
@@ -40,30 +40,30 @@
     }
 }
 
-- (id)initWithManagedObjectContext:(NSManagedObjectContext *)inMoc : (NSManagedObjectModel*) inMom : (NSPersistentStoreCoordinator *)inPsc
+- (instancetype)initWithManagedObjectContext:(NSManagedObjectContext *)inMoc : (NSManagedObjectModel*) inMom : (NSPersistentStoreCoordinator *)inPsc
 {
-	self = [self initLoc];
+    self = [self initLoc];
     
-	if(self) {
+    if(self) {
         [self setManagedObjectContext:inMoc];
         [self setManagedObjectModel:inMom];
         [self setPersistentStoreCoordinator:inPsc];
      //   [self.managedObjectContext setMergePolicy:NSMergeByPropertyStoreTrumpMergePolicy];
     }
     
-	return self;
+    return self;
 }
 
 - (void)setManagedObjectModel:(NSManagedObjectModel *)value
 {
-	// keep only weak ref
-	_mom = value;
+    // keep only weak ref
+    _mom = value;
 }
 
 - (void)setManagedObjectContext:(NSManagedObjectContext *)value
 {
-	// keep only weak ref
-	_moc = value;
+    // keep only weak ref
+    _moc = value;
 }
 
 - (void)setPersistentStoreCoordinator:(NSPersistentStoreCoordinator *)value
@@ -73,7 +73,7 @@
 
 - (NSManagedObjectContext *)managedObjectContext
 {
-	return _moc;
+    return _moc;
 }
 
 - (NSManagedObjectModel *)managedObjectModel
@@ -86,8 +86,8 @@
 }
 
 -(id)getCurrent: (NSArrayController *) array{
-    if ([[array selectedObjects] count] > 0) {
-        return [[array selectedObjects] objectAtIndex:0];
+    if (array.selectedObjects.count > 0) {
+        return array.selectedObjects[0];
     } else {
         return nil;
     }
@@ -95,8 +95,8 @@
 
 -(NSArrayController *) creatArray: (NSString *) entity {
     NSArrayController *ptr = [[NSArrayController alloc] initWithContent:nil];
-    [ptr setManagedObjectContext:[self managedObjectContext]];
-    [ptr setEntityName:entity];
+    ptr.managedObjectContext = [self managedObjectContext];
+    ptr.entityName = entity;
     [ptr prepareContent];
     NSError *error;
     if ([ptr fetchWithRequest:nil merge:YES error:&error] == YES) {
