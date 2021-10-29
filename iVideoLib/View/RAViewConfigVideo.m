@@ -96,14 +96,14 @@
     NSOpenPanel *openPanel = [[NSOpenPanel alloc] init];
     openPanel.delegate = self;
     [openPanel beginSheetModalForWindow:self.view.window completionHandler:^(NSInteger result) {
-        if (result == NSFileHandlingPanelOKButton) {
+        if (result == NSModalResponseOK) {
             NSURL *url = openPanel.URL;
-            if (mVideo) {
-                mVideo.url = url.absoluteString;
+            if (self->mVideo) {
+                self->mVideo.url = url.absoluteString;
                 [self setUrlToPlayer];
-                mVideo.lenght = [[NSNumber alloc] initWithFloat: CMTimeGetSeconds(_player.currentItem.duration)];
-                if( mVideo.name == nil) {
-                    mVideo.name = url.absoluteString.lastPathComponent;
+                self->mVideo.lenght = [[NSNumber alloc] initWithFloat: CMTimeGetSeconds(self->_player.currentItem.duration)];
+                if( self->mVideo.name == nil) {
+                    self->mVideo.name = url.absoluteString.lastPathComponent;
                 }
                 [self performSelectorInBackground:@selector(GetDuration) withObject:nil];
             }
@@ -163,7 +163,7 @@ NSImage* cgImageToNSImage(CGImageRef image)
     NSNumber *compressionFactor = @0.9f;
     NSDictionary *imageProps = @{NSImageCompressionFactor: compressionFactor};
     NSData *data = [NSBitmapImageRep representationOfImageRepsInArray:representations
-                                                            usingType:NSPNGFileType
+                                                            usingType:NSBitmapImageFileTypePNG
                                                            properties:imageProps];
     
     return data;
@@ -233,7 +233,8 @@ NSImage* cgImageToNSImage(CGImageRef image)
     if (_Outline.selectedRow != -1)
         chap = [[_Outline itemAtRow:_Outline.selectedRow] representedObject];
     if (chap) {
-        [_player.currentItem seekToTime:CMTimeMake((chap.position).doubleValue, (chap.scale).doubleValue) toleranceBefore:kCMTimeZero toleranceAfter:kCMTimeZero];
+        //[_player.currentItem seekToTime:CMTimeMake((chap.position).doubleValue, (chap.scale).doubleValue) toleranceBefore:kCMTimeZero toleranceAfter:kCMTimeZero];
+        [_player.currentItem seekToTime:CMTimeMake((chap.position).doubleValue, (chap.scale).doubleValue) toleranceBefore:kCMTimeZero toleranceAfter:kCMTimeZero completionHandler:nil];
     }
 }
 

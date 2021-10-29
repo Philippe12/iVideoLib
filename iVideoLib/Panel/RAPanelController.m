@@ -49,11 +49,15 @@
 }
 
 - (int)runAsPanel: (id)mainWindow {
-    [NSApp beginSheet:self.window
+   /* [NSApp beginSheet:self.window
        modalForWindow:(NSWindow *)mainWindow
         modalDelegate:self.window
        didEndSelector:nil
-          contextInfo:nil];
+          contextInfo:nil];*/
+    [[mainWindow window] beginSheet: self.window
+                       completionHandler: ^(NSModalResponse returnCode){
+        
+    }];
     
     NSInteger retvalue = [NSApp runModalForWindow:self.window];
     

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>CF64705C-EC5D-4C03-8CC2-5EE19E23C6A4</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>8DF43130EA3E3C574F16659F6EEA244CB4AC8615</key>
+		<string>https://github.com/Philippe12/iVideoLib.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>iVideoLib.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>8DF43130EA3E3C574F16659F6EEA244CB4AC8615</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Philippe12/iVideoLib.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>8DF43130EA3E3C574F16659F6EEA244CB4AC8615</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8DF43130EA3E3C574F16659F6EEA244CB4AC8615</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iVideoLib</string>
+		</dict>
+	</array>
+</dict>
+</plist>

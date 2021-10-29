@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="19455" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.AVKitIBPlugin" version="10117"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
+        <plugIn identifier="com.apple.AVKitIBPlugin" version="19455"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="19455"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="RAWindowPlayer">
@@ -16,17 +17,17 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="1">
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="1">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="523" height="373"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1792" height="1095"/>
             <view key="contentView" id="2">
                 <rect key="frame" x="0.0" y="0.0" width="523" height="373"/>
-                <autoresizingMask key="autoresizingMask"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
-                    <avPlayerView canDrawConcurrently="YES" horizontalHuggingPriority="25" verticalHuggingPriority="25" horizontalCompressionResistancePriority="75" verticalCompressionResistancePriority="75" controlsStyle="inline" translatesAutoresizingMaskIntoConstraints="NO" id="vCJ-HA-xR3">
+                    <avPlayerView horizontalHuggingPriority="25" verticalHuggingPriority="25" horizontalCompressionResistancePriority="75" verticalCompressionResistancePriority="75" controlsStyle="inline" translatesAutoresizingMaskIntoConstraints="NO" id="vCJ-HA-xR3">
                         <rect key="frame" x="0.0" y="20" width="523" height="353"/>
                     </avPlayerView>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wFp-zK-nL5">
@@ -50,6 +51,7 @@
                     <constraint firstAttribute="bottom" secondItem="wFp-zK-nL5" secondAttribute="bottom" id="xTk-dU-ITx"/>
                 </constraints>
             </view>
+            <point key="canvasLocation" x="140" y="133"/>
         </window>
         <collectionViewItem id="FIa-er-x26"/>
         <arrayController mode="entity" entityName="Chapitre" automaticallyPreparesContent="YES" automaticallyRearrangesObjects="YES" id="JKT-E3-CAc" userLabel="Chapitre">
@@ -62,7 +64,7 @@
             <rect key="frame" x="0.0" y="0.0" width="523" height="125"/>
             <subviews>
                 <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="i42-rb-mEJ">
-                    <rect key="frame" x="-2" y="18" width="527" height="21"/>
+                    <rect key="frame" x="-2" y="14" width="527" height="28"/>
                     <sliderCell key="cell" enabled="NO" state="on" alignment="left" maxValue="100" tickMarkPosition="above" sliderType="linear" id="MLU-62-WlH"/>
                 </slider>
             </subviews>
@@ -83,6 +85,6 @@
         </drawer>
     </objects>
     <resources>
-        <image name="NSRevealFreestandingTemplate" width="14" height="14"/>
+        <image name="NSRevealFreestandingTemplate" width="15" height="15"/>
     </resources>
 </document>

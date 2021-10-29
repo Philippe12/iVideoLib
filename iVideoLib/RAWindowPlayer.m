@@ -44,7 +44,7 @@
 
 - (IBAction)sliderChange:(id)sender {
     NSSlider *slide = sender;
-    [_player.currentItem seekToTime:CMTimeMake(slide.floatValue, 1) toleranceBefore:kCMTimeZero toleranceAfter:kCMTimeZero];
+    [_player.currentItem seekToTime:CMTimeMake(slide.floatValue, 1) toleranceBefore:kCMTimeZero toleranceAfter:kCMTimeZero completionHandler:nil];
 }
 
 - (instancetype)initLoc {
@@ -85,7 +85,7 @@
     Chapitre *sel = [_ListeViewChapitre itemAtIndex:_ListeViewChapitre.selectionIndexes.firstIndex].representedObject;
      
     if (sel) {
-        [_player.currentItem seekToTime:CMTimeMake((sel.position).doubleValue, (sel.scale).doubleValue) toleranceBefore:kCMTimeZero toleranceAfter:kCMTimeZero];
+        [_player.currentItem seekToTime:CMTimeMake((sel.position).doubleValue, (sel.scale).doubleValue) toleranceBefore:kCMTimeZero toleranceAfter:kCMTimeZero completionHandler:nil];
     }
 }
 

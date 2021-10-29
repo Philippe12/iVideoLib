@@ -31,9 +31,9 @@
 }
 
 - (void)awakeFromNib {
-    [_sidebarOutlineView setFloatsGroupRows:NO];
+    [_sidebarOutlineView setFloatsGroupRows:YES];
     [NSAnimationContext beginGrouping];
-    [NSAnimationContext currentContext].duration = 10;
+    [NSAnimationContext currentContext].duration = 1000;
     [_sidebarOutlineView expandItem:nil expandChildren:NO];
     [NSAnimationContext endGrouping];
     _sidebarOutlineView.doubleAction = @selector(doubleClickInTableView:);
@@ -93,7 +93,7 @@
 
 - (BOOL)outlineView:(NSOutlineView *)outlineView isGroupItem:(id)item {
     if([outlineView parentForItem:item] == nil)
-        return YES;
+        return NO;
     return NO;
 }
 
