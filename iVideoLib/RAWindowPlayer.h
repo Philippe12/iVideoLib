@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "Video.h"
+#import "Video+CoreDataClass.h"
 #import <AVKit/AVKit.h>
 #import "RAPanelController.h"
 

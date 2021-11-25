@@ -9,7 +9,7 @@
 #import "RAViewConfigVideo.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AVKit/AVKit.h>
-#import "Chapitre.h"
+#import "Chapitre+CoreDataClass.h"
 
 @interface RAViewConfigVideo ()
 
@@ -165,7 +165,6 @@ NSImage* cgImageToNSImage(CGImageRef image)
     NSData *data = [NSBitmapImageRep representationOfImageRepsInArray:representations
                                                             usingType:NSBitmapImageFileTypePNG
                                                            properties:imageProps];
-    
     return data;
 }
 

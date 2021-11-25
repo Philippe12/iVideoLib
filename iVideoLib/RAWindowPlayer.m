@@ -9,7 +9,7 @@
 #import "RAWindowPlayer.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AVKit/AVKit.h>
-#import "Chapitre.h"
+#import "Chapitre+CoreDataClass.h"
 
 @interface RAWindowPlayer ()
 
@@ -19,14 +19,14 @@
 
 @implementation RAWindowPlayer
 
-- (instancetype)initWithWindow:(NSWindow *)window
+/*- (instancetype)initWithWindow:(NSWindow *)window
 {
     self = [super initWithWindow:window];
     if (self) {
         // Initialization code here.
     }
     return self;
-}
+}*/
 
 - (void)windowDidLoad
 {

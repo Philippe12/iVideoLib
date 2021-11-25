@@ -7,7 +7,7 @@
 //
 
 #import "RAPanelController.h"
-#import "Video.h"
+#import "Video+CoreDataClass.h"
 #import <AVKit/AVKit.h>
 #import "../View/RAViewConfigVideo.h"
 

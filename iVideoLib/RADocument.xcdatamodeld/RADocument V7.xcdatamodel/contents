@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19461" systemVersion="21A559" minimumToolsVersion="Xcode 7.3" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="V2">
+    <entity name="Actor" representedClassName="Actor" syncable="YES">
+        <attribute name="bonnet" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cheveux" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="naissance" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="nationnalite" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nom" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photo" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="poid" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="prenom" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sexe" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="taille" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="tourdepoitrine" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="tourdeshanche" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="tourdetaille" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="yeux" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="in_video" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Video" inverseName="have_actor" inverseEntity="Video" syncable="YES"/>
+    </entity>
+    <entity name="Chapitre" representedClassName="Chapitre" syncable="YES">
+        <attribute name="locking" optional="YES" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photo" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="position" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="scale" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <relationship name="for_chapitre" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Chapitre" inverseName="have_chapitre" inverseEntity="Chapitre" syncable="YES"/>
+        <relationship name="for_video" maxCount="1" deletionRule="Nullify" destinationEntity="Video" inverseName="have_chapitre" inverseEntity="Video" syncable="YES"/>
+        <relationship name="have_chapitre" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Chapitre" inverseName="for_chapitre" inverseEntity="Chapitre" syncable="YES"/>
+    </entity>
+    <entity name="Video" representedClassName="Video" syncable="YES">
+        <attribute name="lenght" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="locking" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photo" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="have_actor" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Actor" inverseName="in_video" inverseEntity="Actor" syncable="YES"/>
+        <relationship name="have_chapitre" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Chapitre" inverseName="for_video" inverseEntity="Chapitre" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Chapitre" positionX="-2411.268188476562" positionY="-4198.866333007812" width="128" height="180"/>
+        <element name="Video" positionX="-2772" positionY="-4198" width="128" height="148"/>
+        <element name="Actor" positionX="-2584.293090820312" positionY="-4383.58349609375" width="128" height="268"/>
+    </elements>
+</model>

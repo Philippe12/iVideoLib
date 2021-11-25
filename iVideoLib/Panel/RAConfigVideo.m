@@ -9,7 +9,7 @@
 #import "RAConfigVideo.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AVKit/AVKit.h>
-#import "Chapitre.h"
+#import "Chapitre+CoreDataClass.h"
 
 @interface RAConfigVideo ()
 
