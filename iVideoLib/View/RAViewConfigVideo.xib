@@ -108,10 +108,11 @@
                                             </binding>
                                         </connections>
                                     </imageView>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gE3-yr-Zub">
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gE3-yr-Zub">
                                         <rect key="frame" x="265" y="19" width="49" height="17"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="17" id="ff1-Jl-hQt"/>
+                                            <constraint firstAttribute="height" constant="17" id="aDM-gS-hdV"/>
+                                            <constraint firstAttribute="width" constant="45" id="dAk-mM-qtK"/>
                                         </constraints>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Name :" id="QSX-u4-axA">
                                             <font key="font" metaFont="system"/>
@@ -126,7 +127,7 @@
                                             </binding>
                                         </connections>
                                     </textField>
-                                    <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TqU-xS-26B">
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TqU-xS-26B">
                                         <rect key="frame" x="17" y="16" width="23" height="23"/>
                                         <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSQuickLookTemplate" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Noe-26-7f1">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -143,15 +144,15 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="lvN-EM-Mkh" firstAttribute="centerX" secondItem="gE3-yr-Zub" secondAttribute="centerX" id="203-RG-bEx"/>
-                                    <constraint firstItem="TqU-xS-26B" firstAttribute="baseline" secondItem="gE3-yr-Zub" secondAttribute="baseline" id="DAI-hc-7nb"/>
+                                    <constraint firstAttribute="bottom" secondItem="gE3-yr-Zub" secondAttribute="bottom" constant="19" id="9Ok-ea-T5p"/>
+                                    <constraint firstItem="TqU-xS-26B" firstAttribute="leading" secondItem="lvN-EM-Mkh" secondAttribute="leading" id="AOY-PH-cza"/>
+                                    <constraint firstItem="gE3-yr-Zub" firstAttribute="centerY" secondItem="TqU-xS-26B" secondAttribute="centerY" id="BpK-cE-hRM"/>
+                                    <constraint firstItem="gE3-yr-Zub" firstAttribute="centerX" secondItem="lvN-EM-Mkh" secondAttribute="centerX" id="F61-Eb-XmI"/>
+                                    <constraint firstItem="gE3-yr-Zub" firstAttribute="centerX" secondItem="L10-yz-ZeM" secondAttribute="centerX" id="Mwt-hd-n2G"/>
                                     <constraint firstItem="lvN-EM-Mkh" firstAttribute="top" secondItem="L10-yz-ZeM" secondAttribute="top" constant="3" id="VIc-cP-lEw"/>
-                                    <constraint firstItem="lvN-EM-Mkh" firstAttribute="leading" secondItem="TqU-xS-26B" secondAttribute="leading" id="dPn-r6-4q9"/>
-                                    <constraint firstItem="lvN-EM-Mkh" firstAttribute="bottom" secondItem="gE3-yr-Zub" secondAttribute="bottom" id="e7w-QA-8xy"/>
-                                    <constraint firstItem="gE3-yr-Zub" firstAttribute="centerX" secondItem="L10-yz-ZeM" secondAttribute="centerX" id="jrs-q4-uCN"/>
-                                    <constraint firstAttribute="bottom" secondItem="gE3-yr-Zub" secondAttribute="bottom" constant="19" id="pU7-dm-5sr"/>
-                                    <constraint firstItem="TqU-xS-26B" firstAttribute="leading" secondItem="L10-yz-ZeM" secondAttribute="leading" constant="17" id="raf-I0-ht5"/>
-                                    <constraint firstItem="TqU-xS-26B" firstAttribute="centerY" secondItem="gE3-yr-Zub" secondAttribute="centerY" id="wGZ-ZV-k1o"/>
+                                    <constraint firstItem="TqU-xS-26B" firstAttribute="baseline" secondItem="lvN-EM-Mkh" secondAttribute="baseline" id="lxb-IS-i0l"/>
+                                    <constraint firstItem="TqU-xS-26B" firstAttribute="leading" secondItem="L10-yz-ZeM" secondAttribute="leading" constant="17" id="qeJ-BT-Rtg"/>
+                                    <constraint firstItem="gE3-yr-Zub" firstAttribute="bottom" secondItem="lvN-EM-Mkh" secondAttribute="bottom" id="u79-38-iTR"/>
                                 </constraints>
                             </view>
                         </tabViewItem>
@@ -200,7 +201,7 @@
                                         <rect key="frame" x="17" y="17" width="520" height="250"/>
                                         <clipView key="contentView" drawsBackground="NO" id="L9X-k6-ZOx">
                                             <rect key="frame" x="1" y="1" width="518" height="248"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="sourceList" multipleSelection="NO" autosaveColumns="NO" rowHeight="40" viewBased="YES" indentationPerLevel="16" outlineTableColumn="jSW-KC-PVK" id="2D1-T2-YFT">
                                                     <rect key="frame" x="0.0" y="0.0" width="518" height="248"/>

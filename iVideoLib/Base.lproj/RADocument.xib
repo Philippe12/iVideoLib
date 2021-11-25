@@ -82,9 +82,8 @@
                                                     <rect key="frame" x="11" y="0.0" width="272" height="50"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mS7-IU-2hb">
+                                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mS7-IU-2hb">
                                                             <rect key="frame" x="3" y="3" width="80" height="47"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <imageCell key="cell" controlSize="large" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSActionTemplate" id="aon-XV-SJg"/>
                                                             <connections>
                                                                 <binding destination="s28-0O-W7g" name="value" keyPath="objectValue.photo" id="Lsm-7c-TcR">
@@ -94,9 +93,12 @@
                                                                 </binding>
                                                             </connections>
                                                         </imageView>
-                                                        <textField identifier="DataCell" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="par-Xq-YnB">
+                                                        <textField identifier="DataCell" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="par-Xq-YnB">
                                                             <rect key="frame" x="85" y="3" width="150" height="47"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="146" id="Gkl-cl-48f"/>
+                                                                <constraint firstAttribute="height" constant="47" id="tHa-Fv-t3p"/>
+                                                            </constraints>
                                                             <textFieldCell key="cell" controlSize="large" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" title="Table View Cell" id="9fI-yT-gbR">
                                                                 <font key="font" metaFont="system"/>
                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -106,9 +108,8 @@
                                                                 <binding destination="s28-0O-W7g" name="value" keyPath="objectValue.name" id="pcH-XV-8KX"/>
                                                             </connections>
                                                         </textField>
-                                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Szc-Xb-kvp">
-                                                            <rect key="frame" x="67" y="32" width="16" height="15"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Szc-Xb-kvp">
+                                                            <rect key="frame" x="83" y="47" width="0.0" height="0.0"/>
                                                             <imageCell key="cell" controlSize="large" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="oAX-Lb-RCP"/>
                                                             <connections>
                                                                 <binding destination="s28-0O-W7g" name="value" keyPath="objectValue.locking" id="RSW-gY-CtQ">
@@ -119,6 +120,16 @@
                                                             </connections>
                                                         </imageView>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="par-Xq-YnB" secondAttribute="trailing" constant="39" id="0mF-3v-C4Q"/>
+                                                        <constraint firstItem="mS7-IU-2hb" firstAttribute="top" secondItem="Szc-Xb-kvp" secondAttribute="top" id="1Sh-1j-iLI"/>
+                                                        <constraint firstItem="mS7-IU-2hb" firstAttribute="baseline" secondItem="par-Xq-YnB" secondAttribute="baseline" id="Thb-xc-kSy"/>
+                                                        <constraint firstItem="mS7-IU-2hb" firstAttribute="leading" secondItem="s28-0O-W7g" secondAttribute="leading" constant="3" id="eQV-ZS-BSK"/>
+                                                        <constraint firstItem="mS7-IU-2hb" firstAttribute="centerY" secondItem="par-Xq-YnB" secondAttribute="centerY" id="fbX-ah-bhd"/>
+                                                        <constraint firstAttribute="bottom" secondItem="par-Xq-YnB" secondAttribute="bottom" constant="3" id="hMs-NK-J6v"/>
+                                                        <constraint firstItem="mS7-IU-2hb" firstAttribute="trailing" secondItem="Szc-Xb-kvp" secondAttribute="trailing" id="jv6-Nq-VFZ"/>
+                                                        <constraint firstItem="par-Xq-YnB" firstAttribute="leading" secondItem="mS7-IU-2hb" secondAttribute="trailing" constant="4" id="rxd-3T-baA"/>
+                                                    </constraints>
                                                     <connections>
                                                         <outlet property="imageView" destination="mS7-IU-2hb" id="chx-Sg-5sy"/>
                                                         <outlet property="textField" destination="par-Xq-YnB" id="Hgh-Hn-2pM"/>
@@ -176,7 +187,7 @@
             <connections>
                 <outlet property="delegate" destination="-2" id="17"/>
             </connections>
-            <point key="canvasLocation" x="139" y="126"/>
+            <point key="canvasLocation" x="-168" y="-101"/>
         </window>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <userDefaultsController representsSharedInstance="YES" id="7NH-r9-WyJ"/>
