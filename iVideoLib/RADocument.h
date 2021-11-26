@@ -14,9 +14,12 @@
     NSViewController *_currentContentViewController;
 }
 
-@property (strong) IBOutlet NSOutlineView *sidebarOutlineView;
+@property (strong) IBOutlet NSOutlineView *videoSidebarOutlineView;
 @property (strong) IBOutlet NSTreeController *VideoTree;
 @property (strong) IBOutlet NSView *mainContentView;
+@property (strong) IBOutlet NSTreeController *ActorTree;
+@property (strong) IBOutlet NSOutlineView *actorSidebarOutlineView;
+
 
 - (void)reloadData;
 
