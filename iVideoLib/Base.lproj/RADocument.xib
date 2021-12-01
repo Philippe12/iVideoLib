@@ -24,8 +24,8 @@
             <rect key="contentRect" x="133" y="235" width="824" height="509"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1792" height="1095"/>
             <value key="minSize" type="size" width="94" height="86"/>
-            <view key="contentView" misplaced="YES" id="6">
-                <rect key="frame" x="0.0" y="0.0" width="824" height="507"/>
+            <view key="contentView" id="6">
+                <rect key="frame" x="0.0" y="0.0" width="824" height="509"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <splitView dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ImG-WQ-n5e">
@@ -69,7 +69,7 @@
                                                                                 </textFieldCell>
                                                                                 <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                                 <prototypeCellViews>
-                                                                                    <tableCellView identifier="MyCell" id="s28-0O-W7g">
+                                                                                    <tableCellView identifier="MyCellVideo" id="s28-0O-W7g">
                                                                                         <rect key="frame" x="11" y="0.0" width="226" height="50"/>
                                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                         <subviews>
@@ -229,7 +229,7 @@
                                                                                 </textFieldCell>
                                                                                 <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                                                 <prototypeCellViews>
-                                                                                    <tableCellView id="yaJ-jZ-5U4">
+                                                                                    <tableCellView identifier="MyCellActor" id="yaJ-jZ-5U4">
                                                                                         <rect key="frame" x="11" y="0.0" width="226" height="50"/>
                                                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                         <subviews>
@@ -261,13 +261,32 @@
                                                                                                     <binding destination="yaJ-jZ-5U4" name="value" keyPath="objectValue.nom" id="Vry-aT-1dX"/>
                                                                                                 </connections>
                                                                                             </textField>
+                                                                                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ggd-Wx-2Fa">
+                                                                                                <rect key="frame" x="89" y="16" width="136" height="17"/>
+                                                                                                <constraints>
+                                                                                                    <constraint firstAttribute="height" constant="17" id="71F-BK-EoP"/>
+                                                                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="17" id="yS3-Cp-5NU"/>
+                                                                                                </constraints>
+                                                                                                <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="t1a-Ia-1T6">
+                                                                                                    <font key="font" metaFont="system"/>
+                                                                                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                                                </textFieldCell>
+                                                                                                <connections>
+                                                                                                    <binding destination="yaJ-jZ-5U4" name="value" keyPath="objectValue.prenom" id="mvh-fx-pFT"/>
+                                                                                                </connections>
+                                                                                            </textField>
                                                                                         </subviews>
                                                                                         <constraints>
                                                                                             <constraint firstItem="QcA-RZ-Ngm" firstAttribute="leading" secondItem="eRB-ZN-41D" secondAttribute="trailing" constant="8" symbolic="YES" id="7GK-a9-fUL"/>
                                                                                             <constraint firstItem="eRB-ZN-41D" firstAttribute="top" secondItem="yaJ-jZ-5U4" secondAttribute="top" constant="3" id="BAR-NX-bzD"/>
                                                                                             <constraint firstAttribute="bottom" secondItem="eRB-ZN-41D" secondAttribute="bottom" constant="3" id="BlL-Lg-ea1"/>
                                                                                             <constraint firstAttribute="trailing" secondItem="QcA-RZ-Ngm" secondAttribute="trailing" constant="3" id="LWN-R8-Pct"/>
+                                                                                            <constraint firstAttribute="trailing" secondItem="QcA-RZ-Ngm" secondAttribute="trailing" constant="3" id="nA5-Kl-BD8"/>
                                                                                             <constraint firstItem="eRB-ZN-41D" firstAttribute="leading" secondItem="yaJ-jZ-5U4" secondAttribute="leading" constant="3" id="ryO-bq-IZ0"/>
+                                                                                            <constraint firstItem="ggd-Wx-2Fa" firstAttribute="top" secondItem="yaJ-jZ-5U4" secondAttribute="top" constant="17" id="upr-vN-ORt"/>
+                                                                                            <constraint firstAttribute="trailing" secondItem="ggd-Wx-2Fa" secondAttribute="trailing" constant="3" id="w7N-HZ-iob"/>
+                                                                                            <constraint firstItem="ggd-Wx-2Fa" firstAttribute="leading" secondItem="eRB-ZN-41D" secondAttribute="trailing" constant="8" symbolic="YES" id="xc1-iK-Rci"/>
                                                                                             <constraint firstItem="QcA-RZ-Ngm" firstAttribute="top" secondItem="yaJ-jZ-5U4" secondAttribute="top" constant="3" id="zub-3c-KP2"/>
                                                                                         </constraints>
                                                                                         <connections>

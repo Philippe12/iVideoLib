@@ -8,6 +8,7 @@
 
 #import "RADocument.h"
 #import "RAViewConfigVideo.h"
+#import "RAViewConfigActor.h"
 #import "RAWindowPlayer.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AVKit/AVKit.h>
@@ -109,7 +110,11 @@
 }
 
 - (NSView *)outlineView:(NSOutlineView *)outlineView viewForTableColumn:(NSTableColumn *)tableColumn item:(id)item  {
-    NSTableCellView *result = [outlineView makeViewWithIdentifier:@"MyCell" owner:self];
+    NSTableCellView *result;
+    result = [outlineView makeViewWithIdentifier:@"MyCellVideo" owner:self];
+    if( result == nil){
+        result = [outlineView makeViewWithIdentifier:@"MyCellActor" owner:self];
+    }
     result.objectValue = [item representedObject];
     return result;
 }
@@ -129,7 +134,17 @@
         [ptr setPresistent:item];
         [ptr setCallBack:@selector(reloadData)];
     }
-       
+
+    if([item class] == [Actor class]) {
+        ptr = [RAViewConfigActor alloc]; // Retained
+        if (ptr == nil) {
+            return;
+        }
+        ptr = [ptr initWithManagedObjectContext:self.managedObjectContext :self.managedObjectModel :nil];
+        [ptr setPresistent:item];
+        [ptr setCallBack:@selector(reloadData)];
+    }
+
     if( ptr != nil){
         _currentContentViewController = ptr;
         NSView *view = _currentContentViewController.view;
@@ -154,8 +169,8 @@
     [_videoSidebarOutlineView invalidateIntrinsicContentSize];
     [_videoSidebarOutlineView reloadData];
 
-    NSSortDescriptor *sortnameActor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
-    NSSortDescriptor *sortpositionActor = [[NSSortDescriptor alloc] initWithKey:@"position" ascending:YES];
+    NSSortDescriptor *sortnameActor = [[NSSortDescriptor alloc] initWithKey:@"nom" ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)];
+    NSSortDescriptor *sortpositionActor = [[NSSortDescriptor alloc] initWithKey:@"prenom" ascending:YES];
     _ActorTree.sortDescriptors = @[sortnameActor, sortpositionActor];
     [_actorSidebarOutlineView invalidateIntrinsicContentSize];
     [_actorSidebarOutlineView reloadData];
